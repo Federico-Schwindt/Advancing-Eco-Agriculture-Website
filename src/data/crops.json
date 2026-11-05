@@ -1,0 +1,211 @@
+[
+ {
+  "slug": "fruits",
+  "name": "Fruits",
+  "subcrops": [
+   "Citrus",
+   "Pomes",
+   "Stone Fruits",
+   "Grapes"
+  ],
+  "intro": "Through precise nutrition management, we've helped orchards grow high-yielding, profitable crops of fruit with better color, flavor, and improved storability, all while using far fewer pesticides.",
+  "statement": "Although there are many varieties of perennial fruit, our methods of managing these crops are consistent.",
+  "body": [
+   "Addressing quality factors like storability, shipability, firmness, size, and appearance are persistent challenges faced by fruit producers. While most conventional growers place emphasis on enhancing calcium availability and uptake, often overlooked are considerations of the balance and timing of micronutrient applications and the importance of a robust biological soil profile, all of which play a vital role in ensuring overall health and resilience of fruit crops. Often there is a tendency for growers to increase fertilizer rates as well as fungicidal and pesticide applications.",
+   "By managing nutrition and biology, AEA can solve fruit quality problems, improve crop resilience, and increase harvest quality.",
+   "Our products and protocols result in improved production in fruit tree crops across all types and regions. For the home orchardist with diverse mixed species and varieties, the Vegetable and Fruit Growers’ Guide represents an actionable season-long approach for regenerative production.",
+   "There is no one-size-fits-all solution for larger production operations. Nutrition programs should be fine-tuned based on soil and sap reports, crop consultant recommendations, actual plant performance, and, where appropriate, organic certification requirements. AEA offers custom consulting services to help every farm succeed."
+  ],
+  "highlight": "Growing tree fruit is complex and contemporary practices of heavy pesticide use have not improved quality or flavor.",
+  "faqs": [
+   {
+    "q": "How can AEA’s regenerative approach help fruit producers?",
+    "a": "AEA strives to improve the quality metrics that matter most for fruit crop growers, like uniformity of ripening, fruit sizing, color, firmness, and shipability/storability."
+   },
+   {
+    "q": "What specific challenges can AEA help fruit growers overcome?",
+    "a": "Our nutritional recommendations can help to mitigate or solve challenges like bitter pit, greenspot, fireblight, bacterial canker, western X phytoplasma, biennial bearing, and June drop."
+   },
+   {
+    "q": "What are among the most important Critical Points of Influence (CPI) for perennial fruiting crops?",
+    "a": "The CPIs are those times in the lifecycle of a crop when nutritional and biological applications bear the greatest influence upon a successful season. In fruit, of particular importance are applications made during the periods of bud formation and cell division."
+   }
+  ],
+  "stories": [
+   "Steven Cardoza has been able to control his disease and pest pressure for over 4 growing seasons using only nutrition. Steven noticed a big shift in overall health of the plance since he’s been using regenerative management practices in conjunction with AEA products. He has noticed higher yields, higher quality and strong canopy vigor. High pest pressure can cause problems beyond just the year of canopy damage, and organic pesticides weren’t having an impact, but focusing in on nutrition, he was able to reduce spider mite pressure to the point where he doesn’t need to use pesticides anymore. I haven’t sprayed anything with the word “- cide” in it since 2018. Steven Cardoza Organic Raisin Grape Grower, Cardoza and Cardoza Farming Company"
+  ]
+ },
+ {
+  "slug": "vegetables",
+  "name": "Vegetables",
+  "subcrops": [
+   "Tomatoes",
+   "Brassicas",
+   "Onions",
+   "Potatoes",
+   "Cucurbits"
+  ],
+  "intro": "Whether a single-fruiting type, or a continual-flowering variety, AEA understands growers’ goals and challenges. We combine foliar and ground-applied mineral nutrition along with biological inoculants to satisfy the nutritional requirements of vegetable crops that lead to better quality for both the fresh and processing markets.",
+  "statement": "Vegetable Success Stories",
+  "body": [
+   "In vegetable production it is imperative to address the cosmetic issues caused by insects and disease, as well as concerns related to shelf life and overall quality. The reliance on frequent pesticide applications and heavy use of fertilizers has proven to be a less-than-ideal solution. AEA’s management system for vegetable culture includes building inherent plant immunity as a proactive measure to thwart pests and diseases. Maintaining proper nutrient balance fosters healthier plants and reduces the need for pesticides.",
+   "Our products and approaches result in improvements for vegetable crop producers across all types and regions. For the home growers and market gardeners, the Vegetable and Fruit Growers’ Guide represents an actionable season-long approach for regenerative production. Our Customer Care team can assist with scaling applications and rates to your production area from 1,000 sq ft.",
+   "There is no one-size-fits-all solution for larger production operations. Nutrition programs should be fine-tuned based on soil and sap reports, crop consultant recommendations, actual plant performance, and, where appropriate, organic certification requirements. AEA offers customized consulting services through our experienced, regional farm services teams to best maximize performance on your acreage.",
+   "Focusing our efforts during the Critical Points of Influence (CPIs), we manage macro- and micronutrients to optimize uptake of the key nutrients at each phase of the vegetable crop lifecycle."
+  ],
+  "highlight": "AEA helps produce growers to enhance quality and marketability for the fresh and processing markets.",
+  "faqs": [
+   {
+    "q": "How can AEA’s regenerative approach help vegetable growers meet their goals?",
+    "a": "We strive to improve the quality metrics like yield, target size, storability/shipability, firmness, color, and condensed/specified harvest window."
+   },
+   {
+    "q": "What specific challenges can we help vegetable growers overcome?",
+    "a": "Our nutritional recommendations can help to mitigate or solve challenges like insect infestations, malformed fruit, bacterial or fungal pathogens, spot, blight, fusarium, and lengthening harvest window by delaying senescence."
+   },
+   {
+    "q": "What are among the most important Critical Points of Influence (CPI) for vegetable crops?",
+    "a": "The CPIs for vegetable crops vary, with timing specific to whether the crops’ primary purpose is vegetative or reproductive. In the case of the latter, a key CPI is at time of bloom when we can provide nutritional essential support for reproductive function."
+   }
+  ],
+  "stories": [
+   "Dan McClure works alongside AEA to continue his transition from conventional to organic, utilizing our regenerative programs to improve crop performance, build resistance to pests and pathogens and increase water use efficiency. Dan McClure is the owner of Walla Walla Organics, a 600-acre farm in Touchet, Washington. Dan has been farming in the area since 2006, starting with conventional crops like wheat and alfalfa. When Dan realized he couldn’t meet his goals with conventional crops, he shifted his focus to organic practices. Working with AEA, Dan has seen a dramatic decrease in thrip and pink root pressure in his onions and is seeing less disease pressure on his spinach. He is also seeing an increase in yield and overall crop quality. All of our crops are irrigated and water penetration is a big deal. Our soils will just tighten up and water just won't go in. After working with AEA and the products that we have been putting down, we’ve found that the soil is starting to open up, water is getting in better and crops are responding nicely. Dan McClure Organic Mixed Vegetable Grower, Walla Walla Organics"
+  ]
+ },
+ {
+  "slug": "grains-and-legumes",
+  "name": "Grains & Legumes",
+  "subcrops": [
+   "Wheat",
+   "Millet",
+   "Corn",
+   "Soybeans"
+  ],
+  "intro": "AEA’s farm services team helps forage and grain growers to optimize ROI by offering insight into crop rotations, nutrient application schedules, and regenerative pest and pathogen management. Contact our team for more information:",
+  "statement": "In regenerative grain and legume production, it is important to take a systems approach to goal setting, crop planning, and nutrient application timing.",
+  "body": [
+   "Pressing challenges that confront grain and legume producers include soil erosion, leaching of costly soluble fertilizers, and the susceptibility of crops to weather extremes, insects, and diseases. Remedies to increase nitrogen efficiency can result in microbial suppression in the soil and expensive and ineffective fungicide and insecticide treatments all miss the mark to improve crop health and yield. AEA advocates for a holistic management approach, including the strategic delivery of the right nutrients at the right time and biologically friendly methods of creating input efficiency. Our methods enhance the symbiotic relationship between plants and soil microbes, building resilience to erratic weather extremes, and bolstering natural immunity against insects and diseases.",
+   "AEA encourages growers to think in terms of long-term regeneration, not just short-term profitability. AEA’s approach to broad acre crops includes careful consideration of the challenges and goals associated with every individual farm. We help growers better understand the long-term impacts of operational management practices – some of which may appear insignificant when viewed through the short-term lens.",
+   "Our farm services team members assist growers to identify and address the greatest limiting factors to operational success, then create a plan to address these challenges. Using existing agronomic information, along with in-depth testing and data analysis, AEA provides growers with a detailed blueprint of the nutrition needed for optimum yields and quality.",
+   "We further optimize crop performance with data-informed foliar spray programs at the Critical Points of Influence (CPIs) – those times in the lifecycle of a crop when the nutritional and biological applications have the greatest influence upon successful growth and harvest."
+  ],
+  "highlight": "For grains and legume crops, AEA utilizes seed treatments that include plant growth promoting rhizobacteria (PGPRs), mycorrhizal fungi, and liquid mineral nutrition.",
+  "faqs": [
+   {
+    "q": "What are the goals of our approach to grain and legume crops?",
+    "a": "Our approach to grain and legume crops encompasses several key objectives. We aim to enhance nutrient use efficiency, with a particular focus on optimizing nitrogen utilization. Simultaneously, we strive to mitigate the impact of various pests, including earworms, rootworms, spider mites, aphids, and other insects, contributing to a more resilient crop. Our efforts also target increased resistance to extreme temperatures, reducing vulnerability to adverse weather conditions. Additionally, we work to minimize the risk of rust and other leaf diseases, promoting overall plant health. Our comprehensive approach extends to improving grain size, quality, and test weight, ensuring a desirable harvest. Throughout these initiatives, we are dedicated to building soil health, creating a sustainable and profitable foundation for successful crop cultivation."
+   },
+   {
+    "q": "What challenges that growers face can be overcome with AEA’s regenerative approach?",
+    "a": "Our nutritional recommendations can help to mitigate or solve challenges like infestations of spider mites, aphids, ear and cutworms; yield loss due to nutrient imbalances and lack of soil microbial vigor; low protein for certain wheat markets; and drought resilience."
+   },
+   {
+    "q": "What are among the most important Critical Points of Influence (CPI) for grain and legume crops and what gains come from optimized nutrition at these points?",
+    "a": "For corn , the application of nutrients and the enhancement of biological and microbial functions at the root zone during planting play a pivotal role in determining the number of ears that will form. Additionally, between the V3-V5 growth stages, ear size is influenced through foliar adjustments. In the case of wheat , nutrient application at the tillering stage has a profound effect on the eventual number of heads produced. Furthermore, during grain fill, nutrient applications contribute to crop quality markers like test weight and protein content. Soybeans , on the other hand, benefit from applications made at pre-bloom and during the blooming period, improving pod set/holding and maintaining a balanced reproductive to vegetative growth. As the pods fill, appropriate nutrition ensures the realization of their full potential, optimizing overall crop performance."
+   }
+  ],
+  "stories": [
+   "Increased Soybean Pod Set In a trial on Indiana soybeans, Accelerate™ was applied as a foliar at a rate of 2 ½ gallons per acre on a crop that was between the 6th and 7th trifoliate. Despite the application being two or three weeks after the CPI for the bud initiation stage, treated plants averaged 57 pods per plant while untreated plants had an average of 41 pods per plant. We can see that a single foliar application, even applied very late, resulted in substantial results.",
+   "Keith Morter, a dryland wheat farmer in Orgeon, saw his spring wheat sprout in less than 12 hours using BioCoat Gold, AEA’s seed inoculant product. Keith has been on the regenerative journey and has incorporated no-till management as well as eliminating the use of Anhydrous ammonia. The root growth the root mass was unbelievable in the AEA products… we saw was at least a 50 increase in root mass with the AEA products versus the non-AEA products Keith Morter Dryland Wheat Grower, Keith Morter Farms"
+  ]
+ },
+ {
+  "slug": "fibers",
+  "name": "Fibers",
+  "subcrops": [
+   "Cotton",
+   "Hemp"
+  ],
+  "intro": "Whether growing hemp, Pima or upland cotton, AEA is able to guide producers through the complex challenges of managing nutrient applications to achieve optimal crop quality and highest yield. Contact our team for more information:",
+  "statement": "We adopt a systematic approach to customize programs for fiber producers to achieve their goals.",
+  "body": [
+   "Producers of cotton struggle with myriad challenges including boll retention, root rot, and pest pressure. Overuse of synthetic nitrogen and reliance on fungicides and insecticides fall short in solving these issues and may even compound them, especially during periods of high heat and low moisture. AEA crop protocols offer opportunities to:",
+   "Focusing our efforts during the Critical Points of Influence (CPIs) – those points during the crop lifecycle when nutritional applications bear the most influence on successful crop development – we manage macro- and micronutrients using existing agronomic and sap analysis data to supply the essential nutrients to plants.",
+   "This approach to balancing nutrition is built on a foundation of plant health-promoting biological applications for a well-rounded and effective approach to hemp and cotton production and crop health, tailored to achieve outcomes that support attaining crop quality markers, profitability, and bottom line objectives.",
+   "Plant growth regulators (PGRs) place significant stress on the plant, putting it into proteolysis and making it more susceptible to insects and diseases. Excessive nitrogen levels will increase the probability of incomplete protein synthesis in the plant, making it more vulnerable. AEA has a proven capacity to help cotton producers reduce PGRs and nitrogen inputs while increasing yields. As plant health improves, resistance to insect and disease pressure increases, leading to eliminated or reduced insecticidal and fungicidal applications."
+  ],
+  "highlight": "A balance of vegetative and reproductive energies is of the utmost importance for a cotton crop.",
+  "faqs": [
+   {
+    "q": "How can AEA’s regenerative approach help fiber crop growers?",
+    "a": "We strive to improve the quality metrics that matter most to fiber crop growers like input reduction, higher lint quality, square retention, increased boll size, cleaner harvest, better utilization of growing days, increased tonnage per acre, and maintenance of THC concentration under .3% for hemp."
+   },
+   {
+    "q": "What challenges that cotton growers face can be overcome with AEA’s regenerative approach?",
+    "a": "Our nutritional recommendations can help to mitigate or solve challenges like Southwest cotton rust, Texas root rot, bollworm, boll drop, cotton aphid, thrips, and plant bugs/weevils."
+   },
+   {
+    "q": "What are among the most important CPIs for cotton crops?",
+    "a": "Integral to a successful cotton harvest are the applications made at the time of planting to encourage a strong start and thwart early season thrips infestation at emergence – one of the early points during which yield can be positively influenced with nutrition. During pre-bloom, targeted nutrients help to ensure a strong frame and meet high nutrient demand during the peak bloom period. AEA’s custom crop nutrition programs finish out crops to maturity by supporting complete boll fill."
+   }
+  ],
+  "stories": [
+   "James Johnson is a fourth-generation farmer in New Mexico and the Vice President of Carzalia Valley Produce. When James finally took over the family farm in the early 2000s the outlook of his operation seemed grim. After many years of trial and error with various practices, James found the Advancing Eco Agriculture team where he discovered the benefits of regenerative agriculture. Thanks to his partnership with AEA, James achieved an outstanding yield of 1,490 lbs/acre for Pima Cotton at the end of harvest season 2020 while his county average was 880 lbs/acre! We use BioCoat Gold on all acres of our cotton. I think it’s one of the most important things we do for seedling health and vigor. James Johnson Vice President, Carzalia Valley Produce"
+  ]
+ },
+ {
+  "slug": "berries",
+  "name": "Berries",
+  "subcrops": [
+   "Blueberries",
+   "Blackberries",
+   "Raspberries"
+  ],
+  "intro": "Whether annual or perennial, berry culture is demanding and requires deep knowledge and horticultural expertise. AEA provides the experience, innovative data analysis, and support to help improve the accuracy, effectiveness, and ROI of custom mineral nutrition and biological applications.",
+  "statement": "Although there are many types of annual and perennial berries, our methods of addressing these crops are consistent.",
+  "body": [
+   "In berry crop production, growers must address fruit size and firmness, ensure adequate new growth, and manage instances of mildew and aphids. Increased use of fertilizers, insecticides, and fungicides do no address the root causes of these challenges and can even worsen them. By framing opportunities for appropriately timed mineral and biological applications, AEA offers berry producers sustainable options for bringing a vital and profitable crop to market.",
+   "AEA adopts a systematic approach to customize programs for berry producers to achieve their goals. Focusing our efforts during the Critical Points of Influence (CPIs), we manage macro- and micronutrients using sap analysis to optimize uptake of the most impactful nutrients at each phase of the berry crop lifecycle.",
+   "This approach to balancing nutrition is built on a foundation of plant health-promoting biological applications for a well-rounded and effective approach to fruit crop health, tailored to achieve outcomes that support attaining crop quality markers, profitability, and bottom line objectives.",
+   "Our products and approaches result in improved production in berry crops across all types and regions. For the home grower, the Vegetable and Fruit Growers’ Guide represents an actionable season-long approach for regenerative production of all types of berries. Our Customer Care team can assist with scaling applications and rates to your production area from 1,000 sq ft."
+  ],
+  "highlight": "Our approach to berry production combines foliar and ground-applied nutrition and biology, and has a strong focus on calcium uptake, trace mineral nutrition, foliar nutritional support at bloom, and abundant new growth.",
+  "faqs": [
+   {
+    "q": "How can AEA’s regenerative approach help berry producers meet their goals?",
+    "a": "We strive to improve the quality metrics that matter most to berry growers like increased yields, uniform fruit size throughout harvest period, taste and color, balanced growth, fruit bud optimization, and shipability/storability."
+   },
+   {
+    "q": "What specific challenges can AEA help fruit growers overcome?",
+    "a": "We provide targeted solutions to address specific challenges faced by berry growers. In strawberries , AEA's nutritional recommendations play a crucial role in mitigating Spotted Wing Drosophila (SWD) infestation, lygus bugs, and nematodes. Additionally, AEA aids in managing fungal issues like anthracnose, powdery mildew, and botrytis. For blueberries , our solutions target challenges such as SWD and aphids, as well as mummy berry and botrytis issues. AEA's expertise extends to mitigating high-sodium soils in blueberry cultivation. In cane fruits, including raspberries and blackberries , AEA addresses challenges like Phytophthora, downy mildew, powdery mildew, and cane blight. Furthermore, our solutions combat insect infestations, including SWD, worm damage, spider mites, raspberry cane maggot, and thrips, ensuring comprehensive support for fruit growers."
+   }
+  ],
+  "stories": [
+   "Most blueberry growers are on a spray schedule for pest and disease issues, but we aren't because we don't need to spray for anything. Gurprit Brar Berry Grower, Virasat Farms"
+  ]
+ },
+ {
+  "slug": "nuts",
+  "name": "Nuts",
+  "subcrops": [
+   "Walnuts",
+   "Hazelnuts",
+   "Pistachios",
+   "Pecans"
+  ],
+  "intro": "AEA focuses on custom nutrient applications for strong structural wood without creating excessive vegetative growth while simultaneously supporting the trees during the season from bud break through fruit finishing. As the season progresses these practices drive toward a harvest of more nuts of better size and weight, embodying AEA's commitment to sustainable and high-quality nut production. Contact our team for more information:",
+  "statement": "AEA encourages nut growers to think in terms of long-term regeneration, not just short-term profitability.",
+  "body": [
+   "To bring a nut crop to fruition, growers must combat pest pressure including the navel orange worm, flower and nut retention/development, biennial bearing, and water use efficiency challenges. Reliance on heavy applications of synthetic fertilizers and pesticides do not fully relieve these challenges. AEA provides an alternative solutions for nut orchards based on targeted mineral nutrition and biological applications to correct issues, even in the long-term planting setting.",
+   "AEA’s approach to nut crops includes consideration of the unique challenges and goals associated with every farm. We help growers better understand the long-term impacts of operational management practices.",
+   "Our farm services team assists nut growers to identify and address the greatest limiting factors to operational success, then create a plan to address them. We use existing agronomic information along with in-depth testing and data analysis to provide growers with a detailed blueprint of the nutrition needed for optimum yields and quality appropriate for each type of nut.",
+   "Using sap and soil analysis, AEA helps producers develop custom nutrition protocols for crop production to ensure the best ROI consistently without sacrificing future health of the orchard. Special focus is placed on nutrient applications for strong structural wood without creating excessive vegetative growth, while simultaneously supporting the trees during the season from bud break through fruit finishing."
+  ],
+  "highlight": "All perennial crops need a long-view approach and tree nuts are not different.",
+  "faqs": [
+   {
+    "q": "How can AEA’s regenerative approach help nut producers?",
+    "a": "We strive to improve the metrics like increase in nut yield by reducing or eliminating premature nut drop; greater resistance to the effects of extreme temperatures; water use reduction; input efficiency; and increased soil health."
+   },
+   {
+    "q": "What specific challenges can AEA help fruit growers overcome?",
+    "a": "Our nutritional recommendations can help to mitigate or solve challenges like biennial bearing, fungal issues, navel orange worm infestation, and root diseases."
+   },
+   {
+    "q": "What are among the most important CPIs for nut production crops?",
+    "a": "Critical points of influence for all crops are complex and in nut crops that can take 3-7 years to mature, this complexity compounds. Each nut crop has their own nutrition during these developmental stages based on operational goals and challenges. Early season applications like bud break, flowering, and cell division are particularly influential for the retention of potential yield."
+   }
+  ],
+  "stories": []
+ }
+]

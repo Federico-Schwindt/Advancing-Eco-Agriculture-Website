@@ -1,0 +1,267 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, related, money, productImg, tintFor, url, pyramid, states, type Product } from '../../lib/site';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props as { p: Product };
+const rel = related(p, 4);
+const first = p.sizes[0];
+const level = pyramid.find((l) => l.products.includes(p.slug));
+const stateName = p.stateOnly ? (states.find(([c]) => c === p.stateOnly)?.[1] ?? p.stateOnly) : null;
+// state-specific versions of this product (e.g. California-only formulation)
+const variants = products.filter((q) => q.baseName === p.baseName && q.stateOnly && q.slug !== p.slug && q.line === p.line).map((q) => ({ state: q.stateOnly, slug: q.slug }));
+const generic = p.stateOnly ? products.find((q) => q.baseName === p.baseName && !q.stateOnly && q.line === p.line) : null;
+const cats = p.categories.filter((c) => c !== 'Essential');
+const ld = {
+  '@context': 'https://schema.org', '@type': 'Product', name: p.name, sku: p.sku, description: p.tagline,
+  brand: { '@type': 'Brand', name: 'Advancing Eco Agriculture' },
+  offers: { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: (p.priceMin / 100).toFixed(2), highPrice: (p.priceMax / 100).toFixed(2), offerCount: p.sizes.length },
+};
+---
+<Base title={p.name} description={`${p.name} — ${p.tagline || 'Regenerative plant nutrition'} by Advancing Eco Agriculture.`}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(ld)} />
+  <section class="pdp wrap" data-pdp data-variants={JSON.stringify(variants)} data-state-only={p.stateOnly ?? ''}>
+    <div class="pdp__media" style={`--tint:${tintFor(p)}`} data-product-media>
+      <div class="pdp__stage">
+        <div class="pdp__orb" aria-hidden="true"></div>
+        <div class="pdp__ring" aria-hidden="true"></div>
+        <img
+          class="pdp__img"
+          src={productImg(p, 1100)}
+          srcset={`${productImg(p, 640)} 640w, ${productImg(p, 1100)} 1100w`}
+          sizes="(max-width: 900px) 90vw, 50vw"
+          alt={p.name}
+          width="1100"
+          height="1100"
+          fetchpriority="high"
+          data-tilt
+        />
+        <div class="pdp__badges">
+          {p.organic && <span class="chip chip--solid"><Icon name="leaf" size={14} /> Organic-compatible</span>}
+          <span class="chip">Made in USA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp__info">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href={url('/')}>Home</a><span>/</span><a href={url('/shop/')}>Shop</a><span>/</span><span>{p.baseName}</span>
+      </nav>
+      <div class="pdp__cats">
+        {p.line === 'market-garden' && <span class="chip chip--sun">Market gardener line</span>}
+        {cats.map((c) => <a class="chip" href={url(`/shop/?c=${encodeURIComponent(c)}`)}>{c}</a>)}
+        {stateName && <span class="chip chip--solid">{stateName} only</span>}
+      </div>
+      <h1 class="pdp__name">{p.name}</h1>
+      {p.tagline && <p class="pdp__tagline serif">{p.tagline}</p>}
+
+      <div class="pdp__price">
+        <span class="pdp__amount tnum" data-price>{money(first.price)}</span>
+        <span class="mono muted" data-size-label>{first.label}</span>
+      </div>
+
+      {p.sizes.length > 1 && (
+        <fieldset class="sizes">
+          <legend class="mono muted">Size</legend>
+          <div class="sizes__grid">
+            {p.sizes.map((s, i) => (
+              <label class="size">
+                <input type="radio" name="size" value={s.id} checked={i === 0} data-size={JSON.stringify(s)} />
+                <span class="size__label">{s.label}</span>
+                <span class="size__price tnum">{money(s.price, { compact: true })}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      <div class="buy">
+        <div class="qty qty--lg" role="group" aria-label="Quantity">
+          <button type="button" data-q="-1" aria-label="Decrease quantity">−</button>
+          <span data-qv>1</span>
+          <button type="button" data-q="1" aria-label="Increase quantity">+</button>
+        </div>
+        <button
+          class="btn btn--sun buy__btn"
+          type="button"
+          data-buy
+          data-add={JSON.stringify({ id: first.id, pid: p.id, slug: p.slug, name: p.name, size: first.label, price: first.price, img: p.image, qty: 1 })}
+        >
+          <Icon name="bag" size={18} /> Add to cart · <span class="tnum" data-buy-total>{money(first.price)}</span>
+        </button>
+      </div>
+      <p class="pdp__notice" data-notice hidden></p>
+
+      <ul class="perks">
+        <li><Icon name="truck" size={18} /> Free freight over $500</li>
+        <li><Icon name="people" size={18} /> Free agronomist consult with qualifying programs</li>
+        <li><Icon name="shield" size={18} /> Ships only where registered</li>
+      </ul>
+
+      {p.description && <div class="prose pdp__desc" set:html={p.description} />}
+
+      {level && (
+        <a class="pdp__level" href={url('/science/')}>
+          <span class="mono">Plant Health Pyramid · Level 0{level.level}</span>
+          <b>Supports {level.title.toLowerCase()}</b>
+          <span class="muted">Builds resistance to {level.resists.toLowerCase()}</span>
+          <Icon name="arrow-up-right" size={20} />
+        </a>
+      )}
+
+      {p.details.length > 0 && (
+        <div class="acc pdp__acc">
+          {p.details.map((d, i) => (
+            <details open={i === 0}>
+              <summary>{d.title}<i aria-hidden="true"></i></summary>
+              <div class="acc__body prose" set:html={d.body} />
+            </details>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {rel.length > 0 && (
+    <section class="section--tight theme-bone">
+      <div class="wrap">
+        <div class="rel__head">
+          <h2 class="h2">Pairs <em class="serif">well</em> with</h2>
+          <a class="btn btn--ghost btn--sm" href={url('/shop/')}>All products <Icon name="arrow" class="arrow" /></a>
+        </div>
+        <div class="rel__grid">
+          {rel.map((r) => <ProductCard p={r} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script>
+    import { State } from '../../scripts/app';
+    const root = document.querySelector<HTMLElement>('[data-pdp]')!;
+    const buy = root.querySelector<HTMLButtonElement>('[data-buy]')!;
+    const priceEl = root.querySelector('[data-price]')!;
+    const labelEl = root.querySelector('[data-size-label]')!;
+    const totalEl = root.querySelector('[data-buy-total]')!;
+    const qv = root.querySelector('[data-qv]')!;
+    const notice = root.querySelector<HTMLElement>('[data-notice]')!;
+    const fmt = (c: number) => (c / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    const payload = JSON.parse(buy.dataset.add!);
+    let qty = 1;
+    const sync = () => {
+      payload.qty = qty;
+      buy.dataset.add = JSON.stringify(payload);
+      priceEl.textContent = fmt(payload.price);
+      labelEl.textContent = payload.size;
+      totalEl.textContent = fmt(payload.price * qty);
+      qv.textContent = String(qty);
+    };
+    root.querySelectorAll<HTMLInputElement>('[data-size]').forEach((r) =>
+      r.addEventListener('change', () => {
+        const s = JSON.parse(r.dataset.size!);
+        Object.assign(payload, { id: s.id, size: s.label, price: s.price });
+        sync();
+        priceEl.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 400, easing: 'cubic-bezier(.22,1,.36,1)' });
+      }),
+    );
+    root.querySelectorAll<HTMLButtonElement>('[data-q]').forEach((b) => b.addEventListener('click', () => { qty = Math.max(1, Math.min(99, qty + +b.dataset.q!)); sync(); }));
+    buy.addEventListener('click', () => setTimeout(() => { qty = 1; sync(); }, 50));
+
+    // State gating
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const variants: { state: string; slug: string }[] = JSON.parse(root.dataset.variants || '[]');
+    const only = root.dataset.stateOnly;
+    const checkState = () => {
+      const s = State.get();
+      notice.hidden = true;
+      buy.disabled = false;
+      const v = variants.find((x) => x.state === s);
+      if (v) {
+        notice.innerHTML = `A ${s}-registered formulation is required for your state. <a href="${base}/shop/${v.slug}/">View the ${s} version →</a>`;
+        notice.hidden = false;
+        buy.disabled = true;
+      } else if (only && s && s !== only) {
+        notice.textContent = `This formulation ships to ${only} only. Change your state or choose the standard version.`;
+        notice.hidden = false;
+        buy.disabled = true;
+      }
+    };
+    document.addEventListener('state:change', checkState);
+    checkState();
+
+    // Subtle pointer tilt on the product
+    const img = root.querySelector<HTMLElement>('[data-tilt]');
+    const stage = img?.parentElement;
+    if (img && stage && matchMedia('(hover: hover)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      stage.addEventListener('pointermove', (e) => {
+        const r = stage.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        img.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 10}deg) translateY(-6px)`;
+      });
+      stage.addEventListener('pointerleave', () => (img.style.transform = ''));
+    }
+  </script>
+</Base>
+
+<style>
+  .pdp { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 88px); padding-top: calc(var(--nav-h) + 24px); padding-bottom: clamp(64px, 8vw, 120px); align-items: start; }
+  .pdp__media { position: sticky; top: calc(var(--nav-h) + 16px); }
+  .pdp__stage {
+    position: relative; aspect-ratio: 1 / 1.08; border-radius: calc(var(--radius) + 10px); overflow: hidden; display: grid; place-items: center;
+    background: radial-gradient(110% 80% at 50% 100%, var(--tint), color-mix(in srgb, var(--tint) 40%, var(--paper)) 75%);
+  }
+  .pdp__orb { position: absolute; width: 62%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff, color-mix(in srgb, var(--tint) 70%, #fff) 60%, transparent 72%); opacity: 0.85; animation: orb 9s var(--ease-in-out) infinite alternate; }
+  .pdp__ring { position: absolute; width: 82%; aspect-ratio: 1; border-radius: 50%; border: 1px dashed rgba(13, 12, 9, 0.16); animation: spin 60s linear infinite; }
+  @keyframes orb { to { transform: translate(4%, -3%) scale(1.06); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .pdp__img { position: relative; width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 40px 34px rgba(30, 22, 10, 0.25)); transition: transform 0.6s var(--ease); animation: float 6s var(--ease-in-out) infinite alternate; }
+  @keyframes float { to { translate: 0 -12px; } }
+  .pdp__badges { position: absolute; left: 18px; bottom: 18px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .pdp__badges .chip:not(.chip--solid) { background: rgba(255, 255, 255, 0.7); color: var(--ink); box-shadow: none; }
+
+  .pdp__info { padding-top: clamp(8px, 3vw, 40px); }
+  .pdp__info .crumbs { margin-bottom: 20px; }
+  .pdp__cats { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pdp__cats a.chip:hover { color: var(--fg); box-shadow: inset 0 0 0 1px var(--fg); }
+  .pdp__name { font-size: clamp(2.6rem, 1.4rem + 4.4vw, 5.6rem); letter-spacing: -0.055em; line-height: 0.92; margin-top: 20px; }
+  .pdp__tagline { font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem); color: var(--sage); margin-top: 12px; line-height: 1.15; }
+  .pdp__price { display: flex; align-items: baseline; gap: 14px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .pdp__amount { font-size: 2.2rem; font-weight: 550; letter-spacing: -0.04em; display: inline-block; }
+  .sizes { border: 0; padding: 0; margin-top: 22px; }
+  .sizes legend { margin-bottom: 10px; }
+  .sizes__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+  .size { position: relative; display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--line); cursor: pointer; transition: box-shadow 0.2s, background-color 0.2s; }
+  .size:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+  .size input { position: absolute; opacity: 0; pointer-events: none; }
+  .size:has(input:checked) { background: var(--ink); color: var(--paper); box-shadow: none; }
+  .size:has(input:focus-visible) { outline: 2px solid var(--sun); outline-offset: 2px; }
+  .size__label { font-weight: 550; font-size: 0.95rem; }
+  .size__price { font-family: var(--mono); font-size: 0.72rem; opacity: 0.7; }
+  .buy { display: flex; gap: 10px; margin-top: 22px; }
+  .buy .qty { margin-top: 0; flex: none; }
+  .buy__btn { flex: 1; height: 52px; }
+  .pdp__notice { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--sun) 20%, var(--paper)); font-size: 0.9rem; }
+  .pdp__notice :global(a) { text-decoration: underline; font-weight: 600; }
+  .perks { list-style: none; padding: 0; display: grid; gap: 10px; margin-top: 22px; color: var(--muted); font-size: 0.9rem; }
+  .perks li { display: flex; align-items: center; gap: 10px; }
+  .pdp__desc { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 1.05rem; }
+  .pdp__level { position: relative; display: grid; gap: 4px; margin-top: 28px; padding: 20px 56px 20px 22px; border-radius: var(--radius-sm); background: var(--ink); color: var(--bone); --muted: rgba(242, 237, 227, 0.6); transition: background-color 0.3s, color 0.3s; }
+  .pdp__level .mono { color: var(--sun); }
+  .pdp__level :global(svg) { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); transition: transform 0.4s var(--ease); }
+  .pdp__level:hover :global(svg) { transform: translateY(-50%) rotate(45deg); }
+  .pdp__acc { margin-top: 36px; }
+  .rel__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px; }
+  .rel__head em { color: var(--sage); }
+  .rel__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 1000px) { .rel__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) {
+    .pdp { grid-template-columns: 1fr; }
+    .pdp__media { position: relative; top: 0; }
+    .pdp__stage { aspect-ratio: 1 / 0.95; }
+  }
+</style>

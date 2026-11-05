@@ -1,0 +1,2843 @@
+[
+ {
+  "id": 75065,
+  "slug": "revenant-charge-idaho",
+  "name": "Revenant Charge™ – Idaho Only",
+  "baseName": "Revenant Charge™",
+  "sku": "REVENANT-2",
+  "tagline": "Bring your soil back to life in Idaho.",
+  "description": "<p>Revenant Charge™ – Idaho is a low-cost, high-impact boost for soil biology for growers specifically in Idaho. We designed it specifically as a cost-effective solution for row crop growers on a tight budget.</p><p>Apply in the spring to unlock tied-up soil nutrients and reduce input costs, and in the fall to accelerate residue digestion and prime the soil over winter to ensure your field’s biology is working year-round.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": "ID",
+  "image": "revenant-charge-idaho",
+  "priceMin": 2135,
+  "priceMax": 477125,
+  "sizes": [
+   {
+    "id": 75066,
+    "label": "1 Gallon",
+    "price": 2135
+   },
+   {
+    "id": 75067,
+    "label": "5 Gallon",
+    "price": 10175
+   },
+   {
+    "id": 75068,
+    "label": "30 Gallon",
+    "price": 58050
+   },
+   {
+    "id": 75069,
+    "label": "55 Gallon",
+    "price": 100925
+   },
+   {
+    "id": 75070,
+    "label": "275 Gallon",
+    "price": 477125
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Builds an environment in which microorganisms can flourish </p><p> Aids in protein synthesis (creation) and proteolysis (breakdown) </p><p> Supports soil microbes that decompose crop residue, re"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Apply up to 6 quarts per acre. Cover crops before incorporation: Apply up to 2 gallons per acre. </p><p> Crop residues: Apply up to 3 gallons per acre. For fields with little or no"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Farmers are using Rejuvenate™ to reduce the amount of residual stalks, vines, leaves, rotten fruit, and limbs that can harbor disease and insects. </p><p> Crop residue should be in contact with"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis:</p><p> Total Nitrogen (N) ... 1% </p><p> - 1% Water Soluble Nitrogen Soluble Potash (K2O) </p><p> ... 3% Magnesium (Mg) ... </p><p> - 0.5% Water Soluble Magnesium (Mg) </p"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 75057,
+  "slug": "revenant-charge-california",
+  "name": "Revenant Charge™ – California Only",
+  "baseName": "Revenant Charge™",
+  "sku": "REVENANT-1",
+  "tagline": "Bring your soil back to life in California.",
+  "description": "<p>Revenant Charge™ – California is a low-cost, high-impact boost for soil biology for growers specific to California. We designed it specifically as a cost-effective solution for row crop growers on a tight budget.</p><p>Apply in the spring to unlock tied-up soil nutrients and reduce input costs, and in the fall to accelerate residue digestion and prime the soil over winter to ensure your field’s biology is working year-round.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": "CA",
+  "image": "revenant-charge-california",
+  "priceMin": 2135,
+  "priceMax": 477125,
+  "sizes": [
+   {
+    "id": 75058,
+    "label": "1 Gallon",
+    "price": 2135
+   },
+   {
+    "id": 75059,
+    "label": "5 Gallon",
+    "price": 10175
+   },
+   {
+    "id": 75060,
+    "label": "30 Gallon",
+    "price": 58050
+   },
+   {
+    "id": 75061,
+    "label": "55 Gallon",
+    "price": 100925
+   },
+   {
+    "id": 75062,
+    "label": "275 Gallon",
+    "price": 477125
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Builds an environment in which microorganisms can flourish </p><p> Aids in protein synthesis (creation) and proteolysis (breakdown) </p><p> Supports soil microbes that decompose crop residue, re"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Apply up to 6 quarts per acre. Cover crops before incorporation: Apply up to 2 gallons per acre. </p><p> Crop residues: Apply up to 3 gallons per acre. For fields with little or no"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Farmers are using Rejuvenate™ to reduce the amount of residual stalks, vines, leaves, rotten fruit, and limbs that can harbor disease and insects. </p><p> Crop residue should be in contact with"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis:</p><p> Total Nitrogen (N) ... 1% </p><p> - 1% Water Soluble Nitrogen Soluble Potash (K2O) </p><p> ... 3% Magnesium (Mg) ... </p><p> - 0.5% Water Soluble Magnesium (Mg) </p"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 686,
+  "slug": "holo-k",
+  "name": "Holo-K™",
+  "baseName": "Holo-K™",
+  "sku": "holo-k",
+  "tagline": "Fast-acting potassium to improve fruit quality and storability",
+  "description": "<p>Holo-K provides a strong, immediate source of potassium that remains available in soils. A generous supply of potassium after the cell division stage is needed to develop large, firm fruit without defects. Low potassium levels at that time will result in smaller fruit or grain kernels, lightweight fruit, and many other fruit quality and storage problems. </p><p><em>This product is suitable for use under NOP. Please check with your certifier before using. </em></p><p><em>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </em></p>",
+  "organic": false,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "holo-k",
+  "priceMin": 5344,
+  "priceMax": 890944,
+  "sizes": [
+   {
+    "id": 691,
+    "label": "1 Gallon",
+    "price": 5344
+   },
+   {
+    "id": 692,
+    "label": "5 Gallon",
+    "price": 20950
+   },
+   {
+    "id": 693,
+    "label": "30 Gallon",
+    "price": 112321
+   },
+   {
+    "id": 694,
+    "label": "55 Gallon",
+    "price": 184546
+   },
+   {
+    "id": 695,
+    "label": "275 Gallon",
+    "price": 890944
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Potassium deficiency adversely affects fruit quality in the form of reduced size, low test weight and poor flavor </p><p> Deficiency symptoms in the plant include brown leaf margins on most crop"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Foliar: Apply up to 1 gallon per acre at appropriate plant growth stages as part of a comprehensive fertility plan. </p><p> Fertigation: Apply up to 1 gallon per acre at appropriate plant growth"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Holo-K™ liquid concentrate can be used as a row starter, transplant solution, in irrigation systems or as a foliar spray.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Holo-K™ is derived from a high quality potassium sulfate obtained from a natural, mined raw potassium ore with a long history of use in conventional and organic agriculture. </p><p> Holo-K™ cont"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 936,
+  "slug": "spectrum",
+  "name": "Spectrum™",
+  "baseName": "Spectrum™",
+  "sku": "spectrum",
+  "tagline": "Brings soils back to life",
+  "description": "<p>Spectrum is a soil inoculant to enhance and restore beneficial soil microbe populations. It is a critical component of AEA’s Soil Primer application. </p><p>Spectrum™ is approved for use on certified organic crops and is listed by OMRI.</p><p>1 acre = 50 grams</p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "spectrum",
+  "priceMin": 2237,
+  "priceMax": 163236,
+  "sizes": [
+   {
+    "id": 939,
+    "label": "1 Acre",
+    "price": 2237
+   },
+   {
+    "id": 940,
+    "label": "5 Acre",
+    "price": 9895
+   },
+   {
+    "id": 941,
+    "label": "10 Acre",
+    "price": 17404
+   },
+   {
+    "id": 942,
+    "label": "25 Acre",
+    "price": 41911
+   },
+   {
+    "id": 943,
+    "label": "100 Acre",
+    "price": 163236
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rate",
+    "body": "<p>Apply at a rate of 50 grams (1.76 oz) per acre.</p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Spectrum is designed for subsurface application;however, it may be sprayed on ground surface if soil incorporation is done immediately. May beapplied to the soil by aerial spraying, ground spray"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients </p><p> Live beneficial soil microbes of the following types and minimum numbers of colony forming units (CFUs) per gram: Arthrobacter globiformis 1X105; Azosp"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 853,
+  "slug": "rebound-manganese",
+  "name": "Rebound™ Manganese",
+  "baseName": "Rebound™ Manganese",
+  "sku": "rebound-manganese",
+  "tagline": "Chelated Manganese for maximum plant uptake",
+  "description": "<p>Rebound™ Manganese is an organic manganese solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-manganese",
+  "priceMin": 2452,
+  "priceMax": 516726,
+  "sizes": [
+   {
+    "id": 857,
+    "label": "1 Gallon",
+    "price": 2452
+   },
+   {
+    "id": 858,
+    "label": "5 Gallon",
+    "price": 11044
+   },
+   {
+    "id": 859,
+    "label": "30 Gallon",
+    "price": 61037
+   },
+   {
+    "id": 860,
+    "label": "55 Gallon",
+    "price": 105072
+   },
+   {
+    "id": 861,
+    "label": "275 Gallon",
+    "price": 516726
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Manganese (Mn) ... 3% <p> - 3% Water Soluble Manganese (Mn) </p><p> Derived from: Manganese sulfate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 730,
+  "slug": "humacarb-2-0",
+  "name": "HumaCarb 2.0",
+  "baseName": "HumaCarb 2.0",
+  "sku": "humacarb",
+  "tagline": "Humic substances to stabilize nutrients & improve fertilizer efficiency",
+  "description": "<p>Our new and improved HumaCarb 2.0 is a source of stable humic substances that improves soil microbiology and aids in the uptake of nutrients in the root zone to reduce potential fertilizer loss.</p><p>Soluble nutrient fertilizers are unstable and can be leached out of the root zone or become complexed by soil minerals very quickly. This is especially the case for anions such as nitrogen, phosphorus and sulfur, as well as for trace minerals. By preventing leaching, HumaCarb allows you to use fertilizer more efficiently. </p><p>We’ve improved the formula by thickening the solution and increasing its viscosity, so the humic solids stay in suspension and don’t solidify. It’s a game-changer that makes HumaCarb much easier to use.</p><p>Our R&D team is constantly working to improve our products to make them perform better in the field and be easier to use–always supporting our goal of helping growers succeed. </p><p><em>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "humacarb-2-0",
+  "priceMin": 3768,
+  "priceMax": 661685,
+  "sizes": [
+   {
+    "id": 734,
+    "label": "1 Gallon",
+    "price": 3768
+   },
+   {
+    "id": 735,
+    "label": "5 Gallon",
+    "price": 16954
+   },
+   {
+    "id": 736,
+    "label": "30 Gallon",
+    "price": 81987
+   },
+   {
+    "id": 737,
+    "label": "55 Gallon",
+    "price": 136963
+   },
+   {
+    "id": 738,
+    "label": "275 Gallon",
+    "price": 661685
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Holds nitrogen and phosphorus in the root zone. </p><p> Aids in the uptake of micronutrients. </p><p> Chelates plant nutrients. </p><p> Optimizes soil conditions for better overall plant mas"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Usual application rates are 2-3 quarts per acre. HumaCarb™ should be tank mixed with liquid fertilizers at 3% of the solution. </p><p> Check the label on the product or consult your local AEA rep"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Liquid concentrate should be tank mixed with liquid fertilizers as 3% of the total solution. </p><p> Non-synthetic humic substances have a low pH (4 - 4.5) and can be tank mixed with most fertil"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HumaCarb™ is derived from a Humalite ore deposit which contains the humic acid, fulvic acid, and humin compounds that provide the benefits to soil and plants. </p><p> Humic acids are usually ext"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 818,
+  "slug": "rebound-boron",
+  "name": "Rebound™ Boron",
+  "baseName": "Rebound™ Boron",
+  "sku": "rebound-boron",
+  "tagline": "Chelated Boron for maximum plant uptake",
+  "description": "<p>Rebound™ Boron is an organic boron solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-boron",
+  "priceMin": 2337,
+  "priceMax": 520227,
+  "sizes": [
+   {
+    "id": 822,
+    "label": "1 Gallon",
+    "price": 2337
+   },
+   {
+    "id": 823,
+    "label": "5 Gallon",
+    "price": 10588
+   },
+   {
+    "id": 824,
+    "label": "30 Gallon",
+    "price": 60490
+   },
+   {
+    "id": 825,
+    "label": "55 Gallon",
+    "price": 106258
+   },
+   {
+    "id": 826,
+    "label": "275 Gallon",
+    "price": 520227
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Boron (B) ... 2% </p><p> Derived from: Disodium octaborate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 721,
+  "slug": "holophos",
+  "name": "HoloPhos™",
+  "baseName": "HoloPhos™",
+  "sku": "holophos",
+  "tagline": "A superior form of phosphorus",
+  "description": "<p>Phosphorus is an essential nutrient for the transport of the energy created in photosynthesis. Many chemical sources of phosphorus either leach quickly out of the root zone or bind up in soil and become unavailable to the plant. They also negatively impact soil fungal populations.</p><p>Unlike many other phosphorus sources, HoloPhos works within the biological system to be available when plants need it, and to promote microbial activity rather than to shut it down. </p><p><em>This product is not available in California. Product availability varies due to state-by-state product regulations. Please check availability in your state here. </em></p>",
+  "organic": false,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "holophos",
+  "priceMin": 0,
+  "priceMax": 138932,
+  "sizes": [
+   {
+    "id": 729,
+    "label": "275 Gallon",
+    "price": 0
+   },
+   {
+    "id": 725,
+    "label": "1 Gallon",
+    "price": 3952
+   },
+   {
+    "id": 726,
+    "label": "5 Gallon",
+    "price": 16464
+   },
+   {
+    "id": 727,
+    "label": "30 Gallon",
+    "price": 79407
+   },
+   {
+    "id": 728,
+    "label": "55 Gallon",
+    "price": 138932
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Enhances root vigor and plant vitality. </p> <p> Improves photosynthetic efficiency. </p> <p> Enables energy metabolism and storage. </p> <p> Comprises ATP and ADP, \"The Energy Molecules\". </p>"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: As a foliar and/or in fertigation, apply up to 1 gallon per acre at appropriate plant growth stages. </p><p> Broad Acre Crops: As a foliar, apply up to 1 gallon per acre a"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloPhos™ liquid concentrate can be used as a row starter, transplant solution, in irrigation systems, or as a foliar spray to correct phosphorus When soil is cold and moisture content is high, ph"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloPhos™ is derived from high-quality, mined phosphate ore that contains many trace minerals and rare earth elements. HoloPhos™ contains a complex blend of phosphorus sources chelated with stable"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 6110,
+  "slug": "holocal",
+  "name": "HoloCal™",
+  "baseName": "HoloCal™",
+  "sku": "HOLOCALC",
+  "tagline": "Fast-acting calcium",
+  "description": "<p>Our new and improved HoloCal formula is now optimized for ease of use. Calcium is the least mobile of all minerals yet one of the most important. Unlike many calcium sources, HoloCal delivers an immediate, strong source of supplemental calcium, whether applied to the soil or as a foliar. Calcium is a vital component of a sound fruit quality and storability program.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": false,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "holocal",
+  "priceMin": 3625,
+  "priceMax": 634799,
+  "sizes": [
+   {
+    "id": 6609,
+    "label": "1 Gallon",
+    "price": 3625
+   },
+   {
+    "id": 6384,
+    "label": "5 Gallon",
+    "price": 15059
+   },
+   {
+    "id": 6416,
+    "label": "30 Gallon",
+    "price": 78815
+   },
+   {
+    "id": 6418,
+    "label": "55 Gallon",
+    "price": 130912
+   },
+   {
+    "id": 6386,
+    "label": "275 Gallon",
+    "price": 634799
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 862,
+  "slug": "rebound-molybdenum",
+  "name": "Rebound™ Molybdenum",
+  "baseName": "Rebound™ Molybdenum",
+  "sku": "rebound-molybdenum",
+  "tagline": "Chelated Molybdenum for maximum plant uptake",
+  "description": "<p>Rebound™ Molybdenum is an organic molybdenum solution uniquely processed for maximum plant uptake. It is a key part of our Nitrogen Efficiency Program.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-molybdenum",
+  "priceMin": 4059,
+  "priceMax": 886983,
+  "sizes": [
+   {
+    "id": 866,
+    "label": "1 Gallon",
+    "price": 4059
+   },
+   {
+    "id": 867,
+    "label": "5 Gallon",
+    "price": 17984
+   },
+   {
+    "id": 868,
+    "label": "30 Gallon",
+    "price": 101946
+   },
+   {
+    "id": 869,
+    "label": "55 Gallon",
+    "price": 179464
+   },
+   {
+    "id": 870,
+    "label": "275 Gallon",
+    "price": 886983
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Molybdenum (Mo) ... 3% </p><p> Derived from: Sodium molybdate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 803,
+  "slug": "photomag",
+  "name": "PhotoMag™",
+  "baseName": "PhotoMag™",
+  "sku": "photomag",
+  "tagline": "Optimize Sunshine.",
+  "description": "<p>PhotoMag provides all the key nutrients needed by plants to metabolize nitrogen and synthesize complete proteins: cobalt, sulfur, boron, and molybdenum; as well as some key components for photosynthesis, like boron and magnesium (which is the center of the chlorophyll molecule). </p><p><em>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "photomag",
+  "priceMin": 3800,
+  "priceMax": 668721,
+  "sizes": [
+   {
+    "id": 807,
+    "label": "1 Gallon",
+    "price": 3800
+   },
+   {
+    "id": 808,
+    "label": "5 Gallon",
+    "price": 15439
+   },
+   {
+    "id": 809,
+    "label": "30 Gallon",
+    "price": 80360
+   },
+   {
+    "id": 810,
+    "label": "55 Gallon",
+    "price": 137794
+   },
+   {
+    "id": 811,
+    "label": "275 Gallon",
+    "price": 668721
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Forages: Apply up to 6 quarts per acre, 10-14 days after each cutting. </p><p> Fruits and Vegetables: As a foliar and/or in irrigation, apply up to 1 gallon per acre, every 7-14 days. </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Can be used in the row or as a foliar spray and can be mixed with many other fertilizer products, fungicides, and insecticides.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Magnesium (Mg)... 1% </p><p> - 1% Water Soluble Magnesium (Mg) </p><p> Sulfur (S)... 1% </p><p> - 1% Combined Sulfur (S) </p><p> Boron (B) ... 0.6% </p><p> Cobal"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 6153,
+  "slug": "seedflare",
+  "name": "SeedFlare™",
+  "baseName": "SeedFlare™",
+  "sku": "Seedflare",
+  "tagline": "Nutritional seed treatment",
+  "description": "<p>SeedFlare is an NOP-compliant nutritional seed treatment that provides trace minerals directly into the seed to stimulate rapid germination and emergence. SeedFlare is designed to supply nutrients that are commonly missing from commercial seed. </p><p>SeedFlare works best when used in tandem with BioCoat Gold™. </p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Seed Treatments"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seedflare",
+  "priceMin": 2785,
+  "priceMax": 707262,
+  "sizes": [
+   {
+    "id": 6605,
+    "label": "1 Gallon",
+    "price": 2785
+   },
+   {
+    "id": 6397,
+    "label": "5 Gallon",
+    "price": 14736
+   },
+   {
+    "id": 6428,
+    "label": "30 Gallon",
+    "price": 85793
+   },
+   {
+    "id": 6426,
+    "label": "55 Gallon",
+    "price": 153075
+   },
+   {
+    "id": 6399,
+    "label": "275 Gallon",
+    "price": 707262
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 911,
+  "slug": "seastim",
+  "name": "SeaStim™",
+  "baseName": "SeaStim™",
+  "sku": "seastim",
+  "tagline": "A unique blend of cold-processed kelp extracts",
+  "description": "<p>SeaStim is a liquid seaweed concentrate that provides a myriad of trace compounds. It helps strengthen plant resistance to pests and pathogens. It also helps plants grow stronger and larger roots, so they can more efficiently absorb nutrition.</p><p><em>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p><p>SeaStim has a different formulation for California growers.</p>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seastim",
+  "priceMin": 3926,
+  "priceMax": 668091,
+  "sizes": [
+   {
+    "id": 915,
+    "label": "1 Gallon",
+    "price": 3926
+   },
+   {
+    "id": 916,
+    "label": "5 Gallon",
+    "price": 16441
+   },
+   {
+    "id": 917,
+    "label": "30 Gallon",
+    "price": 82811
+   },
+   {
+    "id": 918,
+    "label": "55 Gallon",
+    "price": 142799
+   },
+   {
+    "id": 919,
+    "label": "275 Gallon",
+    "price": 668091
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Up to 2 quarts per acre </p><p> Broadacre Foliar: Up to 2 quarts per acre every 3-4 weeks </p><p> Fruit or Vegetable Foliar: Up to 1 gallon per acre per week </p><p> Fertigation"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>SeaStim is commonly used in planting, as a row starter, in foliars, and in fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients: </p> <p> 11.3% Kelp (microbe food) </p> <p> 88.7% Total Other Ingredients (inert as a soil amendment) </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 902,
+  "slug": "seashield",
+  "name": "SeaShield™",
+  "baseName": "SeaShield™",
+  "sku": "seashield",
+  "tagline": "Critical support for plant immunity and thriving soil fungi",
+  "description": "<p>SeaShield is an essential part of a balanced nutritional program for plants and soil. It enhances plant vigor and resistance to pests and pathogens. SeaShield works especially well when combined with other nutritional supplements, and is one of the 3 products in our cornerstone Soil Primer program. <em>Non-organic growers may consider SeaGuard™ as an alternative to SeaShield.</em></p>",
+  "organic": true,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seashield",
+  "priceMin": 2353,
+  "priceMax": 329505,
+  "sizes": [
+   {
+    "id": 906,
+    "label": "1 Gallon",
+    "price": 2353
+   },
+   {
+    "id": 907,
+    "label": "5 Gallon",
+    "price": 9859
+   },
+   {
+    "id": 908,
+    "label": "30 Gallon",
+    "price": 49386
+   },
+   {
+    "id": 909,
+    "label": "55 Gallon",
+    "price": 80333
+   },
+   {
+    "id": 910,
+    "label": "275 Gallon",
+    "price": 329505
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> At Planting: Up to 2 gallons per acre </p><p> Foliar: Up to 2 gallons per acre every 2 weeks </p><p> Fertigation: Up to 5 gallons per acre every 2 weeks, up to a maximum of 100 gallons per acr"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> SeaShield is recommended for soil and foliar applications. It is used as part of AEA's Regenerative Soil Primer Program. It is often combined with other products throughout the growing season, esp"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Total Nitrogen (N) ... 2% </p><p> - 0.9% Water Soluble Nitrogen </p><p> - 1.1% Water Insoluble Nitrogen </p><p> Available Phosphate (P2O5) ... 1% </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 880,
+  "slug": "rejuvenate",
+  "name": "Rejuvenate™",
+  "baseName": "Rejuvenate™",
+  "sku": "rejuvenate",
+  "tagline": "Broad spectrum nutrition for soil biology",
+  "description": "<p>Rejuvenate provides everything that soil microbes need to thrive. It is designed to provide the commonly missing resources needed by soil bacteria, which are the foundation of the farm ecosystem. Rejuvenate ensures a successful inoculation event, and gets microbes established in all manner of conditions. It can help build up microbial populations in the soil to a point where they can rapidly digest crop residues, thus releasing tied-up nutrients for the following crop.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rejuvenate",
+  "priceMin": 4862,
+  "priceMax": 808293,
+  "sizes": [
+   {
+    "id": 884,
+    "label": "1 Gallon",
+    "price": 4862
+   },
+   {
+    "id": 885,
+    "label": "5 Gallon",
+    "price": 18527
+   },
+   {
+    "id": 886,
+    "label": "30 Gallon",
+    "price": 97585
+   },
+   {
+    "id": 887,
+    "label": "55 Gallon",
+    "price": 166964
+   },
+   {
+    "id": 888,
+    "label": "275 Gallon",
+    "price": 808293
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Builds an environment in which microorganisms can flourish </p><p> Aids in protein synthesis (creation) and proteolysis (breakdown) </p><p> Supports soil microbes that decompose crop residue, re"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Apply up to 6 quarts per acre. Cover crops before incorporation: Apply up to 2 gallons per acre. </p><p> Crop residues: Apply up to 3 gallons per acre. For fields with little or no"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Farmers are using Rejuvenate™ to reduce the amount of residual stalks, vines, leaves, rotten fruit, and limbs that can harbor disease and insects. </p><p> Crop residue should be in contact with"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis:</p><p> Total Nitrogen (N) ... 1% </p><p> - 1% Water Soluble Nitrogen Soluble Potash (K2O) </p><p> ... 3% Magnesium (Mg) ... </p><p> - 0.5% Water Soluble Magnesium (Mg) </p"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 652,
+  "slug": "accelerate",
+  "name": "Accelerate™",
+  "baseName": "Accelerate™",
+  "sku": "accelerate",
+  "tagline": "Nutritional support for flowering and fruiting.",
+  "description": "<p>Accelerate™ delivers a wide range of nutrients needed by plants during blossoming. It can increase the number of flowers and improve fruit set or clonal tuber set. It can help encourage and support plants to move from the vegetative growth phase to the reproductive phase.<em>This product is available in California as Axcel. Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "accelerate",
+  "priceMin": 3221,
+  "priceMax": 758795,
+  "sizes": [
+   {
+    "id": 656,
+    "label": "1 Gal",
+    "price": 3221
+   },
+   {
+    "id": 657,
+    "label": "5 Gal",
+    "price": 15038
+   },
+   {
+    "id": 658,
+    "label": "30 Gal",
+    "price": 87486
+   },
+   {
+    "id": 659,
+    "label": "55 Gal",
+    "price": 156198
+   },
+   {
+    "id": 660,
+    "label": "275 Gal",
+    "price": 758795
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides potassium, calcium, manganese and molybdenum to drive reproductive growth.</p><p> Supports a plant's reproductive processes. </p> <p> Aids in bud, flower or tuber success rates. </p> <"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Single Flowering Crops: Use a single foliar at a rate of up to 4 gallons per acre 1-2 weeks before flowering or tuber-set commences. For fertigation, use up to 4 gallons per acre in two applicati"
+   },
+   {
+    "title": "Applications Instructions",
+    "body": "<p> Accelerate is best used as a foliar application one to two weeks prior to flowering for single fruiting crops or throughout the season for multiple fruiting crops. </p><p> It can be applied throu"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed Analysis: </p><p> Calcium (Ca)... 1% </p><p> Manganese (Mn)... 0.4% </p><p> - 0.4% Water Soluble Manganese (Mn) </p><p> Molybdenum (Mo)... 0.017% </p><p> Derived from: Rock Phospha"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 6092,
+  "slug": "macropak",
+  "name": "MacroPak™",
+  "baseName": "MacroPak™",
+  "sku": "MACPAK-RAW",
+  "tagline": "All the essential macronutrients in one easy-to-use formula.",
+  "description": "<p>MacroPak is intended to provide the macronutrients needed to build a strong plant that can support large yields, strong photosynthesis, and immune system development. It contains NPK at a rate of 2-2-2. MacroPak provides best-in-class nutrient delivery and efficacy.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Macro and Micro",
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "macropak",
+  "priceMin": 4394,
+  "priceMax": 800944,
+  "sizes": [
+   {
+    "id": 6611,
+    "label": "1 Gallon",
+    "price": 4394
+   },
+   {
+    "id": 6380,
+    "label": "5 Gallon",
+    "price": 18633
+   },
+   {
+    "id": 6414,
+    "label": "30 Gallon",
+    "price": 105448
+   },
+   {
+    "id": 6420,
+    "label": "55 Gallon",
+    "price": 180184
+   },
+   {
+    "id": 6382,
+    "label": "275 Gallon",
+    "price": 800944
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 755,
+  "slug": "micropak",
+  "name": "MicroPak™",
+  "baseName": "MicroPak™",
+  "sku": "micropak",
+  "tagline": "8 critical micronutrients. 1 package.",
+  "description": "<p>MicroPak contains a blend of trace minerals that are critical to growing healthy plants. Trace minerals encourage the development of larger and stronger root systems, increase nitrogen fixation and nitrogen use efficiency, enhance sugar transportation, and greatly improve vigor and quality in the buds, blossoms and fruit.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Macro and Micro",
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "micropak",
+  "priceMin": 3035,
+  "priceMax": 708125,
+  "sizes": [
+   {
+    "id": 759,
+    "label": "1 Gallon",
+    "price": 3035
+   },
+   {
+    "id": 760,
+    "label": "5 Gallon",
+    "price": 14610
+   },
+   {
+    "id": 761,
+    "label": "30 Gallon",
+    "price": 84150
+   },
+   {
+    "id": 762,
+    "label": "55 Gallon",
+    "price": 147950
+   },
+   {
+    "id": 763,
+    "label": "275 Gallon",
+    "price": 708125
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Soil: Apply up to 1 gallon per acre every 10-14 days. </p> <p> Fertigation: Apply up to 1 gallon per acre, every 10-14 days.  </p> <br>Foliar:  </p>Broad Acre - Apply up to 1 gallon per acre"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>MicroPak™ is best applied as a foliar. It is also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Sulfur (S)... 1% </p><p> - 1% Combined Sulfur (S) </p><p> Boron (B)... 0.3% </p><p> Cobalt (Co)... 0.2% </p><p> Copper (Cu)... 0.5% </p><p> - 0.5% Water Soluble"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 40199,
+  "slug": "pinion",
+  "name": "Pinion",
+  "baseName": "Pinion",
+  "sku": "PINION",
+  "tagline": "",
+  "description": "<p>Pinion™ is designed to protect the leaf surface from a wide range of fungal pathogens—without disrupting the plant microbiome.</p><ul><li>Effective, easy to apply, and safe when used as directed, Pinion creates an inhospitable environment for disease-causing organisms.</li><li>It helps crops resist new fungal infections and suppress existing foliar disease pressure.</li><li>Learn more, and see field trial results here.</li><li><em>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here or see “State Availability” below.</em></li></ul>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "pinion",
+  "priceMin": 15923,
+  "priceMax": 1751475,
+  "sizes": [
+   {
+    "id": 40203,
+    "label": "2.5 Gal",
+    "price": 15923
+   },
+   {
+    "id": 40204,
+    "label": "275 Gal",
+    "price": 1751475
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides potassium, calcium, manganese and molybdenum to drive reproductive growth.</p><p> Supports a plant's reproductive processes. </p> <p> Aids in bud, flower or tuber success rates. </p> <"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Single Flowering Crops: Use a single foliar at a rate of up to 4 gallons per acre 1-2 weeks before flowering or tuber-set commences. For fertigation, use up to 4 gallons per acre in two applicati"
+   },
+   {
+    "title": "Applications Instructions",
+    "body": "<p> Accelerate is best used as a foliar application one to two weeks prior to flowering for single fruiting crops or throughout the season for multiple fruiting crops. </p><p> It can be applied throu"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed Analysis: </p><p> Calcium (Ca)... 1% </p><p> Manganese (Mn)... 0.4% </p><p> - 0.4% Water Soluble Manganese (Mn) </p><p> Molybdenum (Mo)... 0.017% </p><p> Derived from: Rock Phospha"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 948,
+  "slug": "biocoat-gold",
+  "name": "BioCoat Gold™",
+  "baseName": "BioCoat Gold™",
+  "sku": "biocoat-gold",
+  "tagline": "Germination Catalyst",
+  "description": "<p>BioCoat Gold provides the nutrients and soil microbes needed during germination so seeds can get off to the best start possible. BioCoat Gold allows newly emerged roots to be immediately inoculated with vital microbial life, setting the root system up for sustained nutrient access and availability throughout the growing season.</p><p>BioCoat Gold’s low cost and high ROI make it an essential product for any grower. It is OMRI-listed. </p><p>Washington State growers: please use this specific formulation, available for purchase here.</p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Seed Treatments"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "biocoat-gold",
+  "priceMin": 5766,
+  "priceMax": 1110117,
+  "sizes": [
+   {
+    "id": 952,
+    "label": "BioCoat Gold™ 1lb",
+    "price": 5766
+   },
+   {
+    "id": 953,
+    "label": "BioCoat Gold™ 5lb",
+    "price": 25294
+   },
+   {
+    "id": 954,
+    "label": "BioCoat Gold™ 20lb",
+    "price": 89086
+   },
+   {
+    "id": 69531,
+    "label": "BioCoat Gold 300lb",
+    "price": 1110117
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> BioCoat Gold acts as a catalyst for seed germination and will not only speed the rate of germination, but also improves the consistency with which your seeds will germinate. </p><p> Seeds that g"
+   },
+   {
+    "title": "Application Rate",
+    "body": "<p> BioCoat Gold should be applied to your seed to coat the entire seed at a rate of up to 4 ounces per 100 pounds of seed. </p><p> Smaller seed will require more material for optimum coatings as th"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> BioCoat Gold performs well on a variety of seed types, especially corn, legumes, and small grains. </p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p>BioCoat Gold™ is a dry blend of seaweed, calcium, humic substances, and microbial inoculants.</p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 54407,
+  "slug": "pinion-for-home-and-garden",
+  "name": "Pinion for Home and Garden",
+  "baseName": "Pinion for Home and Garden",
+  "sku": "MGL-PINION",
+  "tagline": "OMRI Listed. Controls powdery mildew on house, garden and greenhouse plants.",
+  "description": "<ul><li>Pinion <strong>for Home and Garden</strong> is pre-diluted and ready to use.</li><li>OMRI Listed</li><li>Comes in a 32-oz spray bottle.</li><li>Pinion for Home and Garden is designed to protect the leaf surface from a wide range of fungal pathogens—without disrupting the plant microbiome.</li><li>Effective, easy to apply, and safe when used as directed, Pinion for Home and Garden creates an inhospitable environment for disease-causing organisms, helping crops resist new infections and suppressing existing foliar disease pressure, for both fungal and bacterial infections.</li><li>Pinion <strong>for Home and Garden </strong>is a part of our Market Garden Line. To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</li><li>Product availability varies due to state-by-state product regulations. Please check your state’s current availability below or click here.</li></ul>",
+  "organic": true,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "pinion-for-home-and-garden",
+  "priceMin": 1999,
+  "priceMax": 1999,
+  "sizes": [
+   {
+    "id": 54407,
+    "label": "Standard",
+    "price": 1999
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides potassium, calcium, manganese and molybdenum to drive reproductive growth.</p><p> Supports a plant's reproductive processes. </p> <p> Aids in bud, flower or tuber success rates. </p> <"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Single Flowering Crops: Use a single foliar at a rate of up to 4 gallons per acre 1-2 weeks before flowering or tuber-set commences. For fertigation, use up to 4 gallons per acre in two applicati"
+   },
+   {
+    "title": "Applications Instructions",
+    "body": "<p> Accelerate is best used as a foliar application one to two weeks prior to flowering for single fruiting crops or throughout the season for multiple fruiting crops. </p><p> It can be applied throu"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed Analysis: </p><p> Calcium (Ca)... 1% </p><p> Manganese (Mn)... 0.4% </p><p> - 0.4% Water Soluble Manganese (Mn) </p><p> Molybdenum (Mo)... 0.017% </p><p> Derived from: Rock Phospha"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 54311,
+  "slug": "biocoat-gold-market-garden",
+  "name": "BioCoat Gold™ – Market Garden Line",
+  "baseName": "BioCoat Gold™",
+  "sku": "biocoat-gold-1",
+  "tagline": "Germination Catalyst",
+  "description": "<p><br />Our 10oz package of BioCoat Gold provides the nutrients and soil microbes needed during germination so seeds can get off to the best start possible. BioCoat Gold allows newly emerged roots to be immediately inoculated with vital microbial life, setting the root system up for sustained nutrient access and availability throughout the growing season.</p><p>BioCoat Gold’s low cost and high ROI make it an essential product for any grower.<br /></p><p>BioCoat Gold is now OMRI listed!</p><p>To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</p><p>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</p><p>Washington State growers: please use this specific formulation, available for purchase here.</p>",
+  "organic": true,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "biocoat-gold-market-garden",
+  "priceMin": 4999,
+  "priceMax": 4999,
+  "sizes": [
+   {
+    "id": 55359,
+    "label": "10 oz",
+    "price": 4999
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> BioCoat Gold acts as a catalyst for seed germination and will not only speed the rate of germination, but also improves the consistency with which your seeds will germinate. </p><p> Seeds that g"
+   },
+   {
+    "title": "Application Rate",
+    "body": "<p> BioCoat Gold should be applied to your seed to coat the entire seed at a rate of up to 4 ounces per 100 pounds of seed. </p><p> Smaller seed will require more material for optimum coatings as th"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> BioCoat Gold performs well on a variety of seed types, especially corn, legumes, and small grains. </p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p>BioCoat Gold™ is a dry blend of seaweed, calcium, humic substances, and microbial inoculants.</p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 69458,
+  "slug": "biocoat-gold-wa-state",
+  "name": "BioCoat Gold™ – WA State Only",
+  "baseName": "BioCoat Gold™",
+  "sku": "WCBCG",
+  "tagline": "Germination Catalyst",
+  "description": "<ul><li><strong>For Washington State Only.</strong> For every other location: see BioCoat Gold. </li><li> BioCoat Gold provides the nutrients and soil microbes needed during germination so seeds can get off to the best start possible.</li><li> BioCoat Gold allows newly emerged roots to be immediately inoculated with vital microbial life, setting the root system up for sustained nutrient access and availability throughout the growing season.</li><li>BioCoat Gold’s low cost and high ROI make it an essential product for any grower. It is OMRI-listed.</li><li>This BioCoat Gold formulation is specifically manufactured to comply with Washington State regulatory standards. Customers everywhere else should purchase our regular BioCoat Gold. </li></ul>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Seed Treatments"
+  ],
+  "line": "commercial",
+  "stateOnly": "WA",
+  "image": "biocoat-gold-wa-state",
+  "priceMin": 4999,
+  "priceMax": 1110117,
+  "sizes": [
+   {
+    "id": 69538,
+    "label": "BioCoat Gold™ 10oz",
+    "price": 4999
+   },
+   {
+    "id": 69459,
+    "label": "BioCoat Gold™ 1lb",
+    "price": 5766
+   },
+   {
+    "id": 69460,
+    "label": "BioCoat Gold™ 5lb",
+    "price": 25294
+   },
+   {
+    "id": 69461,
+    "label": "BioCoat Gold™ 20lb",
+    "price": 89086
+   },
+   {
+    "id": 69471,
+    "label": "BioCoat Gold 300lb",
+    "price": 1110117
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> BioCoat Gold acts as a catalyst for seed germination and will not only speed the rate of germination, but also improves the consistency with which your seeds will germinate. </p><p> Seeds that g"
+   },
+   {
+    "title": "Application Rate",
+    "body": "<p> BioCoat Gold should be applied to your seed to coat the entire seed at a rate of up to 4 ounces per 100 pounds of seed. </p><p> Smaller seed will require more material for optimum coatings as th"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> BioCoat Gold performs well on a variety of seed types, especially corn, legumes, and small grains. </p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p>BioCoat Gold™ is a dry blend of seaweed, calcium, humic substances, and microbial inoculants.</p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 55609,
+  "slug": "market-garden-bundle-market-garden",
+  "name": "Market Garden Bundle – Market Garden Line",
+  "baseName": "Market Garden Bundle",
+  "sku": "MGL",
+  "tagline": "Save 15% when you buy all 5 Market Gardener products.",
+  "description": "<p>The Market Garden Bundle is subject to state-by-state product approval, and is only available for purchase when <em>every</em> product is compliant with the regulations of your state. Please check the current availability here.</p><ul><li>Save 15% when you buy the entire Market Gardener Line! The bundle includes:<ul><li><strong>BioCoat Gold™</strong> (10 oz)</li><li><strong>Revenant Charge™</strong> (50 oz)</li><li><strong>MacroPak™</strong> (50 oz)</li><li><strong>MicroPak™</strong> (50 oz)</li><li><strong>Pinion™ for Home and Garden</strong> (32 oz spray bottle)</li></ul></li></ul><p>To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</p>",
+  "organic": false,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "market-garden-bundle-market-garden",
+  "priceMin": 11995,
+  "priceMax": 11995,
+  "sizes": [
+   {
+    "id": 55949,
+    "label": "1 Bundle",
+    "price": 11995
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 54415,
+  "slug": "revenant-charge-market-garden",
+  "name": "Revenant Charge™ – Market Garden Line",
+  "baseName": "Revenant Charge™",
+  "sku": "MGL-REVENANT",
+  "tagline": "Bring your soil back to life.",
+  "description": "<p>Our Market Gardener Line of Revenant Charge™ comes in a 50oz jug and is a low-cost, high-impact boost for soil biology. </p><p>To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</p><p>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</p>",
+  "organic": false,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "revenant-charge-market-garden",
+  "priceMin": 1799,
+  "priceMax": 1799,
+  "sizes": [
+   {
+    "id": 56091,
+    "label": "50 oz",
+    "price": 1799
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Builds an environment in which microorganisms can flourish </p><p> Aids in protein synthesis (creation) and proteolysis (breakdown) </p><p> Supports soil microbes that decompose crop residue, re"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Apply up to 6 quarts per acre. Cover crops before incorporation: Apply up to 2 gallons per acre. </p><p> Crop residues: Apply up to 3 gallons per acre. For fields with little or no"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Farmers are using Rejuvenate™ to reduce the amount of residual stalks, vines, leaves, rotten fruit, and limbs that can harbor disease and insects. </p><p> Crop residue should be in contact with"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis:</p><p> Total Nitrogen (N) ... 1% </p><p> - 1% Water Soluble Nitrogen Soluble Potash (K2O) </p><p> ... 3% Magnesium (Mg) ... </p><p> - 0.5% Water Soluble Magnesium (Mg) </p"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 54339,
+  "slug": "micropak-market-garden",
+  "name": "MicroPak™ – Market Garden Line",
+  "baseName": "MicroPak™",
+  "sku": "GL-MICROPAK-2L",
+  "tagline": "8 critical micronutrients. 1 package.",
+  "description": "<p>Our Market Gardener Line of MicroPak comes in a 50oz jug and contains a blend of trace minerals that are critical to growing healthy plants. Trace minerals encourage the development of larger and stronger root systems, increase nitrogen fixation and nitrogen use efficiency, enhance sugar transportation, and greatly improve vigor and quality in the buds, blossoms and fruit.</p><p>To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</p><p><em>This product is not yet available in California. Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p>",
+  "organic": false,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "micropak-market-garden",
+  "priceMin": 2499,
+  "priceMax": 2499,
+  "sizes": [
+   {
+    "id": 54340,
+    "label": "50 oz",
+    "price": 2499
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Soil: Apply up to 1 gallon per acre every 10-14 days. </p> <p> Fertigation: Apply up to 1 gallon per acre, every 10-14 days.  </p> <br>Foliar:  </p>Broad Acre - Apply up to 1 gallon per acre"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>MicroPak™ is best applied as a foliar. It is also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Sulfur (S)... 1% </p><p> - 1% Combined Sulfur (S) </p><p> Boron (B)... 0.3% </p><p> Cobalt (Co)... 0.2% </p><p> Copper (Cu)... 0.5% </p><p> - 0.5% Water Soluble"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 54322,
+  "slug": "macropak-market-garden",
+  "name": "MacroPak™ – Market Garden Line",
+  "baseName": "MacroPak™",
+  "sku": "MGL-MACROPAK",
+  "tagline": "All the essential macronutrients in one easy-to-use formula.",
+  "description": "<p>Our Market Gardener Line of MacroPak comes in a 50oz jug and is intended to provide the macronutrients needed to build a strong plant that can support large yields, strong photosynthesis, and immune system development. It contains NPK at a rate of 2-2-2. MacroPak provides best-in-class nutrient delivery and efficacy.</p><p>To learn more about our partnership with JM Fortier and the Market Garden Institute, please click here.</p><p>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</p>",
+  "organic": false,
+  "categories": [],
+  "line": "market-garden",
+  "stateOnly": null,
+  "image": "macropak-market-garden",
+  "priceMin": 2699,
+  "priceMax": 2699,
+  "sizes": [
+   {
+    "id": 54322,
+    "label": "Standard",
+    "price": 2699
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 52861,
+  "slug": "revenant-charge",
+  "name": "Revenant Charge™",
+  "baseName": "Revenant Charge™",
+  "sku": "REVENANT",
+  "tagline": "Bring your soil back to life.",
+  "description": "<p>Revenant Charge™ is a low-cost, high-impact boost for soil biology. We designed it specifically as a cost-effective solution for growers on a budget.</p><p>Apply in the spring to unlock tied-up soil nutrients and reduce input costs, and in the fall to accelerate residue digestion and with fall-planted crops like winter wheat, cover crops, and vegetables.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "revenant-charge",
+  "priceMin": 2135,
+  "priceMax": 477125,
+  "sizes": [
+   {
+    "id": 52862,
+    "label": "1 Gallon",
+    "price": 2135
+   },
+   {
+    "id": 52863,
+    "label": "5 Gallon",
+    "price": 10175
+   },
+   {
+    "id": 52864,
+    "label": "30 Gallon",
+    "price": 58050
+   },
+   {
+    "id": 52865,
+    "label": "55 Gallon",
+    "price": 100925
+   },
+   {
+    "id": 52866,
+    "label": "275 Gallon",
+    "price": 477125
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Builds an environment in which microorganisms can flourish </p><p> Aids in protein synthesis (creation) and proteolysis (breakdown) </p><p> Supports soil microbes that decompose crop residue, re"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Row Starter: Apply up to 6 quarts per acre. Cover crops before incorporation: Apply up to 2 gallons per acre. </p><p> Crop residues: Apply up to 3 gallons per acre. For fields with little or no"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Farmers are using Rejuvenate™ to reduce the amount of residual stalks, vines, leaves, rotten fruit, and limbs that can harbor disease and insects. </p><p> Crop residue should be in contact with"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis:</p><p> Total Nitrogen (N) ... 1% </p><p> - 1% Water Soluble Nitrogen Soluble Potash (K2O) </p><p> ... 3% Magnesium (Mg) ... </p><p> - 0.5% Water Soluble Magnesium (Mg) </p"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 38245,
+  "slug": "seaphos",
+  "name": "SeaPhos®",
+  "baseName": "SeaPhos®",
+  "sku": "seaphos",
+  "tagline": "Critical support for plant immunity and thriving soil fungi",
+  "description": "<p>SeaPhos® is a cold-processed seafood hydrolysate liquid fertilizer with bioavailable phosphorus to power plant productivity.</p><ul><li>SeaPhos feeds beneficial fungi, stimulates glomalin production, and enhances soil aggregation, water conservation, and nutrient flow.</li><li>It also boosts microbial activity to break down residues, mineralize nutrients, and establish a thriving root zone microbiome.</li><li>SeaPhos is OMRI listed and NOP Compliant.</li></ul><p><em>Manufactured by Tidal Grow. Available to AEA customers in custom blends. </em></p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seaphos",
+  "priceMin": 400000,
+  "priceMax": 400000,
+  "sizes": [
+   {
+    "id": 38250,
+    "label": "275 Gallon",
+    "price": 400000
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> At Planting: Up to 2 gallons per acre </p><p> Foliar: Up to 2 gallons per acre every 2 weeks </p><p> Fertigation: Up to 5 gallons per acre every 2 weeks, up to a maximum of 100 gallons per acr"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> SeaShield is recommended for soil and foliar applications. It is used as part of AEA's Regenerative Soil Primer Program. It is often combined with other products throughout the growing season, esp"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Total Nitrogen (N) ... 2% </p><p> - 0.9% Water Soluble Nitrogen </p><p> - 1.1% Water Insoluble Nitrogen </p><p> Available Phosphate (P2O5) ... 1% </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 12005,
+  "slug": "spectrum-myco",
+  "name": "Spectrum + Myco™",
+  "baseName": "Spectrum + Myco™",
+  "sku": "spectrum-myco",
+  "tagline": "Brings soils back to life",
+  "description": "<p>Spectrum + Myco™ is a convenient combination of Spectrum™ and MycoGenesis™ in a single package. It’s used as a biological soil inoculant for establishing populations of beneficial soil microbes. It is a critical component of AEA’s Soil Primer application.</p><p>Spectrum + Myco™ is approved for use on certified organic crops and is listed by OMRI.</p><p>1 acre = 155 grams</p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "spectrum-myco",
+  "priceMin": 16984,
+  "priceMax": 76473,
+  "sizes": [
+   {
+    "id": 12011,
+    "label": "5 Acre",
+    "price": 16984
+   },
+   {
+    "id": 12012,
+    "label": "10 Acre",
+    "price": 31381
+   },
+   {
+    "id": 12013,
+    "label": "25 Acre",
+    "price": 76473
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rate",
+    "body": "<p>Apply at a rate of 50 grams (1.76 oz) per acre.</p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Spectrum is designed for subsurface application;however, it may be sprayed on ground surface if soil incorporation is done immediately. May beapplied to the soil by aerial spraying, ground spray"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients </p><p> Live beneficial soil microbes of the following types and minimum numbers of colony forming units (CFUs) per gram: Arthrobacter globiformis 1X105; Azosp"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 6167,
+  "slug": "seaguard",
+  "name": "SeaGuard™",
+  "baseName": "SeaGuard™",
+  "sku": "SEAGUARD",
+  "tagline": "Critical support for plant immunity and thriving soil fungi",
+  "description": "<p>SeaGuard is a cheaper, non-NOP version of our popular SeaShield™, designed to help non-organic growers cut costs. It’s an essential part of a balanced nutritional program for plants and soil. It enhances plant vigor and helps increase resistance to pests and pathogens. SeaGuard works especially well when combined with other nutritional supplements, and is one of the 3 products in our cornerstone Soil Primer program. </p>",
+  "organic": true,
+  "categories": [
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seaguard",
+  "priceMin": 271625,
+  "priceMax": 271625,
+  "sizes": [
+   {
+    "id": 6401,
+    "label": "265 Gallon",
+    "price": 271625
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 6144,
+  "slug": "calguard",
+  "name": "CalGuard™",
+  "baseName": "CalGuard™",
+  "sku": "Calguard",
+  "tagline": "Highly mobile liquid calcium",
+  "description": "<p>CalGuard provides a form of calcium that is rapidly translocated into the fruit so that it can be most effective in preventing physiological disorders related to calcium deficiency. Since calcium is not mobile in plant phloem tissue, many calcium sources do not move into the fruit readily when they are applied as a foliar spray.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": false,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "calguard",
+  "priceMin": 10585,
+  "priceMax": 525800,
+  "sizes": [
+   {
+    "id": 6393,
+    "label": "5 Gallon",
+    "price": 10585
+   },
+   {
+    "id": 6424,
+    "label": "30 Gallon",
+    "price": 62610
+   },
+   {
+    "id": 6422,
+    "label": "55 Gallon",
+    "price": 109890
+   },
+   {
+    "id": 6395,
+    "label": "275 Gallon",
+    "price": 525800
+   }
+  ],
+  "details": [
+   {
+    "title": "Features and Benefits",
+    "body": "<p> Provides P2O5 , K2O, Ca and most necessary micronutrients. </p><p> Increases photosynthetic efficiency. </p><p> Supports microbial populations. </p><p> Promotes mineral release from soil reserv"
+   },
+   {
+    "title": "Application Rates",
+    "body": "<p> Fruits and Vegetables: Use as a foliar on fruit and vegetable crops at a rate of up to 2 quarts each per week. </p><p> Irrigation:  Apply 1-2 quarts each per acre every 10-14 days.  </p><p> Br"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> HoloMac and HoloMic can be used as a row starter, transplant solution, in irrigation systems or as a foliar program. </p><p> Used together, HoloMac and HoloMic form a strong nutrient foundation"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> HoloMac provides the major constituents of plant growth, focusing on photosynthesis, fruit fill and  sugar transport. </p><p> HoloMac is a combination of fish hydrolysate, calcium, available pho"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 980,
+  "slug": "micropak-california",
+  "name": "MicroPak™ – California Only",
+  "baseName": "MicroPak™",
+  "sku": "micropak-california",
+  "tagline": "8 critical micronutrients. 1 package.",
+  "description": "<p><em>This version of MicroPak is specifically formulated and registered for sale in the state of California. Growers outside of California can find MicroPak here. </em></p><p>MicroPak contains a blend of trace minerals that are critical to growing healthy plants. Trace minerals encourage the development of larger and stronger root systems, increase nitrogen fixation and nitrogen use efficiency, enhance sugar transportation, and greatly improve vigor and quality in the buds, blossoms and fruit.</p>",
+  "organic": false,
+  "categories": [
+   "Essential",
+   "Macro and Micro"
+  ],
+  "line": "commercial",
+  "stateOnly": "CA",
+  "image": "micropak-california",
+  "priceMin": 3035,
+  "priceMax": 708125,
+  "sizes": [
+   {
+    "id": 983,
+    "label": "1 Gal",
+    "price": 3035
+   },
+   {
+    "id": 984,
+    "label": "5 Gal",
+    "price": 14610
+   },
+   {
+    "id": 985,
+    "label": "30 Gal",
+    "price": 84150
+   },
+   {
+    "id": 986,
+    "label": "55 Gal",
+    "price": 147950
+   },
+   {
+    "id": 987,
+    "label": "275 Gal",
+    "price": 708125
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Soil: Apply up to 1 gallon per acre every 10-14 days. </p><p> Fertigation: Apply up to 1 gallon per acre, every 10-14 days. </p><p> Foliar: Broad Acre - Apply up to 1 gallon per acre, every 3-4"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>MicroPak™ - California is best applied as a foliar. It is also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: Sulfur (S) ... 1% </p><p> - 1% Combined Sulfur (S) </p><p> Boron (B)... 0.7% </p><p> Cobalt (Co)... 0.2% </p><p> Copper (Cu)... 0.5% </p><p> 0.5% Water Soluble Copper (Cu"
+   },
+   {
+    "title": "National Organic Program Informaton",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 963,
+  "slug": "axcel-california",
+  "name": "Axcel™ – California",
+  "baseName": "Axcel™",
+  "sku": "axcel",
+  "tagline": "Nutritional support for flowering and fruiting",
+  "description": "<p>Axcel™ (California specific) delivers a wide range of nutrients needed by plants during blossoming. It can increase the number of flowers and improve fruit set or clonal tuber set. It can help encourage and support plants to move from the vegetative growth phase to the reproductive phase.</p><p><em>Axcel™ is specifically formulated and registered for sale in the state of California and is comparable to our product Accelerate™.</em></p>",
+  "organic": false,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": "CA",
+  "image": "axcel-california",
+  "priceMin": 3221,
+  "priceMax": 758795,
+  "sizes": [
+   {
+    "id": 966,
+    "label": "1 Gal",
+    "price": 3221
+   },
+   {
+    "id": 967,
+    "label": "5 Gal",
+    "price": 15038
+   },
+   {
+    "id": 968,
+    "label": "30 Gal",
+    "price": 87486
+   },
+   {
+    "id": 969,
+    "label": "55 Gal",
+    "price": 156198
+   },
+   {
+    "id": 970,
+    "label": "275 Gal",
+    "price": 758795
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Single Flowering Crops: Use a single foliar at a rate of up to 4 gallons per acre 1-2 weeks before flowering or tuber-set commences. For fertigation, use up to 4 gallons per acre in two applicatio"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Accelerate is best used as a foliar application one to two weeks prior to flowering for single fruiting crops or throughout the season for multiple fruiting crops. </p><p> It can be applied throu"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed Analysis: </p><p> Soluble Potash (K2O)... 1% </p><p> Calcium (Ca)... 1% </p><p> Manganese (Mn)... 0.4% </p><p> - 0.4% Water Soluble Manganese (Mn) </p><p> Molybdenum (Mo)... 0.017%"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 955,
+  "slug": "micro5000",
+  "name": "Micro5000™",
+  "baseName": "Micro5000™",
+  "sku": "micro-5000",
+  "tagline": "Biologically-enhanced foliar",
+  "description": "<p>Micro5000 is a foliar fertilizer and inoculant package. Microbes on leaf surfaces can solubilize nutrients from foliar sprays along with nitrogen from the air to help enable these nutrients to be absorbed through the leaf, reducing the amount of supplemental nutrients needed. (1 acre = 75 grams). </p><p>Note: Micro5000 is not for use in organic production. Organic growers should use Micro5000 Organic™</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Foliar"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "micro5000",
+  "priceMin": 4962,
+  "priceMax": 153036,
+  "sizes": [
+   {
+    "id": 958,
+    "label": "2 Acre",
+    "price": 4962
+   },
+   {
+    "id": 959,
+    "label": "5 Acre",
+    "price": 11866
+   },
+   {
+    "id": 960,
+    "label": "10 Acre",
+    "price": 19300
+   },
+   {
+    "id": 961,
+    "label": "25 Acre",
+    "price": 38281
+   },
+   {
+    "id": 962,
+    "label": "100 Acre",
+    "price": 153036
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Apply a minimum of 75 grams (2.66 oz) per acre (can use up to 150 grams per acre). </p><p> Measuring scoop included for your convenience; 2 scoops = approx. 75g (Scoop not included in 2 & 5 acre"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> With agitation or recirculation: Mix soluble powder in spray tank. </p><p> Without agitation or recirculation: Pre-mix beforeadding to spray tank. </p><p> Can be tank-mixed with most fertiliz"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed Analysis: </p><p> Total Nitrogen (N)... 5% </p><p> - 3.5% Ammoniacal Nitrogen </p><p> - 0.45% Nitrate Nitrogen </p><p> - 0.61% Urea Nitrogen </p><p> - 0.44% Other Water Soluble Nit"
+   }
+  ]
+ },
+ {
+  "id": 928,
+  "slug": "spectrum-psb",
+  "name": "Spectrum PSB™",
+  "baseName": "Spectrum PSB™",
+  "sku": "spectrum-psb",
+  "tagline": "Brings phosphorus-deficient soils back to life",
+  "description": "<p>Spectrum PSB™ is a phosphorus-solubilizing biological product for establishing populations of beneficial soil microbes. It is a critical component of AEA’s Soil Primer application.</p><p>Spectrum PSB™ is approved for use on certified organic crops and is listed by OMRI.</p><p>1 acre = 75 grams</p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "spectrum-psb",
+  "priceMin": 4263,
+  "priceMax": 314572,
+  "sizes": [
+   {
+    "id": 931,
+    "label": "1 Acre",
+    "price": 4263
+   },
+   {
+    "id": 932,
+    "label": "5 Acre",
+    "price": 18400
+   },
+   {
+    "id": 933,
+    "label": "10 Acre",
+    "price": 33137
+   },
+   {
+    "id": 934,
+    "label": "25 Acre",
+    "price": 80343
+   },
+   {
+    "id": 935,
+    "label": "100 Acre",
+    "price": 314572
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rate",
+    "body": "<p>Apply at a rate of 75 grams (2.65 oz) per acre. </p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Spectrum PSB is designed for subsurfaceapplication; however, it may be sprayed on ground surface if soil incorporation is done immediately. May be applied to the soil by aerial spraying, ground s"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients: </p><p> Live beneficial soil microbes of the following types and minimum numbers of colony forming units (CFUs) per gram: Arthrobacter globiformis 1X106; Azos"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 920,
+  "slug": "spectrum-ds",
+  "name": "Spectrum DS™",
+  "baseName": "Spectrum DS™",
+  "sku": "spectrum-ds",
+  "tagline": "Brings dry soils back to life",
+  "description": "<p>Spectrum DS™ is a biological inoculant for establishing populations of beneficial soil microbes in drought-stressed soils. It is a critical component of AEA’s Soil Primer application.</p><p>Spectrum DS™ is approved for use on certified organic crops and is listed by OMRI.</p><p>1 acre = 50 grams</p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Essential",
+   "Soil Priming"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "spectrum-ds",
+  "priceMin": 2840,
+  "priceMax": 209714,
+  "sizes": [
+   {
+    "id": 923,
+    "label": "1 Acre",
+    "price": 2840
+   },
+   {
+    "id": 924,
+    "label": "5 Acre",
+    "price": 12267
+   },
+   {
+    "id": 925,
+    "label": "10 Acre",
+    "price": 22091
+   },
+   {
+    "id": 926,
+    "label": "25 Acre",
+    "price": 53561
+   },
+   {
+    "id": 927,
+    "label": "100 Acre",
+    "price": 209714
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rate",
+    "body": "<p>Apply at a rate of 50 grams (1.76 oz) per acre.</p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Spectrum DS is designed for subsurfaceapplication; however, it may be sprayed on ground surface if soil incorporation is done immediately. May be applied to the soil by aerial spraying, ground sp"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients </p><p> Live beneficial soil microbes of the following types and minimum numbers of colony forming units (CFUs) per gram: Arthrobacter globiformis 1X105; Azosp"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 893,
+  "slug": "seacrop",
+  "name": "SeaCrop™",
+  "baseName": "SeaCrop™",
+  "sku": "seacrop",
+  "tagline": "Broad-spectrum ocean mineral concentrate",
+  "description": "<p>The highly available and broad-spectrum mineral content in SeaCrop enables plants to form complex compounds. SeaCrop is naturally derived from rich Northern Pacific seawater, and concentrated using a process that renders it low-sodium, and protects its myriad enzymes and organic substances.</p><p><em>Product availability varies due to state-by-state product regulations. Please check your state’s current availability here.</em></p>",
+  "organic": true,
+  "categories": [
+   "Functional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "seacrop",
+  "priceMin": 1700,
+  "priceMax": 412500,
+  "sizes": [
+   {
+    "id": 897,
+    "label": "1 Gallon",
+    "price": 1700
+   },
+   {
+    "id": 898,
+    "label": "5 Gallon",
+    "price": 8375
+   },
+   {
+    "id": 899,
+    "label": "30 Gallon",
+    "price": 49020
+   },
+   {
+    "id": 900,
+    "label": "55 Gallon",
+    "price": 88660
+   },
+   {
+    "id": 901,
+    "label": "275 Gallon",
+    "price": 412500
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Vegetables: Apply up to 1 quart per acre per week in irrigation system or as a foliar. </p><p> Broad Acre Crops: Apply up to 1 gallon per acre (must be split application), per season. </p><p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>SeaCrop™ is most commonly used in foliars, but can also be applied as a soil drench or with fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p>Derived from concentrated sea water.</p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 782,
+  "slug": "op-8",
+  "name": "OP-8™",
+  "baseName": "OP-8™",
+  "sku": "op8-raw",
+  "tagline": "Serious soil remediation",
+  "description": "<p>OP-8 is a blend of beneficial soil microbes that specialize in digesting petroleum hydrocarbons. Most pesticides used in conventional agriculture are petroleum hydrocarbon derivatives. When the chemical load of a soil is very high, serious biological remediation is the best solution to undo the negative effects of contamination.                                                         </p><p><em>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </em></p>",
+  "organic": false,
+  "categories": [
+   "Biological",
+   "Soil"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "op-8",
+  "priceMin": 15301,
+  "priceMax": 313250,
+  "sizes": [
+   {
+    "id": 785,
+    "label": "1lb",
+    "price": 15301
+   },
+   {
+    "id": 786,
+    "label": "5lb",
+    "price": 68653
+   },
+   {
+    "id": 787,
+    "label": "10lb",
+    "price": 129175
+   },
+   {
+    "id": 788,
+    "label": "25lb",
+    "price": 313250
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rate",
+    "body": "<p> Row Crops: Apply in seed row at a rate of 1 pound (454 grams/16 oz) per acre. May be applied to the soil by aerial spraying, ground sprayer, shanked in with fertilizer liquids, by furrow or flood"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Applied as a soil application, and it works best when incorporated into the soil immediately.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients: </p><p> Live beneficial soil microbes of the following types and minimum colony forming units (CFUs) per gram: </p><p> Arthrobacter globiformis 1X105; Azos"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 764,
+  "slug": "mycogenesis",
+  "name": "MycoGenesis™",
+  "baseName": "MycoGenesis™",
+  "sku": "mycogenesis",
+  "tagline": "Mycorrhizal inoculant",
+  "description": "<p>MycoGenesis is a dry blend of plant growth-promoting rhizobacteria and mycorrhizal fungi, designed to inoculate soils with microbial life. It helps ensure plants get off to a good start and benefit from the symbiotic relationships and nutrient exchange that take place in healthy, living soil.</p><p><br /><em>(1 acre = 454 grams = 1 pound).</em></p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": false,
+  "categories": [
+   "Biological",
+   "Soil"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "mycogenesis",
+  "priceMin": 11149,
+  "priceMax": 220816,
+  "sizes": [
+   {
+    "id": 767,
+    "label": "1 lb",
+    "price": 11149
+   },
+   {
+    "id": 768,
+    "label": "5 lb",
+    "price": 45029
+   },
+   {
+    "id": 769,
+    "label": "10 lb",
+    "price": 88328
+   },
+   {
+    "id": 770,
+    "label": "25 lb",
+    "price": 220816
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row crops: Apply in seed row at planting at a rate of 1 pound (454 grams/16oz) MycoGenesis™ per acre. </p><p> Root Injection: For trees, mix 1 pound (454 grams/16 oz) of MycoGenesis™ in 20 gallo"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> For Best Results: Add 12.5 oz. of a Pepzyme™ product for every 1 pound of MycoGenesis™ applied. </p><p> For maximum benefit of MycoGenesis™, it is important that the Mycorrhizae contact the root"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Live beneficial soil microbes of the following types and minimum colony forming units (CFUs) per gram:  </p><p> Arthrobacter globiformis 1X105; Azospirillum brasilense1X106, A. lipoferum 1X105; A"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 747,
+  "slug": "micro5000-organic",
+  "name": "Micro5000 Organic™",
+  "baseName": "Micro5000 Organic™",
+  "sku": "micro-5000-organic",
+  "tagline": "Biologically-enhanced foliar for organic growers",
+  "description": "<p>Micro5000 Organic is a foliar fertilizer and inoculant package. Microbes on leaf surfaces can solubilize nutrients from foliar sprays along with nitrogen from the air to help enable these nutrients to be absorbed through the leaf, reducing the amount of supplemental nutrients needed.</p><p><em>Conventional growers can use Micro5000™. </em></p><p><em>(1 acre = 75 grams). </em></p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Foliar"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "micro5000-organic",
+  "priceMin": 5056,
+  "priceMax": 155988,
+  "sizes": [
+   {
+    "id": 750,
+    "label": "2 Acre",
+    "price": 5056
+   },
+   {
+    "id": 751,
+    "label": "5 Acre",
+    "price": 12095
+   },
+   {
+    "id": 752,
+    "label": "10 Acre",
+    "price": 19675
+   },
+   {
+    "id": 753,
+    "label": "25 Acre",
+    "price": 39024
+   },
+   {
+    "id": 754,
+    "label": "100 Acre",
+    "price": 155988
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Apply a minimum of 75 grams (2.66 oz) per acre (can use up to 150 grams per acre). </p><p> Measuring scoop included for your convenience; 3 scoops = approx. 75g (Scoop not included in 2 acre size"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> With agitation or recirculation: Mix soluble powder in spray tank. </p><p> Without agitation or recirculation: Pre-mix beforeadding to spray tank. </p><p> Can be tank-mixed with most fertiliz"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Soluble Potash (K2O)... 15% </p> <p> Derived from: Kelp (Ascophyllum nodosum) and potassium hydroxide. </p> <p> Also Contains Non-Plant Food Ingredients: </p><p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 673,
+  "slug": "biogenesis-np",
+  "name": "BioGenesis™ NP",
+  "baseName": "BioGenesis™ NP",
+  "sku": "biogenesis-np",
+  "tagline": "Soil inoculant and root dip",
+  "description": "<p>BioGenesis NP is a soil inoculant composed of a broad spectrum of beneficial microorganisms along with humic acids and humectants. It is used to help reestablish thriving soil biology. The beneficial microbes in BioGenesis NP release nutrients stored in the soil, making the nutrients more readily bio-available to plants in forms they can absorb.</p><p><em>BioGenesis™ NP is approved for use on certified organic crops and is listed by OMRI.</em></p><p>(1 acre = 454 grams).</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Biological",
+   "Soil"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "biogenesis-np",
+  "priceMin": 9657,
+  "priceMax": 191293,
+  "sizes": [
+   {
+    "id": 676,
+    "label": "1 Acre",
+    "price": 9657
+   },
+   {
+    "id": 677,
+    "label": "5 Acre",
+    "price": 39009
+   },
+   {
+    "id": 678,
+    "label": "10 Acre",
+    "price": 76516
+   },
+   {
+    "id": 679,
+    "label": "25 Acre",
+    "price": 191293
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Broadacre Crops: Apply in seed row at a rate of 1 pound (454 grams/16 oz) per acre. May be applied to the soil by aerial spraying, ground sprayer, shanked in with fertilizer liquids, by furrow or"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients: </p><p> Live beneficial soil microbes of the following types and minimum colony forming units (CFUs) per gram: </p><p> Arthrobacter globiformis 1X105; Azosp"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 665,
+  "slug": "biodigester",
+  "name": "BioDigester™",
+  "baseName": "BioDigester™",
+  "sku": "biodigester",
+  "tagline": "Eats disease out of house and home",
+  "description": "<p>BioDigester is a blend of soil microorganisms that excel at digesting cellulose. The organisms in BioDigester help break down dead plant material, crop residues, compost, prunings, and other plant debris. </p><p><em>(1 acre = 50 grams).</em></p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": false,
+  "categories": [
+   "Biological",
+   "Soil"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "biodigester",
+  "priceMin": 3720,
+  "priceMax": 210527,
+  "sizes": [
+   {
+    "id": 668,
+    "label": "1 Acre",
+    "price": 3720
+   },
+   {
+    "id": 669,
+    "label": "5 Acre",
+    "price": 16166
+   },
+   {
+    "id": 670,
+    "label": "10 Acre",
+    "price": 27842
+   },
+   {
+    "id": 671,
+    "label": "25 Acre",
+    "price": 60527
+   },
+   {
+    "id": 672,
+    "label": "100 Acre",
+    "price": 210527
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p>Apply at a rate of 50 grams (1.76 oz) per acre or 10 grams (0.35 oz) per cubic yard.</p>"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p> Dissolve dry material in a bucket of water for 5 minutes. Decant liquid through filter cloth prior to pouring into sprayer tank. The remaining material in the filter cloth is only organic material"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Contains Non-Plant Food Ingredients: </p><p> Live beneficial soil microbes of the following types and minimum colony forming units (CFUs) per gram: </p><p> Arthrobacter globiformis 1X105; Azos"
+   }
+  ]
+ },
+ {
+  "id": 871,
+  "slug": "rebound-zinc",
+  "name": "Rebound™ Zinc",
+  "baseName": "Rebound™ Zinc",
+  "sku": "rebound-zinc",
+  "tagline": "Chelated Zinc for maximum plant uptake",
+  "description": "<p>Rebound™ Zinc is an organic zinc solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-zinc",
+  "priceMin": 2215,
+  "priceMax": 474201,
+  "sizes": [
+   {
+    "id": 875,
+    "label": "1 Gallon",
+    "price": 2215
+   },
+   {
+    "id": 876,
+    "label": "5 Gallon",
+    "price": 9858
+   },
+   {
+    "id": 877,
+    "label": "30 Gallon",
+    "price": 55498
+   },
+   {
+    "id": 878,
+    "label": "55 Gallon",
+    "price": 96275
+   },
+   {
+    "id": 879,
+    "label": "275 Gallon",
+    "price": 474201
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Zinc (Zn) ... 3% </p><p> - 3% Water Soluble Zinc (Zn) </p><p> Derived from: Zinc sulfate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 844,
+  "slug": "rebound-iron",
+  "name": "Rebound™ Iron",
+  "baseName": "Rebound™ Iron",
+  "sku": "rebound-iron",
+  "tagline": "Chelated Iron for maximum plant uptake",
+  "description": "<p>Rebound™ Iron is an organic iron solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-iron",
+  "priceMin": 2239,
+  "priceMax": 479977,
+  "sizes": [
+   {
+    "id": 848,
+    "label": "1 Gallon",
+    "price": 2239
+   },
+   {
+    "id": 849,
+    "label": "5 Gallon",
+    "price": 9980
+   },
+   {
+    "id": 850,
+    "label": "30 Gallon",
+    "price": 56113
+   },
+   {
+    "id": 851,
+    "label": "55 Gallon",
+    "price": 99552
+   },
+   {
+    "id": 852,
+    "label": "275 Gallon",
+    "price": 479977
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Iron (Fe) ... 3% </p><p> Derived from: Ferrous sulfate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 836,
+  "slug": "rebound-copper",
+  "name": "Rebound™ Copper",
+  "baseName": "Rebound™ Copper",
+  "sku": "rebound-copper",
+  "tagline": "Chelated Copper for maximum plant uptake",
+  "description": "<p>Rebound™ Copper is an organic copper solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-copper",
+  "priceMin": 2367,
+  "priceMax": 547730,
+  "sizes": [
+   {
+    "id": 839,
+    "label": "1 Gallon",
+    "price": 2367
+   },
+   {
+    "id": 840,
+    "label": "5 Gallon",
+    "price": 11225
+   },
+   {
+    "id": 841,
+    "label": "30 Gallon",
+    "price": 63219
+   },
+   {
+    "id": 842,
+    "label": "55 Gallon",
+    "price": 111564
+   },
+   {
+    "id": 843,
+    "label": "275 Gallon",
+    "price": 547730
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Copper (Cu) ... 2% </p><p> Derived from: Copper sulfate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ },
+ {
+  "id": 827,
+  "slug": "rebound-cobalt",
+  "name": "Rebound™ Cobalt",
+  "baseName": "Rebound™ Cobalt",
+  "sku": "rebound-cobalt",
+  "tagline": "Chelated Cobalt for maximum plant uptake",
+  "description": "<p>Rebound™ Cobalt is an organic cobalt solution uniquely processed for maximum plant uptake.</p><p>Product availability varies due to state-by-state product regulations. Please check availability in your state here. </p>",
+  "organic": true,
+  "categories": [
+   "Nutritional"
+  ],
+  "line": "commercial",
+  "stateOnly": null,
+  "image": "rebound-cobalt",
+  "priceMin": 3838,
+  "priceMax": 893610,
+  "sizes": [
+   {
+    "id": 831,
+    "label": "1 Gallon",
+    "price": 3838
+   },
+   {
+    "id": 832,
+    "label": "5 Gallon",
+    "price": 17607
+   },
+   {
+    "id": 833,
+    "label": "30 Gallon",
+    "price": 101630
+   },
+   {
+    "id": 834,
+    "label": "55 Gallon",
+    "price": 180303
+   },
+   {
+    "id": 835,
+    "label": "275 Gallon",
+    "price": 893610
+   }
+  ],
+  "details": [
+   {
+    "title": "Application Rates",
+    "body": "<p> Row starter: Apply up to 1 gallon per acre. </p><p> Broadacre crop foliar: Apply up to 1 gallon per acre, every 3-4 weeks. </p><p> Fruit and vegetable foliar: Apply up to 1 gallon per acre per w"
+   },
+   {
+    "title": "Application Instructions",
+    "body": "<p>Rebound™ products are best applied as foliars. They are also effective when applied to the soil and via fertigation.</p>"
+   },
+   {
+    "title": "Ingredients",
+    "body": "<p> Guaranteed analysis: </p><p> Cobalt (Co) ... 3% </p><p> Derived from: Cobalt sulfate </p>"
+   },
+   {
+    "title": "National Organic Program Information",
+    "body": "<p>This product is suitable for use under NOP. Please check with your certifier before using.</p>"
+   }
+  ]
+ }
+]

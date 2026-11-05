@@ -1,0 +1,163 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { timeline, url } from '../lib/site';
+const values = [
+  ['Love', 'Not a sentiment — a living principle guiding our work and relationships. We strive to understand the experiences and challenges of our growers.'],
+  ['Gratitude', 'For the trust our customers grant us and the contributions of our team. The success of growers is our success.'],
+  ['Integrity', 'A reliable, responsive, consistent partner — with actions informed by reliable, accurate data.'],
+  ['Trailblazing', 'We pioneer ideas and technology at the forefront of regenerative agriculture, driven by curiosity.'],
+  ['Boldness', 'Confident in our methods and vision, with open, honest communication that builds trust.'],
+  ['Prosperity', 'An abundance mindset dedicated to bringing prosperity to farming communities for generations.'],
+];
+const beliefs = [
+  'Regenerate producer profitability and create economic incentives for producers.',
+  'Produce crops inherently resistant to insects, bacteria, fungi, nematodes and viruses.',
+  'Grow food that regenerates public health — food as medicine.',
+  'Rapidly sequester carbon, build soil organic matter and restore hydrological cycles.',
+];
+---
+<Base title="Our story" description="From a melon patch on an Amish farm in Ohio to 4 million acres: the story, vision and values of Advancing Eco Agriculture.">
+  <section class="phero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span>/</span><span>About</span></nav>
+      <h1 class="display-hero ab__title" data-split>Born in a <em class="serif">melon</em> patch.</h1>
+    </div>
+  </section>
+
+  <section class="wrap ab__hero">
+    <div class="media ab__img" data-reveal="clip"><img src={url('/img/aea/story-pano.avif')} alt="An AEA partner farm at first light" width="1600" height="424" fetchpriority="high" /></div>
+  </section>
+
+  <section class="section wrap ab__story">
+    <div>
+      <p class="eyebrow">Our story begins with John Kempf</p>
+      <p class="ab__big" data-reveal>Two cantaloupe fields, two feet apart. One devastated by pests and disease. One completely healthy.</p>
+    </div>
+    <div class="prose ab__prose">
+      <p>In the early 2000s, Amish farmer John Kempf was on a desperate quest to save his family’s fruit and vegetable farm in Northeast Ohio. After years of intensive pesticide use, pest and disease pressure was unmanageable — resulting in almost total loss three years in a row.</p>
+      <p>Then John rented a field from a neighboring farm. Cantaloupes in soil previously managed with intense pesticides were disease- and pest-ridden; those on untreated soil were <strong>completely healthy</strong>. The difference launched an intense journey to understand why one plant could resist disease while the same variety two feet away could not.</p>
+      <p>Years of research, first-hand growing and mentorship from leaders like Don Huber, Bruce Tainio, Jerry Brunetti, Arden Anderson and Michael McNeil led to new crop management methods. The practices he discovered and the products he created became Advancing Eco Agriculture.</p>
+      <div class="media ab__melon" data-reveal="clip"><img src={url('/img/aea/story-cantaloupe.avif')} alt="Cantaloupe field" width="818" height="786" loading="lazy" decoding="async" /></div>
+    </div>
+  </section>
+
+  <section class="theme-dark ab__vm">
+    <div class="wrap ab__vm-grid">
+      <div data-reveal>
+        <p class="eyebrow">Vision</p>
+        <p class="h2">To make <span class="sun">80%</span> of global agriculture regenerative by <em class="serif">2040.</em></p>
+      </div>
+      <div data-reveal style="--d:150">
+        <p class="eyebrow">Mission</p>
+        <p class="h2">To empower farmers with innovative, <em class="serif">science-backed</em> tools to regenerate agriculture and food systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section theme-bone" id="timeline">
+    <div class="wrap tl__head">
+      <div>
+        <p class="eyebrow">Timeline</p>
+        <h2 class="h1" data-split>Nineteen years, <em class="serif">rooted.</em></h2>
+      </div>
+      <p class="muted mono">Drag or scroll →</p>
+    </div>
+    <div class="tl" data-drag>
+      <ol class="tl__track">
+        {timeline.map(([y, t], i) => (
+          <li class="tl__item">
+            <span class="tl__year">{y}</span>
+            <span class="tl__dot"></span>
+            <p>{t}</p>
+          </li>
+        ))}
+        <li class="tl__item tl__item--now"><span class="tl__year">Next</span><span class="tl__dot"></span><p>And we’re just getting started.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section wrap" id="values">
+    <p class="eyebrow">Our values</p>
+    <h2 class="h1" style="margin-top:20px" data-split>What we <em class="serif">stand</em> on.</h2>
+    <div class="vals">
+      {values.map(([t, d], i) => (
+        <article class="val" data-reveal style={`--d:${(i % 3) * 90}`}>
+          <span class="mono">0{i + 1}</span>
+          <h3 class="h3">{t}</h3>
+          <p class="muted">{d}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section theme-moss">
+    <div class="wrap jk">
+      <div class="jk__quote">
+        <p class="eyebrow">John Kempf · Founder & Chief Vision Officer</p>
+        <blockquote class="h2" data-reveal>“I dream of a world where the process of growing food regenerates the land, revitalizes rural communities, and facilitates a world where food <em class="serif">improves our health.</em>”</blockquote>
+      </div>
+      <div>
+        <p class="mono muted">John believes regenerative systems can</p>
+        <ul class="jk__list">{beliefs.map((b) => <li data-reveal><Icon name="sprout" size={20} />{b}</li>)}</ul>
+        <a class="btn btn--sun" href={url('/contact/')} style="margin-top:32px">Work with our team <Icon name="arrow" class="arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // drag-to-scroll timeline
+    const el = document.querySelector<HTMLElement>('[data-drag]');
+    if (el) {
+      let down = false, sx = 0, sl = 0;
+      el.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = el.scrollLeft; el.classList.add('is-drag'); });
+      addEventListener('pointerup', () => { down = false; el.classList.remove('is-drag'); });
+      addEventListener('pointermove', (e) => { if (down) el.scrollLeft = sl - (e.clientX - sx); });
+    }
+  </script>
+</Base>
+
+<style>
+  .ab__title em { color: var(--sage); }
+  .ab__img { aspect-ratio: 21 / 9; }
+  .ab__story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+  .ab__big { font-size: clamp(2rem, 1rem + 3vw, 3.8rem); letter-spacing: -0.04em; line-height: 1.04; font-weight: 500; margin-top: 24px; position: sticky; top: calc(var(--nav-h) + 40px); }
+  .ab__prose { font-size: 1.08rem; }
+  .ab__melon { margin-top: 32px; aspect-ratio: 4 / 3; }
+  .ab__vm { padding-block: clamp(80px, 10vw, 160px); }
+  .ab__vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+  .ab__vm .h2 { margin-top: 20px; }
+  .ab__vm em, .ab__vm .sun { color: var(--sun); }
+  .tl__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+  .tl__head h2 { margin-top: 20px; }
+  .tl__head em { color: var(--sage); }
+  .tl { overflow-x: auto; margin-top: clamp(48px, 6vw, 80px); scrollbar-width: none; cursor: grab; padding-inline: var(--gutter); }
+  .tl::-webkit-scrollbar { display: none; }
+  .tl.is-drag { cursor: grabbing; user-select: none; }
+  .tl__track { list-style: none; padding: 0; display: flex; width: max-content; position: relative; }
+  .tl__track::before { content: ''; position: absolute; left: 0; right: 0; top: calc(clamp(3rem, 2rem + 3vw, 5rem) + 22px); height: 1px; background: var(--line); }
+  .tl__item { width: clamp(220px, 22vw, 300px); padding-right: 32px; }
+  .tl__year { display: block; font-size: clamp(3rem, 2rem + 3vw, 5rem); font-weight: 500; letter-spacing: -0.06em; line-height: 1; }
+  .tl__dot { display: block; width: 13px; height: 13px; border-radius: 50%; background: var(--bone); box-shadow: inset 0 0 0 2px var(--ink); margin: 16px 0 18px; position: relative; }
+  .tl__item:hover .tl__dot { background: var(--sun); box-shadow: none; }
+  .tl__item p { color: var(--muted); max-width: 24ch; }
+  .tl__item--now .tl__year { color: var(--sage); font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
+  .vals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: clamp(48px, 6vw, 80px); }
+  .val { padding: clamp(24px, 3vw, 36px); border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line); min-height: 260px; display: flex; flex-direction: column; gap: 14px; transition: background-color 0.4s, color 0.4s; }
+  .val .mono { color: var(--sun); }
+  .val h3 { margin-top: auto; }
+  .val:hover { background: var(--ink); color: var(--bone); }
+  .val:hover .muted { color: rgba(242, 237, 227, 0.65); }
+  .jk { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .jk blockquote { margin-top: 24px; }
+  .jk blockquote em { color: var(--leaf); }
+  .jk__list { list-style: none; padding: 0; margin-top: 16px; }
+  .jk__list li { display: flex; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .jk__list :global(svg) { color: var(--leaf); flex: none; }
+  @media (max-width: 900px) {
+    .ab__story, .ab__vm-grid, .jk { grid-template-columns: 1fr; }
+    .ab__big { position: static; }
+    .vals { grid-template-columns: 1fr; }
+    .ab__img { aspect-ratio: 4 / 3; }
+  }
+</style>

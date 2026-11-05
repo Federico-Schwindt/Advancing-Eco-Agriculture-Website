@@ -1,0 +1,211 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, shopCategories, url, catalog } from '../../lib/site';
+
+// Commercial first, then market garden; within line keep curated order.
+const order = ['biocoat-gold', 'spectrum', 'macropak', 'micropak', 'rejuvenate', 'seashield', 'revenant-charge', 'holocal', 'photomag', 'accelerate', 'seedflare', 'calguard'];
+const rank = (s: string) => { const i = order.indexOf(s); return i === -1 ? 99 : i; };
+const list = [...products].sort((a, b) => (a.line === b.line ? rank(a.slug) - rank(b.slug) : a.line === 'commercial' ? -1 : 1));
+---
+<Base title="Shop" description="Shop AEA’s regenerative plant nutrition: biological inoculants, seed treatments, soil primers and mineral nutrition — many OMRI listed.">
+  <section class="phero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span>/</span><span>Shop</span></nav>
+      <div class="shop-hero">
+        <h1 class="display-hero" data-split>The <em class="serif">toolkit.</em></h1>
+        <div class="shop-hero__side" data-reveal style="--d:300">
+          <p class="lead">Biological and mineral nutrition designed to correct imbalances, build immunity and bring soils back to life. Naturally derived, made in the USA.</p>
+          <div class="shop-hero__badges">
+            <span class="chip"><Icon name="shield" size={14} /> Many OMRI listed</span>
+            <span class="chip"><Icon name="truck" size={14} /> Ships from 5 US warehouses</span>
+            <span class="chip"><Icon name="people" size={14} /> Agronomist support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toolbar" data-toolbar>
+    <div class="wrap toolbar__inner">
+      <div class="toolbar__cats" role="tablist" aria-label="Category">
+        {shopCategories.map((c, i) => (
+          <button type="button" role="tab" class="tchip" data-cat={c.key} aria-selected={i === 0 ? 'true' : 'false'}>{c.label}</button>
+        ))}
+      </div>
+      <div class="toolbar__right">
+        <div class="seg" role="group" aria-label="Product line">
+          <button type="button" data-line-btn="commercial" aria-pressed="true">Commercial</button>
+          <button type="button" data-line-btn="market-garden" aria-pressed="false">Market garden</button>
+        </div>
+        <label class="search">
+          <Icon name="search" size={18} />
+          <span class="sr-only">Search products</span>
+          <input type="search" placeholder="Search" data-search autocomplete="off" />
+        </label>
+        <label class="sr-only" for="sort">Sort</label>
+        <select id="sort" class="input sort" data-sort>
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low → high</option>
+          <option value="price-desc">Price: high → low</option>
+          <option value="az">A → Z</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap shop">
+    <div class="shop__meta">
+      <p class="mono muted"><span class="tnum" data-count-shown>{catalog.length}</span> products</p>
+      <button type="button" class="state-note" data-open-state>
+        <Icon name="pin" size={16} />
+        <span data-state-note>Select your state to see what ships to you</span>
+      </button>
+    </div>
+    <h2 class="sr-only">Products</h2>
+    <div class="shop__grid" data-grid>
+      {list.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
+    </div>
+    <div class="shop__empty" data-empty hidden>
+      <Icon name="sprout" size={48} />
+      <p class="h3">Nothing here — yet.</p>
+      <p class="muted">Try another category or clear your search.</p>
+      <button type="button" class="btn btn--sm" data-reset>Reset filters</button>
+    </div>
+
+    <aside class="primer">
+      <div class="primer__text">
+        <p class="eyebrow">Not sure where to start?</p>
+        <h2 class="h2">Start with the <em class="serif">Soil Primer.</em></h2>
+        <p class="muted">Our foundational application: Spectrum, Rejuvenate, SeaShield and Revenant Charge work together to digest residues, wake up biology and prime soils for the season.</p>
+        <div class="primer__btns">
+          <a class="btn btn--sun" href={url('/shop/?c=Soil%20Priming')} data-primer>Shop soil priming <Icon name="arrow" class="arrow" /></a>
+          <a class="btn btn--ghost" href={url('/contact/')}>Get a custom protocol</a>
+        </div>
+      </div>
+      <div class="primer__img"><img src={url('/media/ground-1344.avif')} alt="" width="1344" height="752" loading="lazy" decoding="async" /></div>
+    </aside>
+  </section>
+
+  <script>
+    import { State } from '../../scripts/app';
+    const $ = <T extends Element = HTMLElement>(s: string) => document.querySelector<T>(s)!;
+    const $$ = <T extends Element = HTMLElement>(s: string) => Array.from(document.querySelectorAll<T>(s));
+    const grid = $('[data-grid]');
+    const cards = $$('[data-product]');
+    const featuredOrder = cards.slice();
+    const params = new URLSearchParams(location.search);
+    const st = { cat: params.get('c') || 'all', line: params.get('line') || 'commercial', q: params.get('q') || '', sort: params.get('sort') || 'featured' };
+    const state = () => State.get();
+
+    function apply(animate = true) {
+      const run = () => {
+        const s = state();
+        const q = st.q.trim().toLowerCase();
+        // state-specific replacements (e.g. Revenant Charge – California Only)
+        const replacements = new Set(cards.filter((c) => c.dataset.stateOnly && c.dataset.stateOnly === s).map((c) => c.dataset.base));
+        let shown = 0;
+        const sorted = st.sort === 'featured' ? featuredOrder.slice() : cards.slice().sort((a, b) => {
+          if (st.sort === 'az') return a.dataset.name!.localeCompare(b.dataset.name!);
+          const d = +a.dataset.price! - +b.dataset.price!;
+          return st.sort === 'price-asc' ? d : -d;
+        });
+        sorted.forEach((c) => {
+          const so = c.dataset.stateOnly;
+          let ok = c.dataset.line === st.line;
+          if (ok && st.cat !== 'all') ok = c.dataset.cats!.split('|').includes(st.cat);
+          if (ok && q) ok = c.dataset.name!.includes(q) || c.dataset.cats!.toLowerCase().includes(q);
+          if (ok && so) ok = so === s;
+          if (ok && !so && s && replacements.has(c.dataset.base)) ok = false;
+          c.hidden = !ok;
+          if (ok) shown++;
+          grid.appendChild(c);
+        });
+        $('[data-count-shown]').textContent = String(shown);
+        $('[data-empty]').hidden = shown > 0;
+        $$<HTMLButtonElement>('[data-cat]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.cat === st.cat)));
+        $$<HTMLButtonElement>('[data-line-btn]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lineBtn === st.line)));
+        $('[data-state-note]').textContent = s ? `Showing products that ship to ${s} · change` : 'Select your state to see what ships to you';
+        const u = new URL(location.href);
+        st.cat !== 'all' ? u.searchParams.set('c', st.cat) : u.searchParams.delete('c');
+        st.line !== 'commercial' ? u.searchParams.set('line', st.line) : u.searchParams.delete('line');
+        st.q ? u.searchParams.set('q', st.q) : u.searchParams.delete('q');
+        st.sort !== 'featured' ? u.searchParams.set('sort', st.sort) : u.searchParams.delete('sort');
+        history.replaceState(null, '', u);
+      };
+      const d = document as any;
+      if (animate && d.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.startViewTransition(run);
+      else run();
+    }
+    cards.forEach((c, i) => (c.style.viewTransitionName = `p${i}`));
+
+    $$<HTMLButtonElement>('[data-cat]').forEach((b) => b.addEventListener('click', () => { st.cat = b.dataset.cat!; apply(); }));
+    $$<HTMLButtonElement>('[data-line-btn]').forEach((b) => b.addEventListener('click', () => { st.line = b.dataset.lineBtn!; if (st.line === 'market-garden') st.cat = 'all'; apply(); }));
+    const search = $<HTMLInputElement>('[data-search]');
+    search.value = st.q;
+    let t: number | undefined;
+    search.addEventListener('input', () => { clearTimeout(t); t = window.setTimeout(() => { st.q = search.value; apply(false); }, 120); });
+    const sort = $<HTMLSelectElement>('[data-sort]');
+    sort.value = st.sort;
+    sort.addEventListener('change', () => { st.sort = sort.value; apply(); });
+    $('[data-reset]').addEventListener('click', () => { Object.assign(st, { cat: 'all', line: 'commercial', q: '', sort: 'featured' }); search.value = ''; sort.value = 'featured'; apply(); });
+    document.addEventListener('state:change', () => apply());
+    apply(false);
+  </script>
+</Base>
+
+<style>
+  .shop-hero { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px 64px; flex-wrap: wrap; }
+  .shop-hero h1 em { color: var(--sage); }
+  .shop-hero__side { max-width: 460px; display: flex; flex-direction: column; gap: 20px; }
+  .shop-hero__badges { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .toolbar { position: sticky; top: 0; z-index: 30; padding-block: 12px; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(16px) saturate(1.5); -webkit-backdrop-filter: blur(16px) saturate(1.5); border-block: 1px solid var(--line); transition: top 0.6s var(--ease); }
+  :global(.nav:not(.is-hidden)) ~ main .toolbar { top: var(--nav-h); }
+  .toolbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .toolbar__cats { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 92%, transparent); padding-right: 24px; }
+  .toolbar__cats::-webkit-scrollbar { display: none; }
+  .tchip { height: 40px; padding: 0 16px; border-radius: 999px; font-size: 0.88rem; font-weight: 500; white-space: nowrap; box-shadow: inset 0 0 0 1px var(--line); transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; }
+  .tchip:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+  .tchip[aria-selected='true'] { background: var(--ink); color: var(--paper); box-shadow: none; }
+  .toolbar__right { display: flex; align-items: center; gap: 8px; flex: none; }
+  .seg { display: inline-flex; padding: 4px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); }
+  .seg button { height: 32px; padding: 0 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 500; color: var(--muted); transition: background-color 0.3s, color 0.3s; }
+  .seg button[aria-pressed='true'] { background: var(--sun); color: var(--ink); }
+  .search { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); }
+  .search:focus-within { box-shadow: inset 0 0 0 2px var(--ink); color: var(--fg); }
+  .search input { border: 0; background: none; outline: none; width: 140px; color: var(--fg); }
+  .sort { height: 42px; border-radius: 999px; width: auto; font-size: 0.88rem; }
+  @media (max-width: 1100px) {
+    .toolbar__inner { flex-direction: column; align-items: stretch; }
+    .toolbar__right { flex-wrap: wrap; }
+    .search { flex: 1; }
+    .search input { width: 100%; }
+  }
+
+  .shop { padding-top: 28px; padding-bottom: clamp(80px, 10vw, 160px); }
+  .shop__meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  .state-note { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted); padding: 8px 14px; border-radius: 999px; background: var(--bone); transition: color 0.3s; }
+  .state-note:hover { color: var(--fg); }
+  .shop__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 1200px) { .shop__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 820px) { .shop__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+  @media (max-width: 480px) {
+    .shop__grid :global(.pcard__body) { padding: 12px; }
+    .shop__grid :global(.pcard__name) { font-size: 1rem; }
+    .shop__grid :global(.pcard__tag) { display: none; }
+    .shop__grid :global(.pcard__tags) { display: none; }
+    .shop__grid :global(.pcard__add) { width: 38px; height: 38px; }
+  }
+  .shop__empty { text-align: center; display: grid; justify-items: center; gap: 12px; padding: 80px 0; color: var(--muted); }
+  .shop__empty .h3 { color: var(--fg); }
+
+  .primer { margin-top: clamp(64px, 8vw, 120px); display: grid; grid-template-columns: 1fr 1fr; border-radius: calc(var(--radius) + 8px); overflow: hidden; background: var(--ink); color: var(--bone); --muted: rgba(242, 237, 227, 0.65); --line: rgba(242, 237, 227, 0.2); --fg: var(--bone); }
+  .primer__text { padding: clamp(28px, 5vw, 72px); display: flex; flex-direction: column; gap: 18px; justify-content: center; }
+  .primer__text em { color: var(--sun); }
+  .primer__btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+  .primer__img { min-height: 320px; }
+  .primer__img img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 860px) { .primer { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url } from '../lib/site';
+---
+<Base title="Not found" navTone="light">
+  <section class="nf theme-dark">
+    <img src={url('/media/roots-1344.avif')} alt="" width="1344" height="752" />
+    <div class="wrap nf__inner">
+      <p class="eyebrow">Error 404 · −60 cm</p>
+      <h1 class="display-hero">You’ve dug <em class="serif">too deep.</em></h1>
+      <p class="lead">This page doesn’t exist — but the roots go everywhere. Let’s get you back to the surface.</p>
+      <div class="nf__btns">
+        <a class="btn btn--sun" href={url('/')}>Back to the surface <Icon name="arrow" class="arrow" /></a>
+        <a class="btn btn--glass" href={url('/shop/')}>Shop products</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; isolation: isolate; }
+  .nf img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.45; }
+  .nf__inner { padding-top: var(--nav-h); }
+  .nf h1 { margin-top: 20px; color: #fff; }
+  .nf h1 em { color: var(--sun); }
+  .nf .lead { margin-top: 24px; }
+  .nf__btns { display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
+</style>

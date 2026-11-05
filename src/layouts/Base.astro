@@ -1,0 +1,108 @@
+---
+import '@fontsource-variable/geist/wght.css';
+import '@fontsource-variable/geist-mono/wght.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource/instrument-serif/latin-400.css';
+import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CartDrawer from '../components/CartDrawer.astro';
+import StateModal from '../components/StateModal.astro';
+import { url } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  navTone?: 'light' | 'dark';
+  preload?: { href: string; as: string; type?: string; media?: string }[];
+}
+const {
+  title,
+  description = 'Advancing Eco Agriculture — regenerative plant nutrition, plant-sap science and agronomic consulting that help growers raise crops naturally resistant to pests and disease.',
+  navTone = 'dark',
+  preload = [],
+} = Astro.props;
+const fullTitle = title ? `${title} — Advancing Eco Agriculture` : 'Advancing Eco Agriculture — Healthy plants defend themselves';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const og = new URL(url('/media/og.jpg'), Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <!-- Concept redesign: keep out of search indexes so it never competes with the official site -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0d0c09" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={og} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" sizes="32x32" href={url('/favicon-32.png')} />
+    <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
+    <link rel="preload" href={geistWoff2} as="font" type="font/woff2" crossorigin />
+    {preload.map((p) => <link rel="preload" href={p.href} as={p.as} type={p.type} media={p.media} fetchpriority="high" />)}
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav tone={navTone} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <CartDrawer />
+    <StateModal />
+    <div class="toast" role="status" aria-live="polite" data-toast>
+      <img alt="" width="36" height="36" data-toast-img />
+      <span data-toast-text>Added to cart</span>
+      <button type="button" data-open-cart>View cart</button>
+    </div>
+    <script is:inline>
+      (function () {
+        var vh = innerHeight, d = document;
+        function split(el) {
+          if (el.dataset.splitDone) return;
+          el.dataset.splitDone = '1';
+          var i = 0;
+          Array.prototype.slice.call(el.childNodes).forEach(function (n) {
+            if (n.nodeType === 3) {
+              var f = d.createDocumentFragment();
+              n.textContent.split(/(\s+)/).forEach(function (part) {
+                if (!part) return;
+                if (/^\s+$/.test(part)) { f.appendChild(d.createTextNode(part)); return; }
+                var w = d.createElement('span'), s = d.createElement('span');
+                w.className = 'w'; s.textContent = part; s.style.setProperty('--i', i++);
+                w.appendChild(s); f.appendChild(w);
+              });
+              n.parentNode.replaceChild(f, n);
+            } else if (n.nodeType === 1 && n.tagName !== 'BR') {
+              var w2 = d.createElement('span'), s2 = d.createElement('span');
+              w2.className = 'w'; s2.style.setProperty('--i', i++);
+              n.parentNode.replaceChild(w2, n); s2.appendChild(n); w2.appendChild(s2);
+            }
+          });
+        }
+        d.querySelectorAll('[data-split]').forEach(split);
+        d.querySelectorAll('[data-split],[data-reveal]').forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < vh && r.bottom > 0) el.classList.add('is-in');
+        });
+        // safety net: never leave content hidden if the app bundle fails to load
+        setTimeout(function () {
+          if (!window.__appReady) d.querySelectorAll('[data-split],[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+        }, 4000);
+      })();
+    </script>
+    <script>
+      import '../scripts/app';
+    </script>
+    <slot name="scripts" />
+  </body>
+</html>

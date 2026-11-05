@@ -1,0 +1,338 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { pyramid, coreConcepts, products, url } from '../lib/site';
+const m = (p: string) => url(`/media/${p}`);
+const bySlug = (s: string) => products.find((p) => p.slug === s);
+
+// Illustrative sap report (sample values, normalized to a 0–100 scale; target band = optimal range)
+const sap = [
+  { k: 'Brix', n: 'Sugars', v: 38, lo: 55, hi: 80, unit: '%', raw: '6.2' },
+  { k: 'NO₃', n: 'Nitrate', v: 78, lo: 15, hi: 40, unit: 'ppm', raw: '1,240' },
+  { k: 'NH₄', n: 'Ammonium', v: 30, lo: 10, hi: 35, unit: 'ppm', raw: '48' },
+  { k: 'P', n: 'Phosphorus', v: 52, lo: 45, hi: 70, unit: 'ppm', raw: '310' },
+  { k: 'K', n: 'Potassium', v: 66, lo: 45, hi: 70, unit: 'ppm', raw: '4,980' },
+  { k: 'Ca', n: 'Calcium', v: 28, lo: 45, hi: 72, unit: 'ppm', raw: '640' },
+  { k: 'Mg', n: 'Magnesium', v: 41, lo: 45, hi: 70, unit: 'ppm', raw: '220' },
+  { k: 'S', n: 'Sulfur', v: 57, lo: 40, hi: 68, unit: 'ppm', raw: '180' },
+  { k: 'Fe', n: 'Iron', v: 22, lo: 40, hi: 70, unit: 'ppm', raw: '1.9' },
+  { k: 'Mn', n: 'Manganese', v: 34, lo: 42, hi: 70, unit: 'ppm', raw: '3.1' },
+  { k: 'Zn', n: 'Zinc', v: 49, lo: 40, hi: 68, unit: 'ppm', raw: '4.4' },
+  { k: 'B', n: 'Boron', v: 61, lo: 40, hi: 66, unit: 'ppm', raw: '2.8' },
+  { k: 'Mo', n: 'Molybdenum', v: 18, lo: 38, hi: 65, unit: 'ppm', raw: '0.04' },
+];
+const status = (s: (typeof sap)[number]) => (s.v < s.lo ? 'Low' : s.v > s.hi ? 'High' : 'Optimal');
+
+const firsts = [
+  'Provide regenerative agriculture consulting',
+  'Manufacture inputs designed specifically for regenerative agriculture',
+  'Succeed at scale in fruit and vegetable crops',
+  'Significantly reduce pesticides in fruit and vegetable crops',
+  'Share agronomic knowledge freely',
+  'Collect extensive agronomic data to guide decisions',
+  'Eliminate yield drag during a regenerative transition',
+];
+const sources = [
+  { t: 'Crop Health Labs', d: 'The most comprehensive plant sap analysis available.', icon: 'drop' },
+  { t: 'FieldLark AI', d: 'The world’s first regenerative AI agronomist.', icon: 'sun' },
+  { t: 'Croptix', d: 'A portable nutrient sensor delivering immediate in-field readings.', icon: 'chart' },
+  { t: 'GenTrek Labs', d: 'Actionable soil DNA testing for farmers.', icon: 'flask' },
+];
+---
+<Base title="The science" description="The Plant Health Pyramid, AEA’s five core concepts, and plant sap analysis — the science behind regenerative crop immunity." navTone="light">
+  <section class="shero theme-dark">
+    <video class="shero__video" muted loop playsinline preload="none" aria-hidden="true" data-lazy-video poster={m('leaf-960.avif')}>
+      <source data-src={m('leaf-960.mp4')} type="video/mp4" />
+    </video>
+    <div class="shero__shade"></div>
+    <div class="wrap shero__inner">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span>/</span><span>Science</span></nav>
+      <h1 class="display-hero" data-split>Plants have an <em class="serif">immune</em> system.</h1>
+      <p class="lead" data-reveal style="--d:400">We don’t guess — we test, analyze and recommend based on scientific data, nineteen years of experience and one of the largest plant sap databases in the world.</p>
+      <div class="shero__jump" data-reveal style="--d:550">
+        <a href="#concepts" class="chip">5 core concepts</a>
+        <a href="#pyramid" class="chip">Plant Health Pyramid</a>
+        <a href="#sap" class="chip">Sap analysis</a>
+        <a href="#rd" class="chip">R&amp;D</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core concepts -->
+  <section class="section wrap concepts" id="concepts">
+    <div class="concepts__head">
+      <div class="concepts__sticky">
+        <p class="eyebrow">The foundation</p>
+        <h2 class="h1" data-split>Five <em class="serif">core</em> concepts.</h2>
+        <p class="lead">Fundamental to the success of regenerative agriculture — and the foundation of everything we do.</p>
+      </div>
+    </div>
+    <ol class="concepts__list">
+      {coreConcepts.map((c, i) => (
+        <li class="concept" data-reveal>
+          <span class="concept__n">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="h3">{c.t}</h3>
+            <p class="muted">{c.d}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Pyramid -->
+  <section class="section theme-dark" id="pyramid">
+    <div class="wrap">
+      <div class="py__head">
+        <p class="eyebrow">The Plant Health Pyramid</p>
+        <h2 class="h1" data-split>Four levels to <em class="serif">complete</em> immunity.</h2>
+        <p class="lead">“What we have come to accept as ‘normal’ is plants which are photosynthesizing at only 25% of their inherent genetic capacity.” — John Kempf</p>
+      </div>
+      <div class="py__tabs" role="tablist" aria-label="Pyramid levels">
+        {pyramid.map((l, i) => (
+          <button type="button" role="tab" id={`tab-${l.level}`} aria-controls={`panel-${l.level}`} aria-selected={i === 0 ? 'true' : 'false'} data-ptab={l.level} style={`--w:${100 - i * 16}%`}>
+            <span class="py__bar"></span>
+            <span class="mono">Level 0{l.level}</span>
+            <b>{l.short}</b>
+          </button>
+        ))}
+      </div>
+      {pyramid.map((l, i) => (
+        <div class="py__panel" role="tabpanel" id={`panel-${l.level}`} aria-labelledby={`tab-${l.level}`} data-ppanel={l.level} hidden={i !== 0}>
+          <div class="py__main">
+            <h3 class="h2">{l.title}</h3>
+            <p class="lead">{l.process}</p>
+            <div class="py__prods">
+              {l.products.map((s) => { const p = bySlug(s); return p && (
+                <a href={url(`/shop/${p.slug}/`)} class="py__prod">
+                  <img src={url(`/img/products/${p.image}-320.webp`)} alt="" width="64" height="64" loading="lazy" />
+                  <span><b>{p.name}</b><small>{p.tagline}</small></span>
+                </a>
+              ); })}
+            </div>
+          </div>
+          <div class="py__side">
+            <div class="py__card">
+              <p class="mono muted">Resists</p>
+              <p class="h3" style="margin-top:8px">{l.resists}</p>
+              <ul>{l.pests.map((p) => <li>{p}</li>)}</ul>
+            </div>
+            <div class="py__card">
+              <p class="mono muted">{l.needs[0].n ? 'Minerals required' : 'Driven by'}</p>
+              <ul class="py__needs">{l.needs.map((n) => <li><b>{n.sym}</b>{n.name}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Sap analysis -->
+  <section class="section wrap sap" id="sap">
+    <div class="sap__text">
+      <p class="eyebrow">Plant sap analysis</p>
+      <h2 class="h1" data-split>A blood test for <em class="serif">crops.</em></h2>
+      <p class="lead">Sap analysis captures a snapshot of the nutrients in play at sampling — 23 data points that reveal excesses and deficiencies weeks before symptoms appear in the field.</p>
+      <ul class="sap__list">
+        <li><Icon name="check" size={18} /> Identify nutrient crises before they occur</li>
+        <li><Icon name="check" size={18} /> Track nutrient flow against target values</li>
+        <li><Icon name="check" size={18} /> Guide in-season foliar and ground applications</li>
+        <li><Icon name="check" size={18} /> Real-time, plant-available — unlike tissue or soil tests</li>
+      </ul>
+    </div>
+    <figure class="report" data-reveal="scale" aria-labelledby="report-title">
+      <div class="report__head">
+        <div>
+          <p class="mono muted">Sample report · Apple, new growth</p>
+          <p class="report__title" id="report-title">Sap nutrient profile</p>
+        </div>
+        <span class="chip">Illustrative</span>
+      </div>
+      <div class="report__legend mono" aria-hidden="true">
+        <span><i class="lg lg--band"></i>Target range</span>
+        <span><i class="lg lg--dot"></i>Measured</span>
+      </div>
+      <table class="report__table">
+        <caption class="sr-only">Sample sap analysis: measured value, target range and status per nutrient</caption>
+        <thead class="sr-only"><tr><th>Nutrient</th><th>Measured</th><th>Status</th></tr></thead>
+        <tbody>
+          {sap.map((s, i) => {
+            const st = status(s);
+            return (
+              <tr class={`row row--${st.toLowerCase()}`} tabindex="0" style={`--v:${s.v}%;--lo:${s.lo}%;--hi:${s.hi}%;--i:${i}`}>
+                <th scope="row"><b>{s.k}</b><span>{s.n}</span></th>
+                <td class="row__track">
+                  <span class="row__band"></span>
+                  <span class="row__dot"></span>
+                  <span class="row__tip" role="tooltip">{s.n}: {s.raw} {s.unit} · {st}</span>
+                </td>
+                <td class="row__status"><span class="sdot"></span>{st}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <figcaption class="muted">Sample values for illustration. Low calcium and iron with excess nitrate points to Level 1–2 limitations — a typical in-season correction.</figcaption>
+    </figure>
+  </section>
+
+  <!-- R&D -->
+  <section class="section theme-moss" id="rd">
+    <div class="wrap">
+      <div class="rd__grid">
+        <div>
+          <p class="eyebrow">Research & development</p>
+          <h2 class="h1" data-split>Data-driven <em class="serif">regeneration.</em></h2>
+          <p class="lead">Founded in an Amish barn in 2006, AEA was the first company to:</p>
+          <ol class="firsts">
+            {firsts.map((f, i) => <li data-reveal style={`--d:${i * 60}`}><span class="mono">{String(i + 1).padStart(2, '0')}</span>{f}</li>)}
+          </ol>
+        </div>
+        <div class="rd__imgs">
+          <div class="media" data-reveal="clip"><img src={url('/img/aea/story-lab.avif')} alt="AEA laboratory in Middlefield, Ohio" width="862" height="829" loading="lazy" decoding="async" /></div>
+          <div class="media" data-reveal="clip" style="--d:150"><img src={url('/img/aea/story-beakers.avif')} alt="" width="862" height="829" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+      <div class="sources">
+        {sources.map((s, i) => (
+          <article class="source" data-reveal style={`--d:${i * 80}`}>
+            <span class="tile-ic"><Icon name={s.icon} size={20} /></span>
+            <h3>{s.t}</h3>
+            <p class="muted">{s.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-ptab]'));
+    const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-ppanel]'));
+    const show = (n: string) => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.ptab === n)));
+      panels.forEach((p) => {
+        const on = p.dataset.ppanel === n;
+        p.hidden = !on;
+        if (on) p.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 600, easing: 'cubic-bezier(.22,1,.36,1)' });
+      });
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => show(t.dataset.ptab!));
+      t.addEventListener('keydown', (e) => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        const nt = tabs[(i + d + tabs.length) % tabs.length];
+        nt.focus(); show(nt.dataset.ptab!);
+      });
+    });
+  </script>
+</Base>
+
+<style>
+  .shero { position: relative; min-height: 92svh; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; padding-bottom: clamp(48px, 7vw, 96px); }
+  .shero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+  .shero__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13, 12, 9, 0.9), rgba(13, 12, 9, 0.2) 70%), linear-gradient(0deg, rgba(13, 12, 9, 0.7), transparent 50%); }
+  .shero__inner { padding-top: calc(var(--nav-h) + 60px); }
+  .shero .crumbs { color: rgba(255, 255, 255, 0.6); }
+  .shero h1 { color: #fff; max-width: 10ch; }
+  .shero h1 em { color: var(--leaf); }
+  .shero .lead { margin-top: 28px; color: rgba(255, 255, 255, 0.78); }
+  .shero__jump { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px; }
+  .shero__jump .chip { color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3); height: 36px; padding: 0 16px; transition: background-color 0.3s, color 0.3s; }
+  .shero__jump .chip:hover { background: var(--sun); color: var(--ink); box-shadow: none; }
+
+  .concepts { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(32px, 6vw, 96px); }
+  .concepts__sticky { position: sticky; top: calc(var(--nav-h) + 40px); }
+  .concepts__sticky h2 { margin-top: 20px; }
+  .concepts__sticky h2 em { color: var(--sage); }
+  .concepts__sticky .lead { margin-top: 20px; }
+  .concepts__list { list-style: none; padding: 0; }
+  .concept { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 32px 0; border-top: 1px solid var(--line); }
+  .concept:last-child { border-bottom: 1px solid var(--line); }
+  .concept__n { font-size: 3rem; font-weight: 500; letter-spacing: -0.06em; line-height: 1; color: var(--sun); }
+  .concept p { margin-top: 12px; max-width: 54ch; }
+  @media (max-width: 900px) { .concepts { grid-template-columns: 1fr; } .concepts__sticky { position: static; } .concept { grid-template-columns: 60px 1fr; } .concept__n { font-size: 2.2rem; } }
+
+  .py__head { max-width: 900px; }
+  .py__head h2 { margin-top: 20px; }
+  .py__head h2 em { color: var(--sun); }
+  .py__head .lead { margin-top: 24px; font-style: italic; }
+  .py__tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: clamp(48px, 6vw, 80px); }
+  .py__tabs button { text-align: left; display: flex; flex-direction: column; gap: 6px; padding: 16px 0 0; color: var(--muted); transition: color 0.3s; }
+  .py__tabs button b { font-size: 1.3rem; font-weight: 500; letter-spacing: -0.02em; }
+  .py__bar { height: 6px; width: var(--w); border-radius: 6px; background: rgba(242, 237, 227, 0.14); margin-bottom: 10px; transition: background-color 0.4s; }
+  .py__tabs button:hover { color: var(--fg); }
+  .py__tabs button[aria-selected='true'] { color: var(--fg); }
+  .py__tabs button[aria-selected='true'] .py__bar { background: var(--sun); box-shadow: 0 0 20px rgba(249, 177, 52, 0.5); }
+  .py__tabs button[aria-selected='true'] .mono { color: var(--sun); }
+  .py__panel { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(28px, 5vw, 72px); margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--line); }
+  .py__main .lead { margin-top: 20px; }
+  .py__prods { display: grid; gap: 10px; margin-top: 32px; }
+  .py__prod { display: flex; align-items: center; gap: 16px; padding: 10px 18px 10px 10px; border-radius: 18px; background: rgba(242, 237, 227, 0.06); transition: background-color 0.3s, color 0.3s; }
+  .py__prod:hover { background: var(--sun); color: var(--ink); }
+  .py__prod img { width: 64px; height: 64px; object-fit: contain; border-radius: 12px; background: var(--bone); padding: 4px; }
+  .py__prod span { display: flex; flex-direction: column; }
+  .py__prod small { opacity: 0.7; font-size: 0.85rem; }
+  .py__side { display: grid; gap: 12px; align-content: start; }
+  .py__card { padding: 24px; border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line); }
+  .py__card ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .py__card li { padding: 6px 12px; border-radius: 999px; background: rgba(242, 237, 227, 0.08); font-size: 0.85rem; }
+  .py__needs li { display: flex; gap: 8px; align-items: center; }
+  .py__needs b { color: var(--sun); }
+  @media (max-width: 900px) { .py__tabs { grid-template-columns: repeat(2, 1fr); } .py__panel { grid-template-columns: 1fr; } }
+
+  .sap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .sap__text h2 { margin-top: 20px; }
+  .sap__text h2 em { color: var(--sage); }
+  .sap__text .lead { margin-top: 24px; }
+  .sap__list { list-style: none; padding: 0; display: grid; gap: 12px; margin-top: 28px; }
+  .sap__list li { display: flex; gap: 12px; align-items: center; }
+  .sap__list :global(svg) { color: var(--sage); flex: none; }
+  .report { --good: #6f9a3a; --low: #e0a020; --high: #c4562e; padding: clamp(20px, 3vw, 32px); border-radius: calc(var(--radius) + 6px); background: var(--paper); box-shadow: 0 0 0 1px var(--line), 0 40px 80px -40px rgba(13, 12, 9, 0.35); }
+  .report__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .report__title { font-size: 1.5rem; font-weight: 550; letter-spacing: -0.03em; margin-top: 4px; }
+  .report__legend { display: flex; gap: 18px; margin-top: 16px; color: var(--muted); font-size: 0.65rem; }
+  .report__legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .lg { display: inline-block; }
+  .lg--band { width: 18px; height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--good) 26%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--good) 50%, transparent); }
+  .lg--dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--paper); }
+  .report__table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .row th { text-align: left; font-weight: 450; padding: 7px 12px 7px 0; width: 120px; white-space: nowrap; }
+  .row th b { display: inline-block; width: 42px; font-weight: 600; }
+  .row th span { color: var(--muted); font-size: 0.78rem; }
+  .row td { padding: 7px 0; }
+  .row__track { position: relative; width: 100%; height: 26px; }
+  .row__track::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: var(--line); border-radius: 2px; }
+  .row__band { position: absolute; top: 50%; height: 10px; transform: translateY(-50%); left: var(--lo); width: calc(var(--hi) - var(--lo)); border-radius: 4px; background: color-mix(in srgb, var(--good) 26%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--good) 50%, transparent); }
+  .row__dot { position: absolute; top: 50%; left: var(--v); width: 12px; height: 12px; border-radius: 50%; transform: translate(-50%, -50%) scale(0); background: var(--ink); box-shadow: 0 0 0 2px var(--paper); transition: transform 0.7s var(--ease); transition-delay: calc(var(--i) * 50ms + 300ms); }
+  :global(.report.is-in) .row__dot { transform: translate(-50%, -50%) scale(1); }
+  .row__tip { position: absolute; bottom: calc(100% + 4px); left: var(--v); transform: translateX(-50%); background: var(--ink); color: var(--bone); font-size: 0.75rem; padding: 6px 10px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 2; }
+  .row:hover .row__tip, .row:focus-visible .row__tip { opacity: 1; }
+  .row:hover th, .row:focus-visible th { color: var(--fg); }
+  .row:focus-visible { outline: 2px solid var(--sun); outline-offset: 2px; }
+  .row__status { width: 92px; padding-left: 14px !important; font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+  .sdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .row--optimal .sdot { background: var(--good); }
+  .row--low .sdot { background: var(--low); }
+  .row--high .sdot { background: var(--high); }
+  .report figcaption { margin-top: 16px; font-size: 0.8rem; }
+  @media (max-width: 1000px) { .sap { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .row th span { display: none; } .row th { width: 50px; } }
+
+  .rd__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .rd__grid h2 { margin-top: 20px; }
+  .rd__grid h2 em { color: var(--leaf); }
+  .rd__grid .lead { margin-top: 24px; }
+  .firsts { list-style: none; padding: 0; margin-top: 24px; }
+  .firsts li { display: flex; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 1.05rem; }
+  .firsts .mono { color: var(--leaf); padding-top: 4px; }
+  .rd__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rd__imgs .media { aspect-ratio: 3 / 4; }
+  .rd__imgs .media:last-child { margin-top: 64px; }
+  .sources { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: clamp(56px, 7vw, 100px); }
+  .source { padding: 24px; border-radius: var(--radius); background: rgba(242, 237, 227, 0.06); box-shadow: inset 0 0 0 1px var(--line); display: flex; flex-direction: column; gap: 10px; }
+  .source h3 { font-size: 1.25rem; letter-spacing: -0.02em; margin-top: 24px; }
+  .tile-ic { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--leaf); color: var(--ink); }
+  @media (max-width: 1000px) { .rd__grid { grid-template-columns: 1fr; } .sources { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .sources { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,214 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { states, url } from '../../lib/site';
+---
+<Base title="Checkout" description="Secure checkout.">
+  <section class="co wrap">
+    <div class="co__banner">
+      <Icon name="lock" size={16} />
+      <span><b>Demo checkout.</b> No payment is processed. In production this step hands off to AEA’s existing WooCommerce checkout — same orders, taxes and freight rules, zero migration.</span>
+    </div>
+
+    <div class="co__grid" data-co>
+      <form class="co__form" data-co-form novalidate>
+        <h1 class="h1">Checkout</h1>
+
+        <fieldset class="co__step">
+          <legend><span class="co__n">1</span> Contact</legend>
+          <div class="co__row co__row--2">
+            <div class="field"><label for="email">Email</label><input class="input" id="email" type="email" required autocomplete="email" placeholder="grower@farm.com" /></div>
+            <div class="field"><label for="phone">Phone</label><input class="input" id="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" /></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="co__step">
+          <legend><span class="co__n">2</span> Ship to</legend>
+          <div class="co__row co__row--2">
+            <div class="field"><label for="fn">First name</label><input class="input" id="fn" required autocomplete="given-name" /></div>
+            <div class="field"><label for="ln">Last name</label><input class="input" id="ln" required autocomplete="family-name" /></div>
+          </div>
+          <div class="field"><label for="farm">Farm / company (optional)</label><input class="input" id="farm" autocomplete="organization" /></div>
+          <div class="field"><label for="addr">Address</label><input class="input" id="addr" required autocomplete="address-line1" /></div>
+          <div class="co__row co__row--3">
+            <div class="field"><label for="city">City</label><input class="input" id="city" required autocomplete="address-level2" /></div>
+            <div class="field"><label for="st">State</label>
+              <select class="input" id="st" required data-co-state autocomplete="address-level1">
+                <option value="">Select</option>
+                {states.map(([c, n]) => <option value={c}>{n}</option>)}
+              </select>
+            </div>
+            <div class="field"><label for="zip">ZIP</label><input class="input" id="zip" required inputmode="numeric" autocomplete="postal-code" /></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="co__step">
+          <legend><span class="co__n">3</span> Delivery</legend>
+          <div class="ship">
+            <label class="ship__opt"><input type="radio" name="ship" value="ground" checked data-ship="1800" /><span><b>Ground</b><small class="muted">3–6 business days</small></span><span class="tnum" data-ship-price>$18.00</span></label>
+            <label class="ship__opt"><input type="radio" name="ship" value="freight" data-ship="9500" /><span><b>LTL freight</b><small class="muted">Totes & drums · liftgate available</small></span><span class="tnum">$95.00</span></label>
+            <label class="ship__opt"><input type="radio" name="ship" value="pickup" data-ship="0" /><span><b>Warehouse pickup</b><small class="muted">OH · WA · CA · FL · NM</small></span><span class="tnum">Free</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="co__step">
+          <legend><span class="co__n">4</span> Payment</legend>
+          <div class="card-ui">
+            <div class="field"><label for="cc">Card number</label><input class="input" id="cc" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="off" data-cc /></div>
+            <div class="co__row co__row--2">
+              <div class="field"><label for="exp">Expiry</label><input class="input" id="exp" placeholder="MM / YY" autocomplete="off" /></div>
+              <div class="field"><label for="cvc">CVC</label><input class="input" id="cvc" placeholder="123" autocomplete="off" /></div>
+            </div>
+          </div>
+          <p class="muted" style="font-size:.8rem">Demo only — please don’t enter real card details.</p>
+        </fieldset>
+
+        <button class="btn btn--sun btn--block co__submit" type="submit" data-place>Place order · <span class="tnum" data-co-total-btn>$0.00</span></button>
+        <p class="co__err" data-co-err hidden></p>
+      </form>
+
+      <aside class="co__summary">
+        <div class="co__sticky">
+          <h2 class="h3">Order summary</h2>
+          <div class="co__items" data-co-items></div>
+          <div class="co__lines">
+            <div><span class="muted">Subtotal</span><span class="tnum" data-co-sub>$0.00</span></div>
+            <div><span class="muted">Shipping</span><span class="tnum" data-co-ship>$18.00</span></div>
+            <div><span class="muted">Estimated tax</span><span class="tnum" data-co-tax>$0.00</span></div>
+            <div class="co__total"><span>Total</span><span class="tnum" data-co-total>$0.00</span></div>
+          </div>
+          <div class="co__assure">
+            <span><Icon name="shield" size={16} /> Registered for your state</span>
+            <span><Icon name="people" size={16} /> Agronomist follow-up included</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="co__empty" data-co-empty hidden>
+      <Icon name="sprout" size={56} />
+      <h1 class="h2">Your cart is empty.</h1>
+      <a class="btn btn--sun" href={url('/shop/')}>Browse products <Icon name="arrow" class="arrow" /></a>
+    </div>
+
+    <div class="co__done" data-co-done hidden>
+      <div class="co__check"><Icon name="check" size={40} /></div>
+      <p class="eyebrow">Order confirmed (demo)</p>
+      <h1 class="h1">Thank you — let’s grow.</h1>
+      <p class="lead" style="margin-inline:auto">Order <b class="tnum" data-order-no></b> is in. An AEA agronomist will reach out within one business day to review application timing for your crops.</p>
+      <a class="btn" href={url('/')}>Back to home <Icon name="arrow" class="arrow" /></a>
+    </div>
+  </section>
+
+  <script>
+    import { Cart as cart, State } from '../../scripts/app';
+    const $ = <T extends Element = HTMLElement>(s: string) => document.querySelector<T>(s)!;
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const fmt = (c: number) => (c / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    const TAX = 0.0575;
+    const stateSel = $<HTMLSelectElement>('[data-co-state]');
+    const saved = State.get();
+    if (saved) stateSel.value = saved;
+
+    function render() {
+      const items = cart.items();
+      const empty = !items.length;
+      $('[data-co]').hidden = empty;
+      $('[data-co-empty]').hidden = !empty || !$('[data-co-done]').hidden;
+      if (empty) return;
+      $('[data-co-items]').innerHTML = items.map((i: any) => `
+        <div class="co__item">
+          <div class="co__thumb">${i.img ? `<img src="${base}/img/products/${i.img}-320.webp" alt="" width="56" height="56">` : ''}<span>${i.qty}</span></div>
+          <div><b>${i.name}</b><small class="muted mono">${i.size}</small></div>
+          <span class="tnum">${fmt(i.price * i.qty)}</span>
+        </div>`).join('');
+      const sub = cart.total();
+      const ship = +(document.querySelector<HTMLInputElement>('input[name="ship"]:checked')?.dataset.ship || 0);
+      const freeShip = sub >= 50000 && ship === 1800;
+      const shipC = freeShip ? 0 : ship;
+      const tax = Math.round(sub * TAX);
+      const total = sub + shipC + tax;
+      $('[data-co-sub]').textContent = fmt(sub);
+      $('[data-co-ship]').textContent = shipC ? fmt(shipC) : 'Free';
+      $('[data-co-tax]').textContent = fmt(tax);
+      $('[data-co-total]').textContent = fmt(total);
+      $('[data-co-total-btn]').textContent = fmt(total);
+    }
+    document.querySelectorAll('input[name="ship"]').forEach((r) => r.addEventListener('change', render));
+    document.addEventListener('cart:change', render);
+    render();
+
+    const cc = $<HTMLInputElement>('[data-cc]');
+    cc.addEventListener('input', () => { cc.value = cc.value.replace(/\D/g, '').slice(0, 16).replace(/(.{4})/g, '$1 ').trim(); });
+
+    $<HTMLFormElement>('[data-co-form]').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target as HTMLFormElement;
+      const bad = Array.from(form.querySelectorAll<HTMLInputElement>('[required]')).filter((i) => !i.value.trim());
+      form.querySelectorAll('.input').forEach((i) => i.classList.remove('is-bad'));
+      const err = $('[data-co-err]');
+      if (bad.length) {
+        bad.forEach((i) => i.classList.add('is-bad'));
+        err.textContent = 'Please complete the highlighted fields.';
+        err.hidden = false;
+        bad[0].focus();
+        return;
+      }
+      err.hidden = true;
+      const btn = $<HTMLButtonElement>('[data-place]');
+      btn.disabled = true;
+      btn.textContent = 'Processing…';
+      setTimeout(() => {
+        $('[data-order-no]').textContent = `#AEA-${Math.floor(100000 + Math.random() * 900000)}`;
+        $('[data-co-done]').hidden = false;
+        $('[data-co]').hidden = true;
+        $('[data-co-empty]').hidden = true;
+        cart.clear();
+        scrollTo({ top: 0 });
+      }, 1100);
+    });
+  </script>
+</Base>
+
+<style>
+  .co { padding-top: calc(var(--nav-h) + 24px); padding-bottom: clamp(80px, 10vw, 140px); min-height: 80vh; }
+  .co__banner { display: flex; gap: 10px; align-items: flex-start; padding: 14px 18px; border-radius: 14px; background: var(--ink); color: rgba(242, 237, 227, 0.8); font-size: 0.88rem; }
+  .co__banner b { color: var(--sun); }
+  .co__banner :global(svg) { flex: none; margin-top: 2px; color: var(--sun); }
+  .co__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 80px); margin-top: 40px; align-items: start; }
+  .co__form { display: flex; flex-direction: column; gap: 28px; }
+  .co__step { border: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .co__step legend { display: flex; align-items: center; gap: 12px; font-size: 1.3rem; font-weight: 550; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .co__n { width: 30px; height: 30px; border-radius: 50%; background: var(--sun); display: grid; place-items: center; font-size: 0.85rem; font-family: var(--mono); }
+  .co__row { display: grid; gap: 12px; }
+  .co__row--2 { grid-template-columns: 1fr 1fr; }
+  .co__row--3 { grid-template-columns: 2fr 1.4fr 1fr; }
+  @media (max-width: 560px) { .co__row--2, .co__row--3 { grid-template-columns: 1fr; } }
+  .ship { display: grid; gap: 8px; }
+  .ship__opt { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--line); cursor: pointer; transition: box-shadow 0.2s, background-color 0.2s; }
+  .ship__opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--ink); background: var(--bone); }
+  .ship__opt input { accent-color: var(--ink); width: 18px; height: 18px; }
+  .ship__opt span:nth-child(2) { display: flex; flex-direction: column; }
+  .ship__opt small { font-size: 0.8rem; }
+  .card-ui { padding: 18px; border-radius: 18px; background: var(--bone); display: grid; gap: 12px; }
+  :global(.input.is-bad) { box-shadow: inset 0 0 0 2px #c2410c !important; }
+  .co__err { color: #c2410c; font-size: 0.9rem; }
+  .co__submit { height: 60px; font-size: 1.05rem; }
+  .co__sticky { position: sticky; top: calc(var(--nav-h) + 20px); padding: clamp(20px, 3vw, 32px); border-radius: var(--radius); background: var(--bone); }
+  .co__items { margin-top: 20px; display: grid; gap: 14px; max-height: 44vh; overflow-y: auto; }
+  .co__items :global(.co__item) { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; }
+  .co__items :global(.co__item b) { display: block; font-weight: 550; line-height: 1.2; }
+  .co__items :global(.co__item small) { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .co__items :global(.co__thumb) { position: relative; width: 56px; height: 56px; border-radius: 12px; background: var(--paper); display: grid; place-items: center; }
+  .co__items :global(.co__thumb img) { width: 80%; height: 80%; object-fit: contain; }
+  .co__items :global(.co__thumb span) { position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; border-radius: 999px; background: var(--ink); color: var(--sun); font-size: 0.7rem; display: grid; place-items: center; padding: 0 5px; }
+  .co__lines { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+  .co__lines > div { display: flex; justify-content: space-between; }
+  .co__total { padding-top: 14px; margin-top: 4px; border-top: 1px solid var(--line); font-size: 1.4rem; font-weight: 550; letter-spacing: -0.03em; }
+  .co__assure { display: grid; gap: 8px; margin-top: 20px; color: var(--muted); font-size: 0.85rem; }
+  .co__assure span { display: flex; gap: 8px; align-items: center; }
+  .co__empty, .co__done { text-align: center; display: grid; justify-items: center; gap: 18px; padding: 100px 0; }
+  .co__check { width: 96px; height: 96px; border-radius: 50%; background: var(--sun); display: grid; place-items: center; animation: pop 0.8s var(--ease) both; }
+  @keyframes pop { from { transform: scale(0.4); opacity: 0; } }
+  @media (max-width: 900px) { .co__grid { grid-template-columns: 1fr; } .co__summary { order: -1; } }
+</style>

@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { crops, url } from '../../lib/site';
+---
+<Base title="Crop programs" description="Regenerative crop programs for fruits, vegetables, grains & legumes, fibers, berries and nuts.">
+  <section class="phero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span>/</span><span>Crops</span></nav>
+      <div class="ch">
+        <h1 class="display-hero" data-split>Every crop, <em class="serif">its own</em> protocol.</h1>
+        <p class="lead" data-reveal style="--d:300">Nutrition programs fine-tuned with soil and sap reports, crop consultant recommendations and real plant performance — with a focus on the Critical Points of Influence that make or break a season.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap cgrid">
+    {crops.map((c, i) => (
+      <a class="ccard" href={url(`/crops/${c.slug}/`)} data-reveal style={`--d:${(i % 3) * 90}`}>
+        <div class="ccard__img">
+          <img src={url(`/img/aea/crop-${c.slug}.avif`)} srcset={`${url(`/img/aea/crop-${c.slug}-480.avif`)} 480w, ${url(`/img/aea/crop-${c.slug}.avif`)} 862w`} sizes="(max-width: 700px) 100vw, 33vw" alt="" width="862" height="829" loading={i < 3 ? 'eager' : 'lazy'} decoding="async" />
+        </div>
+        <div class="ccard__body">
+          <span class="mono muted">0{i + 1}</span>
+          <h2 class="h3">{c.name}</h2>
+          <p class="muted">{c.subcrops.join(' · ')}</p>
+          <span class="ccard__go"><Icon name="arrow-up-right" size={20} /></span>
+        </div>
+      </a>
+    ))}
+    <a class="ccard ccard--mg" href={url('/shop/?line=market-garden')} data-reveal style="--d:180">
+      <div class="ccard__body">
+        <span class="mono">Small scale, big results</span>
+        <h2 class="h2">Market gardener line</h2>
+        <p>Five essentials sized for gardens from 1,000 sq ft — including a bundle that saves 15%.</p>
+        <span class="ccard__go"><Icon name="arrow-up-right" size={20} /></span>
+      </div>
+    </a>
+  </section>
+
+  <section class="cpi section theme-dark">
+    <div class="wrap cpi__inner">
+      <p class="eyebrow">Critical Points of Influence</p>
+      <h2 class="h1" data-split>Timing is <em class="serif">everything.</em></h2>
+      <p class="lead">CPIs are the moments in a crop’s life cycle when nutritional and biological applications have the greatest influence on the season — from seed and root establishment to bloom, fruit set and fill. We plan programs around them.</p>
+      <ol class="cpi__line" aria-label="Typical critical points">
+        {['Seed & germination', 'Root establishment', 'Rapid vegetative growth', 'Bud initiation & bloom', 'Fruit set & sizing', 'Fill & post-harvest'].map((t, i) => (
+          <li data-reveal style={`--d:${i * 80}`}><span class="cpi__dot"></span><span class="mono">CPI {i + 1}</span><b>{t}</b></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ch { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px 64px; flex-wrap: wrap; }
+  .ch h1 { max-width: 12ch; }
+  .ch h1 em { color: var(--sage); }
+  .cgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-bottom: clamp(80px, 10vw, 160px); }
+  .ccard { position: relative; display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: var(--bone); transition: transform 0.6s var(--ease); }
+  .ccard:hover { transform: translateY(-6px); }
+  .ccard__img { aspect-ratio: 4 / 3.4; overflow: hidden; }
+  .ccard__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+  .ccard:hover .ccard__img img { transform: scale(1.06); }
+  .ccard__body { position: relative; padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; }
+  .ccard__body p { font-size: 0.9rem; padding-right: 56px; }
+  .ccard__go { position: absolute; right: 22px; bottom: 24px; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--paper); transition: transform 0.5s var(--ease), background-color 0.3s, color 0.3s; }
+  .ccard:hover .ccard__go { transform: rotate(45deg); background: var(--sun); color: var(--ink); }
+  .ccard--mg { background: var(--sun); grid-column: span 3; min-height: 280px; justify-content: flex-end; }
+  .ccard--mg p { color: rgba(13, 12, 9, 0.75); max-width: 50ch; font-size: 1rem; }
+  @media (max-width: 1000px) { .cgrid { grid-template-columns: repeat(2, 1fr); } .ccard--mg { grid-column: span 2; } }
+  @media (max-width: 620px) { .cgrid { grid-template-columns: 1fr; } .ccard--mg { grid-column: auto; } }
+
+  .cpi__inner h2 { margin-top: 20px; }
+  .cpi__inner h2 em { color: var(--sun); }
+  .cpi__inner .lead { margin-top: 24px; }
+  .cpi__line { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); margin-top: clamp(48px, 6vw, 96px); position: relative; }
+  .cpi__line::before { content: ''; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: linear-gradient(90deg, var(--sun), rgba(242, 237, 227, 0.2)); }
+  .cpi__line li { display: flex; flex-direction: column; gap: 8px; padding-right: 16px; position: relative; }
+  .cpi__dot { width: 15px; height: 15px; border-radius: 50%; background: var(--ink); box-shadow: inset 0 0 0 2px var(--sun); margin-bottom: 14px; }
+  .cpi__line .mono { color: var(--sun); }
+  .cpi__line b { font-weight: 500; font-size: 1.1rem; letter-spacing: -0.02em; }
+  @media (max-width: 900px) {
+    .cpi__line { grid-template-columns: 1fr; gap: 24px; }
+    .cpi__line::before { left: 7px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; }
+    .cpi__line li { padding-left: 36px; }
+    .cpi__dot { position: absolute; left: 0; top: 2px; }
+  }
+</style>

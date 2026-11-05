@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { states, crops, url } from '../lib/site';
+const locations = [
+  ['Middlefield, OH', 'Headquarters · Manufacturing · Laboratory'],
+  ['Aurora, CO', 'Manufacturing'],
+  ['Union Gap, WA', 'Warehouse'],
+  ['California', 'Warehouse'],
+  ['Florida', 'Warehouse'],
+  ['New Mexico', 'Warehouse'],
+];
+---
+<Base title="Talk to an agronomist" description="Get a custom regenerative crop protocol from an AEA agronomist.">
+  <section class="phero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={url('/')}>Home</a><span>/</span><span>Contact</span></nav>
+      <h1 class="display-hero ct__title" data-split>Let’s talk <em class="serif">dirt.</em></h1>
+    </div>
+  </section>
+
+  <section class="wrap ct">
+    <form class="ct__form" data-demo-form>
+      <div class="ct__row">
+        <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" required autocomplete="name" /></div>
+        <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" required autocomplete="email" /></div>
+      </div>
+      <div class="ct__row">
+        <div class="field"><label for="c-farm">Farm / company</label><input class="input" id="c-farm" autocomplete="organization" /></div>
+        <div class="field"><label for="c-state">State</label>
+          <select class="input" id="c-state"><option value="">Select</option>{states.map(([c, n]) => <option value={c}>{n}</option>)}</select>
+        </div>
+      </div>
+      <fieldset class="ct__chips">
+        <legend class="mono muted">What do you grow?</legend>
+        {[...crops.map((c) => c.name), 'Market garden', 'Pasture & livestock'].map((n) => (
+          <label class="pick"><input type="checkbox" name="crops" value={n} /><span>{n}</span></label>
+        ))}
+      </fieldset>
+      <fieldset class="ct__chips">
+        <legend class="mono muted">Acres in production</legend>
+        {['< 10', '10–100', '100–1,000', '1,000–10,000', '10,000+'].map((n, i) => (
+          <label class="pick"><input type="radio" name="acres" value={n} checked={i === 1} /><span>{n}</span></label>
+        ))}
+      </fieldset>
+      <div class="field"><label for="c-msg">What are you working on?</label><textarea class="input" id="c-msg" placeholder="Goals, challenges, what you’ve tried…"></textarea></div>
+      <button class="btn btn--sun ct__submit" type="submit">Send to our team <Icon name="arrow" class="arrow" /></button>
+      <p class="muted" data-form-msg style="font-size:.85rem">We typically reply within one business day.</p>
+    </form>
+
+    <aside class="ct__side">
+      <div class="ct__card theme-dark">
+        <p class="eyebrow">What happens next</p>
+        <ol class="ct__steps">
+          <li><b>01</b><span>An agronomist from your regional Farm Services team reaches out.</span></li>
+          <li><b>02</b><span>A holistic assessment of your operation, soils and goals.</span></li>
+          <li><b>03</b><span>A custom crop protocol matched to your budget — with in-season support.</span></li>
+        </ol>
+        <p class="ct__note"><Icon name="people" size={18} /> Not buying products? <b>Groundwork</b> contract consulting is available with no purchase necessary.</p>
+      </div>
+      <div class="ct__phone">
+        <p class="mono muted">Prefer the phone?</p>
+        <a href="tel:18004956603" class="h3 link-u">1-800-495-6603</a>
+      </div>
+      <div class="ct__locs">
+        <p class="mono muted">Where we are</p>
+        <ul>{locations.map(([p, d]) => <li><b>{p}</b><span class="muted">{d}</span></li>)}</ul>
+      </div>
+    </aside>
+  </section>
+</Base>
+
+<style>
+  .ct__title em { color: var(--sage); }
+  .ct { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6vw, 96px); padding-bottom: clamp(80px, 10vw, 160px); align-items: start; }
+  .ct__form { display: flex; flex-direction: column; gap: 18px; }
+  .ct__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ct__chips { border: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .ct__chips legend { margin-bottom: 10px; }
+  .pick input { position: absolute; opacity: 0; pointer-events: none; }
+  .pick span { display: inline-flex; align-items: center; height: 42px; padding: 0 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s, color 0.2s, box-shadow 0.2s; }
+  .pick span:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+  .pick input:checked + span { background: var(--ink); color: var(--paper); box-shadow: none; }
+  .pick input:focus-visible + span { outline: 2px solid var(--sun); outline-offset: 2px; }
+  .ct__submit { align-self: flex-start; height: 58px; padding-inline: 28px; }
+  .ct__side { display: grid; gap: 14px; position: sticky; top: calc(var(--nav-h) + 20px); }
+  .ct__card { padding: clamp(24px, 3vw, 36px); border-radius: var(--radius); }
+  .ct__steps { list-style: none; padding: 0; margin-top: 20px; display: grid; gap: 16px; }
+  .ct__steps li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; }
+  .ct__steps b { color: var(--sun); font-family: var(--mono); font-weight: 450; font-size: 0.8rem; padding-top: 3px; }
+  .ct__note { display: flex; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+  .ct__note b { color: var(--fg); }
+  .ct__note :global(svg) { flex: none; color: var(--sun); }
+  .ct__phone, .ct__locs { padding: 24px; border-radius: var(--radius); background: var(--bone); }
+  .ct__phone a { display: inline-block; margin-top: 8px; }
+  .ct__locs ul { list-style: none; padding: 0; margin-top: 12px; }
+  .ct__locs li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.9rem; }
+  @media (max-width: 900px) { .ct { grid-template-columns: 1fr; } .ct__side { position: static; } }
+  @media (max-width: 560px) { .ct__row { grid-template-columns: 1fr; } }
+</style>

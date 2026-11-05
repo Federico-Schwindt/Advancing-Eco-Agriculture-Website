@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import { url } from '../lib/site';
+---
+<footer class="footer theme-dark">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <p class="eyebrow">Stay rooted</p>
+        <p class="h3" style="margin-top:18px;max-width:18ch">Field notes from the regenerative frontier.</p>
+        <form class="newsletter" data-demo-form>
+          <label class="sr-only" for="nl-email">Email</label>
+          <input id="nl-email" type="email" placeholder="you@farm.com" required autocomplete="email" />
+          <button class="btn btn--sun btn--sm" type="submit">Subscribe <Icon name="arrow" class="arrow" /></button>
+        </form>
+        <p class="muted" style="font-size:.8rem;margin-top:12px" data-form-msg>Monthly. No spam. Unsubscribe anytime.</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__h">Shop</p>
+        <a href={url('/shop/')}>All products</a>
+        <a href={url('/shop/?c=Soil%20Priming')}>Soil priming</a>
+        <a href={url('/shop/?c=Seed%20Treatments')}>Seed treatments</a>
+        <a href={url('/shop/?line=market-garden')}>Market gardener line</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__h">Learn</p>
+        <a href={url('/science/')}>Plant Health Pyramid</a>
+        <a href={url('/science/#sap')}>Plant sap analysis</a>
+        <a href={url('/crops/')}>Crop programs</a>
+        <a href={url('/about/')}>Our story</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__h">Company</p>
+        <a href={url('/contact/')}>Talk to an agronomist</a>
+        <a href={url('/about/#timeline')}>Timeline</a>
+        <a href={url('/about/#values')}>Values</a>
+        <a href={url('/contact/')}>Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" aria-hidden="true" style="overflow:hidden">
+    <div class="footer__word">aea</div>
+  </div>
+  <div class="wrap">
+    <div class="footer__bottom">
+      <span>© {new Date().getFullYear()} Advancing Eco Agriculture · Middlefield, Ohio</span>
+      <span>Concept redesign · not the official AEA website or store</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import { nav, url } from '../lib/site';
+interface Props { tone?: 'light' | 'dark' }
+const { tone = 'dark' } = Astro.props;
+const path = Astro.url.pathname;
+const isActive = (href: string) => path.startsWith(url(href));
+---
+<header class="nav" data-nav data-tone={tone === 'light' ? 'light' : 'dark'} data-initial-tone={tone}>
+  <div class="nav__bg" aria-hidden="true"></div>
+  <div class="nav__inner">
+    <a class="nav__logo" href={url('/')} aria-label="Advancing Eco Agriculture — home">
+      <img src={url('/img/aea-logo.webp')} alt="" width="40" height="40" />
+      <span>Advancing Eco<br />Agriculture</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      {nav.map((n) => (
+        <a href={url(n.href)} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
+      ))}
+    </nav>
+    <div class="nav__actions">
+      <button class="nav__state" type="button" data-open-state aria-label="Choose shipping state">
+        <Icon name="pin" />
+        <span class="label" data-state-label>Ship to</span>
+      </button>
+      <button class="nav__cart" type="button" data-open-cart>
+        <Icon name="bag" />
+        <span class="sr-only">Cart, items:</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+      <button class="nav__menu" type="button" data-open-menu aria-label="Open menu" aria-expanded="false">
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" data-menu aria-hidden="true" inert>
+  <button class="menu__close" type="button" data-close-menu aria-label="Close menu"><Icon name="close" /></button>
+  <nav aria-label="Mobile">
+    <a class="menu__link" href={url('/')}><small>00</small>Home</a>
+    {nav.map((n) => (
+      <a class="menu__link" href={url(n.href)}><small>{n.n}</small>{n.label}</a>
+    ))}
+  </nav>
+  <div class="menu__foot">
+    <span>Middlefield, Ohio · Since 2006</span>
+    <a href={url('/shop/')} class="link-u">Shop products →</a>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro';
+import { states } from '../lib/site';
+---
+<div class="modal" data-state-modal aria-hidden="true" inert>
+  <div class="modal__scrim" data-close-state></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="state-title">
+    <button class="icon-btn" type="button" data-close-state aria-label="Close" style="position:absolute;top:18px;right:18px"><Icon name="close" /></button>
+    <p class="eyebrow">Shipping region</p>
+    <h2 id="state-title" class="h3" style="margin-top:14px;max-width:16ch">Where are you growing?</h2>
+    <p class="muted" style="margin-top:12px;max-width:44ch">Fertilizer regulations vary state by state. Pick yours and we’ll only show products registered for shipping to your farm.</p>
+    <div class="state-grid" role="group" aria-label="States">
+      {states.map(([code, name]) => (
+        <button type="button" data-state={code} title={name} aria-pressed="false">{code}</button>
+      ))}
+    </div>
+    <button type="button" class="link-u muted" style="margin-top:16px;font-size:.85rem" data-state="">Clear selection</button>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+---
+import Icon from './Icon.astro';
+import { type Product, money, productImg, tintFor, url } from '../lib/site';
+interface Props { p: Product; eager?: boolean; class?: string }
+const { p, eager = false, class: cls } = Astro.props;
+const first = p.sizes[0];
+const payload = JSON.stringify({ id: first.id, pid: p.id, slug: p.slug, name: p.name, size: first.label, price: first.price, img: p.image });
+const tags = p.categories.filter((c) => c !== 'Essential' && c !== 'Macro and Micro').slice(0, 2);
+---
+<article
+  class:list={['pcard', cls]}
+  style={`--tint:${tintFor(p)}`}
+  data-product
+  data-name={p.name.toLowerCase()}
+  data-cats={p.categories.join('|')}
+  data-line={p.line}
+  data-state-only={p.stateOnly ?? ''}
+  data-base={p.baseName}
+  data-price={p.priceMin}
+>
+  <div class="pcard__media">
+    <div class="pcard__tags">
+      {p.line === 'market-garden' && <span class="chip">Market garden</span>}
+      {tags.map((t) => <span class="chip">{t}</span>)}
+      {p.stateOnly && <span class="chip">{p.stateOnly} only</span>}
+    </div>
+    <img
+      src={productImg(p, 640)}
+      srcset={`${productImg(p, 320)} 320w, ${productImg(p, 640)} 640w`}
+      sizes="(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 25vw"
+      alt={p.name}
+      width="640"
+      height="640"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </div>
+  <div class="pcard__body">
+    <h3 class="pcard__name">{p.name}</h3>
+    <p class="pcard__tag">{p.tagline || 'Regenerative plant nutrition'}</p>
+    <div class="pcard__foot">
+      <span class="pcard__price">{p.sizes.length > 1 && <small>from</small>}{money(p.priceMin)}</span>
+      <button class="pcard__add" type="button" data-add={payload} aria-label={`Add ${p.name} (${first.label}) to cart`}>
+        <Icon name="plus" />
+      </button>
+    </div>
+  </div>
+  <a class="pcard__link" href={url(`/shop/${p.slug}/`)} aria-label={`View ${p.name}`}></a>
+</article>
