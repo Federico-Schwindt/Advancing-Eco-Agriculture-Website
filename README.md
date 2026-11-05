@@ -14,6 +14,7 @@ A from-scratch redesign of [advancingecoag.com](https://advancingecoag.com/) bui
 | **Cart & checkout** | Slide-out cart (localStorage) with free-freight meter · polished demo checkout with order confirmation |
 | **Crops** | Index + 6 crop programs (FAQs, field stories, recommended products) · Critical Points of Influence timeline |
 | **Science** | 5 core concepts · tabbed Pyramid deep-dive · illustrative **sap analysis report** · R&D firsts & data partners |
+| **Pitch** (`/pitch/`) | Case study for AEA’s team: before/after slider (desktop, product, mobile), Lighthouse comparison measured against the live site, integration diagram, guided tour, QR code, next steps. Personalize the `DESIGNER` block at the top of `src/pages/pitch.astro`. |
 | **About / Contact / 404** | Origin story, draggable timeline, values, John Kempf · lead form · “You’ve dug too deep” 404 |
 
 ## Performance

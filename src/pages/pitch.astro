@@ -1,0 +1,500 @@
+---
+import QRCode from 'qrcode';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url, catalog, products } from '../lib/site';
+import pitch from '../data/pitch.json';
+
+/* ------------------------------------------------------------------
+   Personalize here — anything left empty is simply not shown.
+------------------------------------------------------------------ */
+const DESIGNER = {
+  name: '',      // e.g. 'Jane Doe'
+  role: '',      // e.g. 'Independent product designer'
+  email: '',     // e.g. 'hello@janedoe.com' → enables the “Start the conversation” button
+  website: '',   // e.g. 'https://janedoe.com'
+};
+
+const h = pitch.home, pr = pitch.product;
+const sec = (ms: number) => `${(ms / 1000).toFixed(1)}s`;
+const ms = (v: number) => `${Math.round(v).toLocaleString('en-US')}ms`;
+const mb = (b: number) => (b >= 1e6 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.round(b / 1024)} KB`);
+const times = (a: number, b: number) => (b > 0 ? `${Math.round(a / b)}×` : '∞');
+
+const headline = [
+  { k: 'Performance score', old: String(h.old.perf), neu: String(h.new.perf), note: 'Lighthouse, homepage' },
+  { k: 'Largest paint', old: sec(h.old.lcp), neu: sec(h.new.lcp), note: `${(h.old.lcp / h.new.lcp).toFixed(1)}× faster` },
+  { k: 'Page weight', old: mb(h.old.bytes), neu: mb(h.new.bytes), note: `${times(h.old.bytes, h.new.bytes)} lighter` },
+  { k: 'JavaScript', old: mb(h.old.js), neu: mb(h.new.js), note: `${times(h.old.js, h.new.js)} less code` },
+];
+const rows = [
+  { k: 'Performance', unit: '/100', a: h.old.perf, b: h.new.perf, c: pr.old.perf, d: pr.new.perf, fmt: (v: number) => String(v), better: 'high' },
+  { k: 'Accessibility', unit: '/100', a: h.old.a11y, b: h.new.a11y, c: pr.old.a11y, d: pr.new.a11y, fmt: (v: number) => String(v), better: 'high' },
+  { k: 'Best practices', unit: '/100', a: h.old.bp, b: h.new.bp, c: pr.old.bp, d: pr.new.bp, fmt: (v: number) => String(v), better: 'high' },
+  { k: 'First paint', unit: '', a: h.old.fcp, b: h.new.fcp, c: pr.old.fcp, d: pr.new.fcp, fmt: sec, better: 'low' },
+  { k: 'Largest paint (LCP)', unit: '', a: h.old.lcp, b: h.new.lcp, c: pr.old.lcp, d: pr.new.lcp, fmt: sec, better: 'low' },
+  { k: 'Visually complete', unit: '', a: h.old.si, b: h.new.si, c: pr.old.si, d: pr.new.si, fmt: sec, better: 'low' },
+  { k: 'Main-thread blocking', unit: '', a: h.old.tbt, b: h.new.tbt, c: pr.old.tbt, d: pr.new.tbt, fmt: ms, better: 'low' },
+  { k: 'Requests', unit: '', a: h.old.reqs, b: h.new.reqs, c: pr.old.reqs, d: pr.new.reqs, fmt: (v: number) => String(v), better: 'low' },
+  { k: 'JavaScript shipped', unit: '', a: h.old.js, b: h.new.js, c: pr.old.js, d: pr.new.js, fmt: mb, better: 'low' },
+];
+const raceMax = Math.max(h.old.si, h.old.lcp);
+const race = [
+  { label: 'Today', lcp: h.old.lcp, si: h.old.si },
+  { label: 'Concept', lcp: h.new.lcp, si: h.new.si },
+];
+
+const demoUrl = new URL(url('/'), Astro.site).toString();
+const qr = await QRCode.toString(demoUrl, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#0d0c09', light: '#00000000' } });
+
+const sample = products.find((p) => p.slug === 'biocoat-gold')!;
+const samplePayload = JSON.stringify({ id: sample.sizes[1].id, pid: sample.id, slug: sample.slug, name: sample.name, size: sample.sizes[1].label, price: sample.sizes[1].price, img: sample.image, qty: 1 });
+
+const principles = [
+  { icon: 'sprout', t: 'Story before catalog', d: 'The homepage leads with why AEA exists — a scroll journey from canopy to root zone that makes soil biology visceral before anyone sees a jug.' },
+  { icon: 'flask', t: 'Science you can touch', d: 'The Plant Health Pyramid, mineral tiles and a sample sap report turn AEA’s intellectual property into interactive, memorable moments.' },
+  { icon: 'bag', t: 'Commerce without friction', d: 'Live prices per size, state-aware catalog, slide-out cart and a free-freight meter — buying takes seconds, not page loads.' },
+  { icon: 'sun', t: 'Speed is a feature', d: 'Static pages, zero render-blocking resources, video that waits its turn. Growers on rural connections get the same experience.' },
+  { icon: 'shield', t: 'Accessible by default', d: 'Semantic structure, keyboard paths, reduced-motion support and contrast-checked color — 97–100 on Lighthouse accessibility.' },
+  { icon: 'chart', t: 'Low cost to run', d: 'Static hosting on a global CDN, a one-command catalog sync from WooCommerce, and no plugin stack to patch.' },
+];
+
+const tour = [
+  { href: '/#dig', t: 'The soil descent', d: 'Scroll from the canopy into the roots', img: '/media/roots-800.avif', tag: 'Homepage' },
+  { href: '/science/#pyramid', t: 'Plant Health Pyramid', d: 'Four levels, interactive', img: '/media/leaf-960.avif', tag: 'Science' },
+  { href: '/shop/', t: 'State-aware shop', d: 'Pick California — watch the catalog adapt', img: '/media/ground-1344.avif', tag: 'Shop' },
+  { href: '/shop/biocoat-gold/', t: 'Product experience', d: 'Sizes, live pricing, fly-to-cart', img: '/img/aea/crop-grains-and-legumes-480.avif', tag: 'Product' },
+];
+---
+<Base title="Redesign proposal" description="A redesign proposal for Advancing Eco Agriculture: a working concept with measured performance gains and a no-migration path to the existing WooCommerce store." navTone="light">
+  <!-- ============ HERO ============ -->
+  <section class="ph theme-dark">
+    <div class="ph__bg" aria-hidden="true"><img src={url('/media/hero-1600.avif')} alt="" width="1600" height="900" fetchpriority="high" /></div>
+    <div class="wrap ph__inner">
+      <p class="eyebrow" data-reveal="fade">Redesign proposal · Prepared for Advancing Eco Agriculture</p>
+      <h1 class="display-hero ph__title" data-split>A site as <em class="serif">alive</em> as your soil.</h1>
+      <div class="ph__row">
+        <p class="lead" data-reveal style="--d:400">This is a working concept, not a mockup: AEA’s real catalog and prices, real content, a complete shopping flow, and a verified path to your existing checkout. Measured side by side with today’s site.</p>
+        <div class="ph__ctas" data-reveal style="--d:550">
+          <a class="btn btn--sun" href={url('/')}>Open the live demo <Icon name="arrow-up-right" class="arrow" /></a>
+          <a class="btn btn--glass" href="#compare">See before &amp; after</a>
+        </div>
+      </div>
+      <dl class="ph__stats" data-reveal style="--d:700">
+        {headline.map((s) => (
+          <div>
+            <dt>{s.k}</dt>
+            <dd><s class="tnum">{s.old}</s><Icon name="arrow" size={16} /><b class="tnum">{s.neu}</b></dd>
+            <span class="mono">{s.note}</span>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER ============ -->
+  <section class="section wrap" id="compare">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Before &amp; after</p>
+        <h2 class="h1" data-split>Drag to <em class="serif">compare.</em></h2>
+      </div>
+      <div class="ba-tabs" role="tablist" aria-label="Comparison">
+        <button type="button" role="tab" aria-selected="true" data-ba-tab="home">Homepage</button>
+        <button type="button" role="tab" aria-selected="false" data-ba-tab="pdp">Product page</button>
+        <button type="button" role="tab" aria-selected="false" data-ba-tab="mobile">Mobile</button>
+      </div>
+    </div>
+
+    {[
+      { id: 'home', old: 'old-home', neu: 'new-home', w: 1600, hgt: 1000 },
+      { id: 'pdp', old: 'old-pdp', neu: 'new-pdp', w: 1600, hgt: 1000 },
+    ].map((c, i) => (
+      <div class="ba" data-ba={c.id} hidden={i !== 0} style="--pos:50%">
+        <img class="ba__img" src={url(`/pitch/${c.neu}.avif`)} srcset={`${url(`/pitch/${c.neu}-800.avif`)} 800w, ${url(`/pitch/${c.neu}.avif`)} 1600w`} sizes="(max-width: 900px) 100vw, 1600px" alt="Concept redesign" width={c.w} height={c.hgt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+        <div class="ba__old" aria-hidden="true">
+          <img class="ba__img" src={url(`/pitch/${c.old}.avif`)} srcset={`${url(`/pitch/${c.old}-800.avif`)} 800w, ${url(`/pitch/${c.old}.avif`)} 1600w`} sizes="(max-width: 900px) 100vw, 1600px" alt="" width={c.w} height={c.hgt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+        </div>
+        <span class="ba__label ba__label--l mono">Today</span>
+        <span class="ba__label ba__label--r mono">Concept</span>
+        <span class="ba__handle" aria-hidden="true"><Icon name="arrow" size={16} /><Icon name="arrow" size={16} /></span>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Reveal today’s site versus the concept" data-ba-range />
+      </div>
+    ))}
+
+    <div class="ba-m" data-ba="mobile" hidden>
+      <figure>
+        <div class="phone"><img src={url('/pitch/old-m.avif')} alt="Today’s homepage on iPhone" width="600" height="1022" loading="lazy" decoding="async" /></div>
+        <figcaption class="mono muted">Today</figcaption>
+      </figure>
+      <figure>
+        <div class="phone phone--new"><img src={url('/pitch/new-m.avif')} alt="Concept homepage on iPhone" width="600" height="1022" loading="lazy" decoding="async" /></div>
+        <figcaption class="mono">Concept</figcaption>
+      </figure>
+      <div class="ba-m__qr">
+        <div class="qr" set:html={qr} role="img" aria-label="QR code to open the demo on your phone"></div>
+        <p><b>Try it on your phone.</b><br /><span class="muted">Scan to open the live demo — the scroll story was designed thumb-first.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NUMBERS ============ -->
+  <section class="section theme-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Measured, not promised</p>
+          <h2 class="h1" data-split>Speed growers can <em class="serif">feel.</em></h2>
+        </div>
+        <p class="lead">Many growers browse from the field on rural connections. Every second of load time is a second they wait for the content they need.</p>
+      </div>
+
+      <figure class="race" data-reveal aria-labelledby="race-title">
+        <p class="race__title" id="race-title">Homepage on a mid-range phone · seconds until…</p>
+        <div class="race__legend mono" aria-hidden="true">
+          <span><i class="sw sw--lcp"></i>Main content visible (LCP)</span>
+          <span><i class="sw sw--si"></i>Page visually complete</span>
+        </div>
+        <div class="race__rows">
+          {race.map((r) => (
+            <div class="race__row" style={`--lcp:${(r.lcp / raceMax) * 100}%;--si:${(r.si / raceMax) * 100}%`}>
+              <span class="race__label">{r.label}</span>
+              <div class="race__track">
+                <span class="race__bar race__bar--si" title={`Visually complete: ${sec(r.si)}`}></span>
+                <span class="race__bar race__bar--lcp" title={`Main content: ${sec(r.lcp)}`}></span>
+              </div>
+              <span class="race__val tnum"><b>{sec(r.lcp)}</b> · {sec(r.si)}</span>
+            </div>
+          ))}
+        </div>
+      </figure>
+
+      <div class="mtable-wrap" data-reveal>
+        <table class="mtable">
+          <caption class="sr-only">Lighthouse comparison: today’s site versus the concept</caption>
+          <thead>
+            <tr>
+              <th scope="col">Metric</th>
+              <th scope="col" colspan="2">Homepage</th>
+              <th scope="col" colspan="2">Product page</th>
+            </tr>
+            <tr class="mtable__sub">
+              <th></th><th scope="col">Today</th><th scope="col">Concept</th><th scope="col">Today</th><th scope="col">Concept</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <th scope="row">{r.k}</th>
+                <td class="tnum old">{r.fmt(r.a)}{r.unit && <small>{r.unit}</small>}</td>
+                <td class="tnum neu">{r.fmt(r.b)}{r.unit && <small>{r.unit}</small>}</td>
+                <td class="tnum old">{r.fmt(r.c)}{r.unit && <small>{r.unit}</small>}</td>
+                <td class="tnum neu">{r.fmt(r.d)}{r.unit && <small>{r.unit}</small>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mono muted footnote">{pitch.tool} · measured {pitch.measured} · today = advancingecoag.com, concept = production build of this site. Homepage weight includes the hero film.</p>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What changed</p>
+        <h2 class="h1" data-split>Six ideas behind the <em class="serif">redesign.</em></h2>
+      </div>
+    </div>
+    <div class="pgrid">
+      {principles.map((p, i) => (
+        <article class="pcell" data-reveal style={`--d:${(i % 3) * 90}`}>
+          <span class="pcell__ic"><Icon name={p.icon} size={22} /></span>
+          <span class="mono muted">0{i + 1}</span>
+          <h3 class="h3">{p.t}</h3>
+          <p class="muted">{p.d}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ INTEGRATION ============ -->
+  <section class="section theme-bone">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Plugs into what you already run</p>
+          <h2 class="h1" data-split>No store <em class="serif">migration.</em></h2>
+        </div>
+        <p class="lead">The cart lives in the browser. At checkout it hands off to AEA’s existing WooCommerce store using its built-in shareable checkout links — so orders, payments, taxes, freight rules and reporting stay exactly where they are today.</p>
+      </div>
+      <ol class="flow" aria-label="How checkout connects">
+        <li class="flow__node" data-reveal><span class="flow__ic"><Icon name="sun" size={22} /></span><b>New site</b><span class="muted">Static pages on a global CDN</span></li>
+        <li class="flow__node" data-reveal style="--d:120"><span class="flow__ic"><Icon name="bag" size={22} /></span><b>Cart</b><span class="muted">Sizes, quantities, state rules — instant, in the browser</span></li>
+        <li class="flow__node" data-reveal style="--d:240"><span class="flow__ic"><Icon name="arrow-up-right" size={22} /></span><b>Checkout link</b><span class="muted">One URL carries the whole cart</span></li>
+        <li class="flow__node flow__node--dark" data-reveal style="--d:360"><span class="flow__ic"><Icon name="lock" size={22} /></span><b>Your WooCommerce</b><span>Payments · tax · freight · orders · ERP — unchanged</span></li>
+      </ol>
+      <div class="code" data-reveal>
+        <span class="mono muted">Example handoff — verified against the live store</span>
+        <code>advancingecoag.com/checkout-link/?products=<mark>691:2</mark>,<mark>939:1</mark>,<mark>54407:1</mark></code>
+        <span class="muted">Holo-K 1 gal × 2 · Spectrum 1 acre · Pinion → lands on your checkout with a $149.24 cart, ready to pay.</span>
+      </div>
+      <p class="muted integ-note">The demo ships in “demo checkout” mode so no real orders are created. Switching to the live handoff is a one-line change. The catalog ({catalog.length} products, every size and price) re-syncs from WooCommerce with a single command.</p>
+    </div>
+  </section>
+
+  <!-- ============ TOUR ============ -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Take the tour</p>
+        <h2 class="h1" data-split>Five minutes, <em class="serif">four</em> moments.</h2>
+      </div>
+      <button class="btn btn--sun" type="button" data-sample-checkout data-add={samplePayload}>Try checkout with a sample cart <Icon name="arrow" class="arrow" /></button>
+    </div>
+    <div class="tour">
+      {tour.map((t, i) => (
+        <a class="tcard" href={url(t.href)} data-reveal style={`--d:${i * 90}`}>
+          <img src={url(t.img)} alt="" width="800" height="500" loading="lazy" decoding="async" />
+          <div class="tcard__body">
+            <span class="chip">{t.tag}</span>
+            <h3 class="h3">{t.t}</h3>
+            <p>{t.d}</p>
+          </div>
+          <span class="tcard__go"><Icon name="arrow-up-right" size={20} /></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ NEXT STEPS ============ -->
+  <section class="section theme-moss">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">From concept to launch</p>
+          <h2 class="h1" data-split>What happens <em class="serif">next.</em></h2>
+        </div>
+      </div>
+      <ol class="nsteps">
+        {[
+          ['Walkthrough & feedback', 'A live session with your team: what resonates, what’s missing, what your growers and agronomists need most.'],
+          ['Refine design & content', 'Brand alignment, copy review with your agronomy team, and the remaining sections — blog, podcast, events, grower stories.'],
+          ['Connect live systems', 'Switch on the WooCommerce handoff, route forms to your CRM, add analytics and the state-availability rules you already maintain.'],
+          ['Launch & measure', 'Ship on your domain, monitor real-user speed and conversion, and keep iterating from data.'],
+        ].map(([t, d], i) => (
+          <li data-reveal style={`--d:${i * 90}`}>
+            <span class="nsteps__n">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{t}</h3>
+            <p class="muted">{d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="pcta">
+    <div class="wrap">
+      <h2 class="pcta__title" data-split>Let’s grow this <em class="serif">together.</em></h2>
+      <div class="pcta__row">
+        <div>
+          {DESIGNER.name && <p class="pcta__by"><span class="mono">Prepared by</span><b>{DESIGNER.name}</b>{DESIGNER.role && <span>{DESIGNER.role}</span>}</p>}
+          <p class="pcta__p">Everything you’ve seen is real, working code — ready to evolve into AEA’s next website.</p>
+        </div>
+        <div class="pcta__btns">
+          {DESIGNER.email && <a class="btn" href={`mailto:${DESIGNER.email}?subject=AEA%20website%20redesign`} style="--b-hover:var(--paper)">Start the conversation <Icon name="arrow" class="arrow" /></a>}
+          {DESIGNER.website && <a class="btn btn--ghost" href={DESIGNER.website} style="--line:rgba(13,12,9,.3)">See more work</a>}
+          <a class:list={['btn', { 'btn--ghost': !!DESIGNER.email }]} href={url('/')} style={DESIGNER.email ? '--line:rgba(13,12,9,.3)' : '--b-hover:var(--paper)'}>Open the live demo <Icon name="arrow-up-right" class="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { Cart } from '../scripts/app';
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    // before/after tabs
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-ba-tab]'));
+    const panes = Array.from(document.querySelectorAll<HTMLElement>('[data-ba]'));
+    tabs.forEach((t) => t.addEventListener('click', () => {
+      tabs.forEach((x) => x.setAttribute('aria-selected', String(x === t)));
+      panes.forEach((p) => (p.hidden = p.dataset.ba !== t.dataset.baTab));
+    }));
+    // sliders
+    document.querySelectorAll<HTMLInputElement>('[data-ba-range]').forEach((r) => {
+      const host = r.closest<HTMLElement>('.ba')!;
+      const set = () => host.style.setProperty('--pos', `${r.value}%`);
+      r.addEventListener('input', set);
+      set();
+      // gentle hint animation the first time it scrolls into view
+      const io = new IntersectionObserver((e) => {
+        if (!e[0].isIntersecting || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        io.disconnect();
+        const frames = [50, 32, 68, 50];
+        let i = 0;
+        const step = () => { if (i >= frames.length) return; r.value = String(frames[i++]); set(); setTimeout(step, 520); };
+        setTimeout(step, 400);
+      }, { threshold: 0.5 });
+      io.observe(host);
+    });
+    // sample cart → checkout
+    document.querySelector<HTMLButtonElement>('[data-sample-checkout]')?.addEventListener('click', () => {
+      setTimeout(() => { if (Cart.count() > 0) location.href = `${base}/checkout/`; }, 650);
+    });
+  </script>
+</Base>
+
+<style>
+  /* hero */
+  .ph { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; padding-bottom: clamp(32px, 5vw, 64px); }
+  .ph__bg { position: absolute; inset: 0; z-index: -1; }
+  .ph__bg img { width: 100%; height: 100%; object-fit: cover; }
+  .ph__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(13, 12, 9, 0.95) 10%, rgba(13, 12, 9, 0.55) 55%, rgba(13, 12, 9, 0.35)); }
+  .ph__inner { padding-top: calc(var(--nav-h) + 72px); }
+  .ph .eyebrow { color: rgba(255, 255, 255, 0.75); }
+  .ph__title { color: #fff; margin-top: 22px; max-width: 12ch; }
+  .ph__title em { color: var(--sun); }
+  .ph__row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 48px; margin-top: 32px; flex-wrap: wrap; }
+  .ph .lead { color: rgba(255, 255, 255, 0.78); max-width: 52ch; }
+  .ph__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ph__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid rgba(255, 255, 255, 0.16); padding-top: 22px; }
+  .ph__stats dt { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.55); }
+  .ph__stats dd { display: flex; align-items: center; gap: 10px; margin-top: 8px; color: #fff; }
+  .ph__stats dd s { font-size: 1.1rem; color: rgba(255, 255, 255, 0.45); text-decoration-thickness: 1px; }
+  .ph__stats dd :global(svg) { color: rgba(255, 255, 255, 0.45); flex: none; }
+  .ph__stats dd b { font-size: clamp(1.6rem, 1rem + 1.6vw, 2.6rem); font-weight: 500; letter-spacing: -0.04em; color: var(--sun); }
+  .ph__stats .mono { color: rgba(255, 255, 255, 0.55); font-size: 0.65rem; }
+  @media (max-width: 860px) { .ph__stats { grid-template-columns: repeat(2, 1fr); row-gap: 22px; } }
+
+  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 48px; flex-wrap: wrap; margin-bottom: clamp(36px, 5vw, 64px); }
+  .sec-head h2 { margin-top: 18px; }
+  .sec-head h2 em { color: var(--sage); }
+  :global(.theme-dark) .sec-head h2 em, :global(.theme-moss) .sec-head h2 em { color: var(--sun); }
+
+  /* before / after */
+  .ba-tabs { display: inline-flex; padding: 4px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); }
+  .ba-tabs button { height: 40px; padding: 0 18px; border-radius: 999px; font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: background-color 0.3s, color 0.3s; }
+  .ba-tabs button[aria-selected='true'] { background: var(--ink); color: var(--paper); }
+  .ba { position: relative; border-radius: calc(var(--radius) + 6px); overflow: hidden; aspect-ratio: 16 / 10; background: var(--bone); box-shadow: 0 0 0 1px var(--line), 0 50px 100px -50px rgba(13, 12, 9, 0.45); user-select: none; }
+  .ba__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .ba__old { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .ba__old::after { content: ''; position: absolute; top: 0; bottom: 0; right: calc(100% - var(--pos)); width: 2px; background: var(--sun); box-shadow: 0 0 20px rgba(249, 177, 52, 0.7); }
+  .ba__label { position: absolute; top: 16px; padding: 8px 12px; border-radius: 999px; background: rgba(13, 12, 9, 0.75); color: #fff; backdrop-filter: blur(8px); z-index: 2; }
+  .ba__label--l { left: 16px; }
+  .ba__label--r { right: 16px; background: var(--sun); color: var(--ink); }
+  .ba__handle { position: absolute; top: 50%; left: var(--pos); width: 56px; height: 56px; border-radius: 50%; background: var(--sun); color: var(--ink); display: flex; align-items: center; justify-content: center; gap: 0; transform: translate(-50%, -50%); z-index: 2; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); pointer-events: none; transition: transform 0.3s var(--ease); }
+  .ba__handle :global(svg:first-child) { transform: rotate(180deg); }
+  .ba__range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 3; margin: 0; }
+  .ba__range:focus-visible + * { outline: none; }
+  .ba:has(.ba__range:focus-visible) .ba__handle { transform: translate(-50%, -50%) scale(1.15); outline: 3px solid var(--paper); }
+  .ba:has(.ba__range:active) .ba__handle { transform: translate(-50%, -50%) scale(0.92); }
+  .ba-m { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: clamp(20px, 4vw, 56px); align-items: center; }
+  .ba-m figure { display: grid; justify-items: center; gap: 14px; }
+  .phone { width: min(300px, 100%); aspect-ratio: 600 / 1022; border-radius: 40px; padding: 10px; background: var(--ink); box-shadow: 0 40px 80px -40px rgba(13, 12, 9, 0.6); }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 30px; }
+  .phone--new { background: linear-gradient(160deg, #2a2418, var(--ink)); box-shadow: 0 0 0 2px var(--sun), 0 40px 80px -40px rgba(249, 177, 52, 0.5); }
+  .ba-m__qr { display: grid; gap: 18px; justify-items: start; padding: clamp(20px, 3vw, 32px); border-radius: var(--radius); background: var(--bone); }
+  .qr { width: 168px; height: 168px; padding: 14px; border-radius: 18px; background: var(--paper); }
+  .qr :global(svg) { width: 100%; height: 100%; }
+  @media (max-width: 900px) { .ba-m { grid-template-columns: 1fr 1fr; } .ba-m__qr { grid-column: 1 / -1; } .ba { aspect-ratio: 4 / 3; } }
+
+  /* race chart */
+  .race { padding: clamp(20px, 3vw, 36px); border-radius: var(--radius); background: rgba(242, 237, 227, 0.04); box-shadow: inset 0 0 0 1px var(--line); }
+  .race__title { font-weight: 550; letter-spacing: -0.02em; font-size: 1.1rem; }
+  .race__legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; color: var(--muted); font-size: 0.65rem; }
+  .race__legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { display: inline-block; width: 18px; height: 8px; border-radius: 4px; }
+  .sw--lcp { background: var(--sun); }
+  .sw--si { background: rgba(242, 237, 227, 0.28); }
+  .race__rows { display: grid; gap: 18px; margin-top: 24px; }
+  .race__row { display: grid; grid-template-columns: 90px 1fr 130px; gap: 16px; align-items: center; }
+  .race__label { font-weight: 550; }
+  .race__track { position: relative; height: 22px; }
+  .race__bar { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.6s var(--ease); }
+  .race__bar--si { width: var(--si); background: rgba(242, 237, 227, 0.22); }
+  .race__bar--lcp { width: var(--lcp); background: var(--sun); top: 5px; bottom: 5px; border-radius: 0 3px 3px 0; box-shadow: 0 0 0 2px var(--ink); }
+  :global(.race.is-in) .race__bar { transform: scaleX(1); }
+  :global(.race.is-in) .race__bar--lcp { transition-delay: 0.25s; }
+  .race__val { text-align: right; color: var(--muted); font-size: 0.9rem; }
+  .race__val b { color: var(--fg); font-weight: 600; }
+  @media (max-width: 600px) { .race__row { grid-template-columns: 1fr; gap: 6px; } .race__val { text-align: left; } }
+
+  /* metrics table */
+  .mtable-wrap { margin-top: 18px; overflow-x: auto; border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line); }
+  .mtable { width: 100%; border-collapse: collapse; min-width: 620px; }
+  .mtable th, .mtable td { padding: 14px 18px; text-align: right; border-bottom: 1px solid var(--line); }
+  .mtable th:first-child { text-align: left; font-weight: 450; color: var(--muted); }
+  .mtable thead th { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 450; }
+  .mtable thead tr:first-child th[colspan] { text-align: center; color: var(--fg); }
+  .mtable__sub th { padding-top: 0; }
+  .mtable tbody tr:last-child th, .mtable tbody tr:last-child td { border-bottom: 0; }
+  .mtable td small { color: var(--muted); font-size: 0.7em; margin-left: 2px; }
+  .mtable td.old { color: var(--muted); }
+  .mtable td.neu { color: var(--sun); font-weight: 600; }
+  .mtable td:nth-child(3) { border-right: 1px solid var(--line); }
+  .footnote { margin-top: 16px; font-size: 0.65rem; line-height: 1.6; text-transform: none; letter-spacing: 0.02em; }
+
+  /* principles */
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .pcell { padding: clamp(24px, 3vw, 32px); border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line); display: flex; flex-direction: column; gap: 12px; min-height: 280px; transition: background-color 0.4s, color 0.4s; }
+  .pcell:hover { background: var(--ink); color: var(--bone); }
+  .pcell:hover .muted { color: rgba(242, 237, 227, 0.65); }
+  .pcell__ic { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: var(--sun); color: var(--ink); margin-bottom: auto; }
+  .pcell h3 { margin-top: 18px; }
+  @media (max-width: 1000px) { .pgrid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .pgrid { grid-template-columns: 1fr; } }
+
+  /* integration flow */
+  .flow { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: f; }
+  .flow__node { position: relative; padding: 24px; border-radius: var(--radius); background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); display: flex; flex-direction: column; gap: 8px; min-height: 200px; }
+  .flow__node b { font-size: 1.2rem; letter-spacing: -0.02em; margin-top: auto; font-weight: 550; }
+  .flow__node:not(:last-child)::after { content: ''; position: absolute; right: -14px; top: 50%; width: 14px; height: 2px; background: var(--sun); z-index: 1; }
+  .flow__node--dark { background: var(--ink); color: var(--bone); box-shadow: none; }
+  .flow__node--dark span:last-child { color: rgba(242, 237, 227, 0.7); }
+  .flow__ic { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--bone); }
+  .flow__node--dark .flow__ic { background: var(--sun); color: var(--ink); }
+  @media (max-width: 900px) {
+    .flow { grid-template-columns: 1fr; }
+    .flow__node { min-height: 0; }
+    .flow__node:not(:last-child)::after { right: auto; left: 46px; top: auto; bottom: -14px; width: 2px; height: 14px; }
+  }
+  .code { margin-top: 18px; padding: 22px 24px; border-radius: var(--radius); background: var(--ink); color: var(--bone); display: grid; gap: 10px; --muted: rgba(242, 237, 227, 0.6); }
+  .code code { font-family: var(--mono); font-size: clamp(0.8rem, 0.6rem + 0.6vw, 1.05rem); word-break: break-all; }
+  .code mark { background: rgba(249, 177, 52, 0.22); color: var(--sun); border-radius: 4px; padding: 0 3px; }
+  .code > span:last-child { font-size: 0.88rem; }
+  .integ-note { margin-top: 18px; max-width: 80ch; font-size: 0.92rem; }
+
+  /* tour */
+  .tour { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tcard { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; border-radius: var(--radius); overflow: hidden; isolation: isolate; color: #fff; }
+  .tcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.4s var(--ease); }
+  .tcard::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(13, 12, 9, 0.9), rgba(13, 12, 9, 0.1) 65%); }
+  .tcard:hover img { transform: scale(1.06); }
+  .tcard__body { padding: 22px; display: grid; gap: 8px; padding-right: 72px; }
+  .tcard__body .chip { color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35); justify-self: start; }
+  .tcard__body p { color: rgba(255, 255, 255, 0.75); font-size: 0.92rem; }
+  .tcard__go { position: absolute; right: 20px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; background: var(--sun); color: var(--ink); display: grid; place-items: center; transition: transform 0.5s var(--ease); }
+  .tcard:hover .tcard__go { transform: rotate(45deg); }
+  @media (max-width: 1100px) { .tour { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .tour { grid-template-columns: 1fr; } .tcard { min-height: 280px; } }
+
+  /* next steps */
+  .nsteps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .nsteps li { padding: 26px; border-radius: var(--radius); background: rgba(242, 237, 227, 0.06); box-shadow: inset 0 0 0 1px var(--line); display: flex; flex-direction: column; gap: 10px; min-height: 260px; }
+  .nsteps__n { font-size: 3rem; font-weight: 500; letter-spacing: -0.06em; line-height: 1; color: var(--sun); margin-bottom: auto; }
+  .nsteps h3 { font-size: 1.25rem; letter-spacing: -0.02em; margin-top: 32px; font-weight: 550; }
+  @media (max-width: 1000px) { .nsteps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .nsteps { grid-template-columns: 1fr; } }
+
+  /* cta */
+  .pcta { background: var(--sun); color: var(--ink); padding-block: clamp(96px, 12vw, 180px); --line: rgba(13, 12, 9, 0.2); --muted: rgba(13, 12, 9, 0.7); }
+  .pcta__title { font-size: clamp(3rem, 1rem + 8vw, 10rem); letter-spacing: -0.06em; line-height: 0.88; font-weight: 500; max-width: 12ch; }
+  .pcta__title em { color: var(--plum); }
+  .pcta__row { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: clamp(40px, 5vw, 72px); flex-wrap: wrap; }
+  .pcta__p { max-width: 44ch; font-size: var(--fs-lg); line-height: 1.45; }
+  .pcta__by { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
+  .pcta__by b { font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 550; }
+  .pcta__btns { display: flex; gap: 10px; flex-wrap: wrap; }
+</style>
