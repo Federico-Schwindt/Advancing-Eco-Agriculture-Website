@@ -34,10 +34,10 @@ export type Crop = {
 
 /** Your details — shown on /pitch and in the disclaimer's takedown contact. Empty = hidden. */
 export const AUTHOR = {
-  name: '',    // e.g. 'Jane Doe'
-  role: '',    // e.g. 'Independent product designer'
-  email: '',   // e.g. 'hello@janedoe.com'
-  website: '', // e.g. 'https://janedoe.com'
+  name: 'Federico Schwindt',
+  role: 'Web designer & developer',
+  email: 'leonel.sch2003@gmail.com',
+  website: 'https://federico-schwindt.github.io/portfolio-FEDERICOSCH/',
 };
 
 export const products = productsRaw as Product[];

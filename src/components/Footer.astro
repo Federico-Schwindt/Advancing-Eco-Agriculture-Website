@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { url } from '../lib/site';
+import { url, AUTHOR } from '../lib/site';
 ---
 <footer class="footer theme-dark">
   <div class="wrap">
@@ -43,7 +43,7 @@ import { url } from '../lib/site';
   </div>
   <div class="wrap">
     <p class="footer__legal">
-      Unofficial design concept. Not affiliated with, endorsed by, or sponsored by Advancing Eco Agriculture, LLC.
+      Unofficial design concept{AUTHOR.name && <> by <a href={AUTHOR.website || undefined} target="_blank" rel="noopener">{AUTHOR.name}</a></>}, made for portfolio purposes. Not affiliated with, endorsed by, or sponsored by Advancing Eco Agriculture, LLC.
       “Advancing Eco Agriculture”, “AEA”, the AEA logo, product names, images and content are trademarks or property of their respective owners and are shown for illustrative purposes only.
       No products are sold and no data is collected on this site. For the official website and store visit <a href="https://advancingecoag.com" target="_blank" rel="noopener">advancingecoag.com</a>.
     </p>
