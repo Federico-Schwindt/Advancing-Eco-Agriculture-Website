@@ -1,0 +1,57 @@
+---
+import Icon from './Icon.astro';
+import { AUTHOR } from '../lib/site';
+const contact = AUTHOR.email
+  ? `<a href="mailto:${AUTHOR.email}?subject=AEA%20concept%20site">${AUTHOR.email}</a>`
+  : 'the author of this demo';
+---
+<!-- Persistent, always-visible concept label -->
+<button class="concept-pill" type="button" data-open-notice aria-haspopup="dialog">
+  <span class="concept-pill__dot" aria-hidden="true"></span>
+  <span>Concept demo · not affiliated with AEA</span>
+  <Icon name="arrow-up-right" size={14} />
+</button>
+
+<!-- Disclaimer dialog — shown on first visit, reopenable from the pill and footer -->
+<div class="modal notice" data-notice-modal aria-hidden="true" inert>
+  <div class="modal__scrim" data-close-notice></div>
+  <div class="modal__card notice__card" role="dialog" aria-modal="true" aria-labelledby="notice-title" aria-describedby="notice-body">
+    <p class="eyebrow">Please read · Disclaimer</p>
+    <h2 id="notice-title" class="h3 notice__title">This is a design concept, <em class="serif">not</em> the official AEA website.</h2>
+    <div id="notice-body" class="notice__body">
+      <p><b>Independent proposal.</b> This site is an unsolicited redesign concept created for portfolio and pitch purposes. It is not affiliated with, endorsed by, or sponsored by Advancing Eco Agriculture, LLC.</p>
+      <p><b>Trademarks & content.</b> “Advancing Eco Agriculture”, “AEA”, the AEA logo, product names, product photography and written content are trademarks or property of their respective owners. They appear here only to illustrate the proposed design. No ownership is claimed.</p>
+      <p><b>Nothing is for sale.</b> No orders are placed, no payments are taken, and forms do not send or store any data. Product details and prices may be outdated. For real products, pricing and agronomic advice, visit <a href="https://advancingecoag.com" target="_blank" rel="noopener">advancingecoag.com</a>.</p>
+      <p><b>Rights holders.</b> If you would like anything changed or removed, contact <span set:html={contact} /> and it will be taken down promptly.</p>
+    </div>
+    <div class="notice__actions">
+      <button type="button" class="btn btn--sun" data-ack-notice>I understand — explore the concept <Icon name="arrow" class="arrow" /></button>
+      <a class="btn btn--ghost" href="https://advancingecoag.com" target="_blank" rel="noopener">Visit the official site <Icon name="arrow-up-right" class="arrow" /></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .concept-pill {
+    position: fixed; left: 14px; bottom: 14px; z-index: 45;
+    display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 10px; border-radius: 999px;
+    background: rgba(13, 12, 9, 0.78); color: rgba(242, 237, 227, 0.92);
+    backdrop-filter: blur(12px) saturate(1.4); -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    box-shadow: inset 0 0 0 1px rgba(242, 237, 227, 0.16), 0 10px 30px -12px rgba(0, 0, 0, 0.5);
+    font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.4s var(--ease);
+  }
+  .concept-pill:hover { background: var(--ink); transform: translateY(-2px); }
+  .concept-pill__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 3px rgba(249, 177, 52, 0.25); }
+  @media (max-width: 480px) { .concept-pill { font-size: 0.58rem; height: 30px; left: 10px; bottom: 10px; } }
+  @media print { .concept-pill { display: none; } }
+
+  .notice { z-index: 88; }
+  .notice__card { width: min(620px, 100%); max-height: calc(100svh - 32px); overflow-y: auto; }
+  .notice__title { margin-top: 14px; max-width: 20ch; }
+  .notice__title em { color: var(--sage); }
+  .notice__body { margin-top: 18px; display: grid; gap: 12px; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+  .notice__body b { color: var(--fg); font-weight: 600; }
+  .notice__body a, .notice__body :global(a) { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; }
+  .notice__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+</style>

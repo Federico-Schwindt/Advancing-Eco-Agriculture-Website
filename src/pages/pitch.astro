@@ -2,18 +2,11 @@
 import QRCode from 'qrcode';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { url, catalog, products } from '../lib/site';
+import { url, catalog, products, AUTHOR } from '../lib/site';
 import pitch from '../data/pitch.json';
 
-/* ------------------------------------------------------------------
-   Personalize here — anything left empty is simply not shown.
------------------------------------------------------------------- */
-const DESIGNER = {
-  name: '',      // e.g. 'Jane Doe'
-  role: '',      // e.g. 'Independent product designer'
-  email: '',     // e.g. 'hello@janedoe.com' → enables the “Start the conversation” button
-  website: '',   // e.g. 'https://janedoe.com'
-};
+// Personalize in src/lib/site.ts → AUTHOR (name, role, email, website). Empty fields are hidden.
+const DESIGNER = AUTHOR;
 
 const h = pitch.home, pr = pitch.product;
 const sec = (ms: number) => `${(ms / 1000).toFixed(1)}s`;

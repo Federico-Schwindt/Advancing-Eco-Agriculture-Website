@@ -58,4 +58,4 @@ NODE_USE_ENV_PROXY=1 npm run sync   # proxy variable only needed behind a proxy
 
 ## Media credits
 
-Cinematic films and stills (hero field, soil descent, sap droplet, hands, orchard) were generated with Higgsfield (FLUX 3 Video, GPT Image) for this concept. Product photography, crop/story imagery, grower portraits, logos and copy belong to Advancing Eco Agriculture and are used with permission.
+Cinematic films and stills (hero field, soil descent, sap droplet, hands, orchard) were generated with Higgsfield (FLUX 3 Video, GPT Image) for this concept. Product photography, crop/story imagery, grower portraits, logos, trademarks and copy belong to Advancing Eco Agriculture and their respective owners; they appear here only to illustrate this unofficial design proposal. Every page shows a disclaimer (first-visit notice, persistent “concept demo” label and footer legal text), and the site is excluded from search engines via `noindex`.

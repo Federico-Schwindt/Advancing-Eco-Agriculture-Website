@@ -272,7 +272,7 @@ document.addEventListener('click', (e) => {
   if (r) { Cart.setQty(+r.dataset.remove!, 0); return; }
 });
 addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { setDrawer(false); setMenu(false); setStateModal(false); }
+  if (e.key === 'Escape') { setDrawer(false); setMenu(false); setStateModal(false); setNotice(false); }
 });
 addEventListener('storage', (e) => { if (e.key === 'aea-cart') { cart = store.get('aea-cart', []); render(); } });
 
@@ -339,3 +339,26 @@ const vio = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '200px' });
 $$<HTMLVideoElement>('video[data-lazy-video]').forEach((v) => (reduced ? null : vio.observe(v)));
+
+/* ==========================================================================
+   Concept disclaimer — first visit + reopen from pill/footer
+   ========================================================================== */
+const NOTICE_KEY = 'aea-concept-ack-v1';
+const noticeEl = $('[data-notice-modal]');
+function setNotice(open: boolean) {
+  if (!noticeEl) return;
+  noticeEl.classList.toggle('is-open', open);
+  noticeEl.setAttribute('aria-hidden', String(!open));
+  noticeEl.inert = !open;
+  open ? lenis?.stop() : lenis?.start();
+  if (open) setTimeout(() => { $<HTMLButtonElement>('[data-ack-notice]')?.focus({ preventScroll: true }); $('.notice__card')?.scrollTo({ top: 0 }); }, 60);
+}
+document.addEventListener('click', (e) => {
+  const t = e.target as Element;
+  if (t.closest('[data-open-notice]')) { e.preventDefault(); setNotice(true); return; }
+  if (t.closest('[data-ack-notice]') || t.closest('[data-close-notice]')) { store.set(NOTICE_KEY, Date.now()); setNotice(false); }
+});
+if (noticeEl && !store.get<number>(NOTICE_KEY, 0)) {
+  const show = () => setTimeout(() => setNotice(true), 900);
+  document.readyState === 'complete' ? show() : addEventListener('load', show, { once: true });
+}

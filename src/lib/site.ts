@@ -32,6 +32,14 @@ export type Crop = {
   stories: string[];
 };
 
+/** Your details — shown on /pitch and in the disclaimer's takedown contact. Empty = hidden. */
+export const AUTHOR = {
+  name: '',    // e.g. 'Jane Doe'
+  role: '',    // e.g. 'Independent product designer'
+  email: '',   // e.g. 'hello@janedoe.com'
+  website: '', // e.g. 'https://janedoe.com'
+};
+
 export const products = productsRaw as Product[];
 export const crops = cropsRaw as Crop[];
 

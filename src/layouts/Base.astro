@@ -9,6 +9,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import CartDrawer from '../components/CartDrawer.astro';
 import StateModal from '../components/StateModal.astro';
+import ConceptNotice from '../components/ConceptNotice.astro';
 import { url } from '../lib/site';
 
 interface Props {
@@ -19,11 +20,11 @@ interface Props {
 }
 const {
   title,
-  description = 'Advancing Eco Agriculture — regenerative plant nutrition, plant-sap science and agronomic consulting that help growers raise crops naturally resistant to pests and disease.',
+  description = 'Unofficial redesign concept for Advancing Eco Agriculture — a design proposal, not affiliated with or endorsed by AEA.',
   navTone = 'dark',
   preload = [],
 } = Astro.props;
-const fullTitle = title ? `${title} — Advancing Eco Agriculture` : 'Advancing Eco Agriculture — Healthy plants defend themselves';
+const fullTitle = title ? `${title} · AEA redesign concept` : 'AEA redesign concept — Healthy plants defend themselves';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const og = new URL(url('/media/og.jpg'), Astro.site);
 ---
@@ -40,7 +41,8 @@ const og = new URL(url('/media/og.jpg'), Astro.site);
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={`Design concept — not affiliated with AEA. ${description}`} />
+    <meta property="og:site_name" content="AEA redesign concept (unofficial)" />
     <meta property="og:image" content={og} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" sizes="32x32" href={url('/favicon-32.png')} />
@@ -59,6 +61,7 @@ const og = new URL(url('/media/og.jpg'), Astro.site);
     <Footer />
     <CartDrawer />
     <StateModal />
+    <ConceptNotice />
     <div class="toast" role="status" aria-live="polite" data-toast>
       <img alt="" width="36" height="36" data-toast-img />
       <span data-toast-text>Added to cart</span>

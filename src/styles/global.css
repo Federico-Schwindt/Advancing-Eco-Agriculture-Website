@@ -399,7 +399,9 @@ html.js [data-split].is-in .w > span { animation: rv-word 1.2s var(--ease) backw
   -webkit-background-clip: text; background-clip: text; color: transparent; opacity: 0.95;
   transform: translateY(14%);
 }
-.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8rem; position: relative; z-index: 1; }
+.footer__legal { position: relative; z-index: 1; max-width: 110ch; padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; line-height: 1.6; }
+.footer__legal a { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; }
+.footer__bottom { padding-bottom: 64px !important; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8rem; position: relative; z-index: 1; }
 @media (max-width: 860px) { .footer__top { grid-template-columns: 1fr 1fr; } .footer__top > :first-child { grid-column: 1 / -1; } }
 
 /* ---------- Forms ---------- */

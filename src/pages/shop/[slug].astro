@@ -63,6 +63,7 @@ const ld = {
         <span class="pdp__amount tnum" data-price>{money(first.price)}</span>
         <span class="mono muted" data-size-label>{first.label}</span>
       </div>
+      <p class="pdp__demo-note">Demo pricing for illustration only — see <a href="https://advancingecoag.com" target="_blank" rel="noopener">advancingecoag.com</a> for current prices.</p>
 
       {p.sizes.length > 1 && (
         <fieldset class="sizes">
@@ -232,6 +233,8 @@ const ld = {
   .pdp__tagline { font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem); color: var(--sage); margin-top: 12px; line-height: 1.15; }
   .pdp__price { display: flex; align-items: baseline; gap: 14px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
   .pdp__amount { font-size: 2.2rem; font-weight: 550; letter-spacing: -0.04em; display: inline-block; }
+  .pdp__demo-note { margin-top: 6px; font-size: 0.75rem; color: var(--muted); }
+  .pdp__demo-note a { text-decoration: underline; text-underline-offset: 2px; }
   .sizes { border: 0; padding: 0; margin-top: 22px; }
   .sizes legend { margin-bottom: 10px; }
   .sizes__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
