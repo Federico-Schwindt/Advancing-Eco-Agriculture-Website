@@ -49,16 +49,25 @@ document.addEventListener('click', (e) => {
    ========================================================================== */
 const navEl = $('[data-nav]');
 if (navEl) {
+  // Hide while scrolling down, show only when scrolling up (or back near the top). The state changes only after
+  // 8px of travel in one direction, so the small steps at the end of a smooth scroll, or a pause, never bring it back.
   let lastY = scrollY;
+  let travel = 0;
+  const show = () => navEl.classList.remove('is-hidden');
   const onScroll = () => {
     const y = scrollY;
-    navEl.classList.toggle('is-scrolled', y > 40);
-    const menuOpen = document.documentElement.classList.contains('menu-open');
-    if (!menuOpen) navEl.classList.toggle('is-hidden', y > 400 && y > lastY + 2);
-    if (y < lastY - 2) navEl.classList.remove('is-hidden');
+    const dy = y - lastY;
     lastY = y;
+    navEl.classList.toggle('is-scrolled', y > 40);
+    if (document.documentElement.classList.contains('menu-open')) return;
+    if (y < 120) { show(); travel = 0; return; }
+    if (dy === 0) return;
+    travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
+    if (travel > 8 && y > 400) navEl.classList.add('is-hidden');
+    else if (travel < -8) show();
   };
   addEventListener('scroll', onScroll, { passive: true });
+  navEl.addEventListener('focusin', show);   // keyboard users always get the nav back
   onScroll();
 }
 const menu = $('[data-menu]');
