@@ -49,26 +49,34 @@ document.addEventListener('click', (e) => {
    ========================================================================== */
 const navEl = $('[data-nav]');
 if (navEl) {
-  // Hide while scrolling down, show only when scrolling up (or back near the top). The state changes only after
-  // 8px of travel in one direction, so the small steps at the end of a smooth scroll, or a pause, never bring it back.
+  // Hide as soon as the page scrolls down, show only when it scrolls up (or back at the very top). Direction changes
+  // only after a few px of travel, so the small steps at the end of a smooth scroll, or a pause, never bring it back.
+  // The "scrolled" pill style is set only right before the nav slides back in (and cleared at the very top), so the
+  // bar never changes look on screen, e.g. the pill never fades in over the hero while the nav is leaving.
   let lastY = scrollY;
   let travel = 0;
-  const show = () => navEl.classList.remove('is-hidden');
+  const hidden = () => navEl.classList.contains('is-hidden');
+  const show = () => {
+    if (!hidden()) return;
+    navEl.classList.toggle('is-scrolled', scrollY > 40);
+    navEl.classList.remove('is-hidden');
+  };
   const onScroll = () => {
     const y = scrollY;
     const dy = y - lastY;
     lastY = y;
-    navEl.classList.toggle('is-scrolled', y > 40);
     if (document.documentElement.classList.contains('menu-open')) return;
-    if (y < 120) { show(); travel = 0; return; }
-    if (dy === 0) return;
-    travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
-    if (travel > 8 && y > 400) navEl.classList.add('is-hidden');
-    else if (travel < -8) show();
+    if (y < 24) { travel = 0; navEl.classList.remove('is-scrolled'); show(); return; }   // back at the top: transparent
+    if (dy !== 0) {
+      travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
+      if (travel > 6) navEl.classList.add('is-hidden');
+      else if (travel < -8) show();
+    }
+    // no style change here: the nav keeps its look while it slides away (0.6s); show() sets the pill before it returns
   };
+  navEl.classList.toggle('is-scrolled', scrollY > 40);   // opened (or reloaded) mid-page: start with the pill
   addEventListener('scroll', onScroll, { passive: true });
   navEl.addEventListener('focusin', show);   // keyboard users always get the nav back
-  onScroll();
 }
 const menu = $('[data-menu]');
 const setMenu = (open: boolean) => {
