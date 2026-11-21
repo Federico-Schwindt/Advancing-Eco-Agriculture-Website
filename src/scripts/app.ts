@@ -49,26 +49,27 @@ document.addEventListener('click', (e) => {
    ========================================================================== */
 const navEl = $('[data-nav]');
 if (navEl) {
-  // Hide as soon as the page scrolls down, show only when the user scrolls up (or is back at the very top). Direction
-  // changes only after a few px of travel and only with an upward input, so stopping or pausing never brings it back.
-  // The "scrolled" pill style is set only right before the nav slides back in (and cleared at the very top), so the
-  // bar never changes look on screen, e.g. the pill never fades in over the hero while the nav is leaving.
+  // Hide as soon as the page scrolls down; show only when the USER scrolls up (or is back at the very top).
+  // Upward page movement only counts while the last input was an upward one: wheel up, ↑ / PgUp / Home / ⇧Space, or a
+  // deliberate swipe down (finger ≥ SWIPE px). Everything else is ignored and never accumulates: momentum settling when
+  // the scroll stops, the small finger slip of the tap that stops a fling, iOS rubber-banding, the browser bar resizing
+  // the viewport, or a layout refresh restoring the scroll position.
+  const SHOW_AFTER = 24; // px of upward travel after an upward input
+  const SWIPE = 48; // finger travel that makes a touch gesture an intentional "scroll up"
   let lastY = scrollY;
   let travel = 0;
-  // Direction of the user's last scroll input. Only an upward input (wheel up, finger dragging down, ↑ / PgUp / Home /
-  // ⇧Space) may bring the nav back. Page movement without one never does: momentum settling when the scroll stops,
-  // iOS rubber-banding, the browser bar resizing the viewport, or a layout refresh restoring the scroll position.
   let intentUp = false;
-  addEventListener('wheel', (e) => { if (e.deltaY) intentUp = e.deltaY < 0; }, { passive: true });
-  let touchY = 0;
-  addEventListener('touchstart', (e) => { touchY = e.touches[0]?.clientY ?? touchY; }, { passive: true });
+  const setIntent = (up: boolean) => { if (up !== intentUp) travel = 0; intentUp = up; };
+  addEventListener('wheel', (e) => { if (e.deltaY) setIntent(e.deltaY < 0); }, { passive: true });
+  let touchStartY = 0;
+  addEventListener('touchstart', (e) => { touchStartY = e.touches[0]?.clientY ?? 0; intentUp = false; travel = 0; }, { passive: true });
   addEventListener('touchmove', (e) => {
-    const y = e.touches[0]?.clientY ?? touchY;
-    if (Math.abs(y - touchY) > 6) { intentUp = y > touchY; touchY = y; }
+    const d = (e.touches[0]?.clientY ?? touchStartY) - touchStartY;
+    if (d > SWIPE) setIntent(true); else if (d < -6) setIntent(false);
   }, { passive: true });
   addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Home' || (e.key === ' ' && e.shiftKey)) intentUp = true;
-    else if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'End' || e.key === ' ') intentUp = false;
+    if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Home' || (e.key === ' ' && e.shiftKey)) setIntent(true);
+    else if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'End' || e.key === ' ') setIntent(false);
   });
   const hidden = () => navEl.classList.contains('is-hidden');
   const show = () => {
@@ -82,10 +83,12 @@ if (navEl) {
     lastY = y;
     if (document.documentElement.classList.contains('menu-open')) return;
     if (y < 24) { travel = 0; navEl.classList.remove('is-scrolled'); show(); return; }   // back at the top: transparent
-    if (dy !== 0) {
-      travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
+    if (dy > 0) {
+      travel = travel > 0 ? travel + dy : dy;
       if (travel > 6) navEl.classList.add('is-hidden');
-      else if (travel < -8 && intentUp) show();
+    } else if (dy < 0) {
+      if (!intentUp) travel = 0;   // the page moved up on its own: ignore it, never let it add up
+      else { travel = travel < 0 ? travel + dy : dy; if (travel < -SHOW_AFTER) show(); }
     }
     // no style change here: the nav keeps its look while it slides away (0.6s); show() sets the pill before it returns
   };
