@@ -28,8 +28,10 @@ if (document.readyState === 'complete') setTimeout(startHeroVideo, 200);
 else addEventListener('load', () => setTimeout(startHeroVideo, 200), { once: true });
 
 if (!reduced) {
+  // Parallax without ever exposing the page behind the hero: the media may only drift down as much as its zoom grows
+  // at the top edge (scale 1 + S around the centre adds S/2 above), so yPercent ≤ S/2 keeps the top edge covered.
   gsap.to('[data-hero-media]', {
-    yPercent: 18, scale: 1.08, ease: 'none',
+    yPercent: 9, scale: 1.2, ease: 'none',
     scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true },
   });
   gsap.to('[data-hero-content]', {
