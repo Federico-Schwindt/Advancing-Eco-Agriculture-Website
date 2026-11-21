@@ -49,12 +49,27 @@ document.addEventListener('click', (e) => {
    ========================================================================== */
 const navEl = $('[data-nav]');
 if (navEl) {
-  // Hide as soon as the page scrolls down, show only when it scrolls up (or back at the very top). Direction changes
-  // only after a few px of travel, so the small steps at the end of a smooth scroll, or a pause, never bring it back.
+  // Hide as soon as the page scrolls down, show only when the user scrolls up (or is back at the very top). Direction
+  // changes only after a few px of travel and only with an upward input, so stopping or pausing never brings it back.
   // The "scrolled" pill style is set only right before the nav slides back in (and cleared at the very top), so the
   // bar never changes look on screen, e.g. the pill never fades in over the hero while the nav is leaving.
   let lastY = scrollY;
   let travel = 0;
+  // Direction of the user's last scroll input. Only an upward input (wheel up, finger dragging down, ↑ / PgUp / Home /
+  // ⇧Space) may bring the nav back. Page movement without one never does: momentum settling when the scroll stops,
+  // iOS rubber-banding, the browser bar resizing the viewport, or a layout refresh restoring the scroll position.
+  let intentUp = false;
+  addEventListener('wheel', (e) => { if (e.deltaY) intentUp = e.deltaY < 0; }, { passive: true });
+  let touchY = 0;
+  addEventListener('touchstart', (e) => { touchY = e.touches[0]?.clientY ?? touchY; }, { passive: true });
+  addEventListener('touchmove', (e) => {
+    const y = e.touches[0]?.clientY ?? touchY;
+    if (Math.abs(y - touchY) > 6) { intentUp = y > touchY; touchY = y; }
+  }, { passive: true });
+  addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Home' || (e.key === ' ' && e.shiftKey)) intentUp = true;
+    else if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'End' || e.key === ' ') intentUp = false;
+  });
   const hidden = () => navEl.classList.contains('is-hidden');
   const show = () => {
     if (!hidden()) return;
@@ -70,7 +85,7 @@ if (navEl) {
     if (dy !== 0) {
       travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
       if (travel > 6) navEl.classList.add('is-hidden');
-      else if (travel < -8) show();
+      else if (travel < -8 && intentUp) show();
     }
     // no style change here: the nav keeps its look while it slides away (0.6s); show() sets the pill before it returns
   };
