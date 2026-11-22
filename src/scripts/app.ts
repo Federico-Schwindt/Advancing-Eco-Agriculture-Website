@@ -166,9 +166,10 @@ observeReveals();
    ========================================================================== */
 const toast = $('[data-toast]');
 let toastT: number | undefined;
-function showToast(text: string, img?: string | null) {
+function showToast(text: string, img?: string | null, meta = '') {
   if (!toast) return;
   ($('[data-toast-text]', toast) as HTMLElement).textContent = text;
+  ($('[data-toast-meta]', toast) as HTMLElement).textContent = meta;
   const im = $('[data-toast-img]', toast) as HTMLImageElement;
   if (img) { im.src = `${BASE}/img/products/${img}-320.webp`; im.hidden = false; } else im.hidden = true;
   toast.classList.add('is-on');
@@ -194,7 +195,7 @@ export const Cart = {
     this.save();
     const badge = $('[data-cart-count]');
     badge?.classList.remove('bump'); void badge?.offsetWidth; badge?.classList.add('bump');
-    showToast(`${item.name} · ${item.size} added`, item.img);
+    showToast(item.name, item.img, `${item.size} added`);
   },
   setQty(id: number, qty: number) {
     const it = cart.find((i) => i.id === id);

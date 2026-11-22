@@ -367,6 +367,26 @@ html.js [data-split].is-in .w > span { animation: rv-word 1.2s var(--ease) backw
 .toast.is-on { transform: translate(-50%, 0); }
 .toast img { width: 36px; height: 36px; object-fit: contain; background: var(--bone); border-radius: 50%; padding: 3px; }
 .toast button { background: var(--sun); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 0.8rem; white-space: nowrap; }
+/* name + "1 Gallon added": one line on desktop ("Name · 1 Gallon added"), two lines on phones */
+.toast__text { display: flex; align-items: baseline; gap: 0.35em; min-width: 0; }
+.toast__text strong { font-weight: inherit; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.toast__text small { font-size: inherit; white-space: nowrap; }
+.toast__text small::before { content: '· '; }
+.toast__text small:empty { display: none; }
+@media (max-width: 600px) {
+  /* a full-width card above the concept pill instead of a squeezed pill: the name never wraps into three lines */
+  .toast {
+    left: 12px; right: 12px; bottom: calc(52px + env(safe-area-inset-bottom)); max-width: none;
+    transform: translateY(calc(100% + 90px)); border-radius: 20px; padding: 10px 10px 10px 10px; gap: 12px;
+  }
+  .toast.is-on { transform: translateY(0); }
+  .toast img { width: 44px; height: 44px; flex: none; }
+  .toast__text { flex: 1; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1.25; }
+  .toast__text strong { font-weight: 600; font-size: 0.95rem; max-width: 100%; }
+  .toast__text small { font-size: 0.78rem; color: rgba(242, 237, 227, 0.66); }
+  .toast__text small::before { content: none; }
+  .toast button { flex: none; padding: 10px 16px; }
+}
 
 /* ---------- State modal ---------- */
 .modal { position: fixed; inset: 0; z-index: 85; display: grid; place-items: center; padding: 16px; pointer-events: none; }

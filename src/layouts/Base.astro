@@ -64,7 +64,7 @@ const og = new URL(url('/media/og.jpg'), Astro.site);
     <ConceptNotice />
     <div class="toast" role="status" aria-live="polite" data-toast>
       <img alt="" width="36" height="36" data-toast-img />
-      <span data-toast-text>Added to cart</span>
+      <span class="toast__text"><strong data-toast-text>Added to cart</strong><small data-toast-meta></small></span>
       <button type="button" data-open-cart>View cart</button>
     </div>
     <script is:inline>
